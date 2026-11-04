@@ -1,0 +1,45 @@
+node_modules/
+.venv/
+dist/
+work/
+outputs/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.sqlite3*
+*.db*
+backend/data/
+backend/models/**/*.joblib
+backend/models/**/*.pkl
+backend/models/**/*.pickle
+# Raw corpora, backups and experiment scratch are never source assets.
+data/raw/
+datasets/
+backend/models/**/predictions-raw.*
+test-results/
+playwright-report/
+*.log
+.DS_Store
+Thumbs.db
+# Raw mail and private key containers are never source assets. Keep only the
+# three reviewed synthetic application fixtures, not arbitrary inbox messages.
+*.mbox
+*.pst
+*.ost
+*.msg
+*.eml
+!fixtures/ordinary-update.eml
+!fixtures/suspicious-invoice.eml
+!fixtures/spanish-account-review.eml
+*.pem
+*.key
+*.p12
+*.pfx
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.cache/

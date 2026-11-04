@@ -1,0 +1,16 @@
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.pdf binary
+*.woff2 binary
+*.zip binary
+*.joblib binary
+*.pkl binary
+# Byte identities are recorded by the frozen preparation and training reports.
+backend/models/** -text
+docs/ml/phase6/provenance.json -text
+docs/ml/phase6/preparation-audit.json -text
+docs/ml/phase6/acquisition-v2.json -text
+docs/ml/phase6/selection.json -text
+docs/ml/phase6/independent-evaluation.json -text
+docs/ml/phase6/routing-development-frozen.json -text

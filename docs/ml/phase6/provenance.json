@@ -1,0 +1,69 @@
+{
+  "task": "email",
+  "name": "Phase6 source/era-held-out English archive experiment",
+  "approved_for_training": true,
+  "supported_languages": [
+    "en"
+  ],
+  "source_url": "https://zenodo.org/records/18471483",
+  "license": "Development curator CC BY 4.0 / MASC CC BY 3.0 US; original source rights inherited. PhishingPot final only CC BY-NC 4.0. University never fits.",
+  "validation_scope": "Historical source/era-held-out archive diagnostics; limited independent-curator manually reviewed final subset, not deployment probability calibration.",
+  "prepared": {
+    "path": "work/phase6/raw/development.csv",
+    "sha256": "904dfe0eb3963e72fd48263fc3cdcadfb4ea59db4b0aface62d065d87b7e455d",
+    "rows": 22889,
+    "class_balance": {
+      "0": 21438,
+      "1": 1451
+    },
+    "sources": {
+      "Figshare-Enron": 6421,
+      "MeAJOR-trec6": 2912,
+      "CEAS-08-ham": 6537,
+      "Figshare-Ling": 998,
+      "MeAJOR-trec5": 3262,
+      "Nazario-2018": 160,
+      "Figshare-Assassin": 1237,
+      "nazario-phishing-2024": 234,
+      "nazario-phishing-2025": 347,
+      "Nazario-2023": 193,
+      "nazario-phishing2": 177,
+      "nazario-phishing1": 71,
+      "MASC-W3C": 27,
+      "Nazario-2020": 79,
+      "Nazario-2022": 82,
+      "nazario-phishing0": 53,
+      "Nazario-2021": 55,
+      "MASC-Enron": 44
+    },
+    "roles": {
+      "train_pool": 15538,
+      "validation": 7351
+    },
+    "groups": 16028
+  },
+  "final": {
+    "path": "work/phase6/raw/final.csv",
+    "sha256": "720d8d8b1d5108576e45dc8e52cde4de1f17c7ff39c3d284b2d8bfe1131ec660",
+    "rows": 5965,
+    "class_balance": {
+      "0": 5801,
+      "1": 164
+    },
+    "sources": {
+      "MeAJOR-trec7": 5801,
+      "Nazario-2019": 138,
+      "PhishingPot-strict_phishing": 19,
+      "PhishingPot-financial_scam": 7
+    },
+    "roles": {
+      "final": 5965
+    },
+    "groups": 4067
+  },
+  "source_roles": "TREC05 fit pool; TREC06 validation; TREC07 final; Nazario2022/24/25 validation; unused2019 final secondary; Pot final only",
+  "acquisition_sha256": "729ceed0a3b85216be8e1af4387a3a621863ab597e770d3c7cdba8d266e9d0f4",
+  "preparation_audit_sha256": "fd8e417900fe78069a5fe160cc5df4ae20947f42f77162b49e2927be3154e149",
+  "permission_basis": "MeAJOR v2 official Zenodo metadata explicitly licenses its anonymized curator release CC BY 4.0; original TREC/source/sender rights are inherited, not independently re-cleared. Existing Nazario and Figshare development are author/curator CC BY 4.0, MASC CC BY 3.0 US. No University or PhishingPot row fits this model. Pinned PhishingPot explicit CC BY-NC 4.0 is used solely for held-out local noncommercial evaluation.",
+  "collection_notes": "Real historical email subject/body only; MeAJOR original benign0 rows only, all merged spam/phishing1 rows excluded. TREC05 supports development and TREC06 source-held-out validation; TREC07 is final. Existing Phase4/5 tests are observed development evidence. Source, era, anonymization and imperfect ham labels remain limitations. Final Pot apparent-phishing labels were content-reviewed before any prediction; small repeated-campaign subset is not expert consensus or verified malicious infrastructure. No synthetic primary data."
+}

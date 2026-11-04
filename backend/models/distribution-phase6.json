@@ -1,0 +1,104 @@
+{
+  "format_version": 1,
+  "review_date": "2026-11-04",
+  "publication_approval": true,
+  "source_license_decision": "MIT for authorized original source and documentation. See LICENSE.NOTICE.md.",
+  "raw_datasets_and_private_application_records": "Always excluded",
+  "rights_statement": "Publisher permissions and source history are documented; this is not a legal clearance or a claim of field reliability. Existing artifact bytes remain unchanged.",
+  "models": [
+    {
+      "directory": "email",
+      "version": "email-passive-text-v2-1f69eeb07591",
+      "artifact_sha256": "7a2a52a67faf21f959c74e5c310d7732c050e5697284101fa78f2523aa370f49",
+      "classifier_decision": "Approved for limited use",
+      "runtime_state": "Active Spanish archive classifier",
+      "public_weight_policy": "Candidate for owner-reviewed model-only distribution with CC BY4 attribution and documented limitations",
+      "training_permission_notes": [
+        "SpaPhish v5; creator release CC BY4.0"
+      ],
+      "probability_validated_for_deployment": false
+    },
+    {
+      "directory": "url",
+      "version": "url-passive-text-v2-4c777052d55d",
+      "artifact_sha256": "719f147c02c402881203b9fb0fe1c5f4f3c5bc95a7aad61c548991f459943709",
+      "classifier_decision": "Approved for limited use",
+      "runtime_state": "Active hostname-only archive classifier",
+      "public_weight_policy": "Candidate for owner-reviewed model-only distribution with CC BY4 attribution and documented limitations",
+      "training_permission_notes": [
+        "UCI PhiUSIIL; CC BY4.0"
+      ],
+      "probability_validated_for_deployment": false
+    },
+    {
+      "directory": "email_en",
+      "version": "email-passive-text-v2-3c3796081ca9",
+      "artifact_sha256": "cda5272ccad91326f42ecc2fea2723f32bccbf1ae655cf675009d43d8d9e3d27",
+      "classifier_decision": "Experimental/inactive",
+      "runtime_state": "Retained historical English baseline; superseded locally by the selected Phase 6 classifier",
+      "public_weight_policy": "Exclude weights from conservative public source until inherited-source/attribution review; provide preparation and heuristic fallback",
+      "training_permission_notes": [
+        "Nazario author corpus; CC BY4.0",
+        "Figshare ham curator release; CC BY4.0 with inherited original-source rights limitations"
+      ],
+      "probability_validated_for_deployment": false
+    },
+    {
+      "directory": "email_en_v5/email-multiscale-v3-fa5c01a0f9a7",
+      "version": "email-multiscale-v3-fa5c01a0f9a7",
+      "artifact_sha256": "2fc41332e17adf0773b03780378e48c7bd5ff50a1d54746978552217f2c0d9b8",
+      "classifier_decision": "Rejected",
+      "runtime_state": "Inactive research candidate; failed independent FPR admission",
+      "public_weight_policy": "Retain locally; exclude from conservative public source unless separately reviewed as inactive research",
+      "training_permission_notes": [
+        "Phase4 English development",
+        "Additional Nazario CC BY4.0",
+        "MASC CC BY3.0US",
+        "University CC BY-NC-SA2.0 was evaluation-only, not fit into weights"
+      ],
+      "probability_validated_for_deployment": false
+    },
+    {
+      "directory": "email_en_v6/email-source-text-v6-bb697598d76b",
+      "version": "email-source-text-v6-bb697598d76b",
+      "artifact_sha256": "28f6cd932170c7aa22aeec015d3f3036b2d71333dc73de308a6e8c720b019a8c",
+      "classifier_decision": "Experimental/inactive",
+      "runtime_state": "Frozen unselected Phase 6 candidate",
+      "public_weight_policy": "Include only in local review package. Conservative public source omits all weights. Inherited-source rights require owner review.",
+      "training_permission_notes": [
+        "Nazario/Figshare CC BY 4.0 and MASC CC BY 3.0 US",
+        "MeAJOR curator release CC BY 4.0 with inherited TREC and sender rights",
+        "Phishing Pot CC BY-NC 4.0 and University scam material excluded from fitting"
+      ],
+      "probability_validated_for_deployment": false
+    },
+    {
+      "directory": "email_en_v6/email-source-text-v6-609bba638c1d",
+      "version": "email-source-text-v6-609bba638c1d",
+      "artifact_sha256": "17040d24c574d753c0b6491e21ce8a8cfa32007d16e0fc66d68538a7f0b2ba13",
+      "classifier_decision": "Approved for limited use",
+      "runtime_state": "Active limited local English research classifier",
+      "public_weight_policy": "Include only in local review package. Conservative public source omits all weights. Inherited-source rights require owner review.",
+      "training_permission_notes": [
+        "Nazario/Figshare CC BY 4.0 and MASC CC BY 3.0 US",
+        "MeAJOR curator release CC BY 4.0 with inherited TREC and sender rights",
+        "Phishing Pot CC BY-NC 4.0 and University scam material excluded from fitting"
+      ],
+      "probability_validated_for_deployment": false
+    },
+    {
+      "directory": "email_en_v6/email-source-text-v6-3b1e4efb2bfa",
+      "version": "email-source-text-v6-3b1e4efb2bfa",
+      "artifact_sha256": "7c141a2bcf99f187abb156b1cfe44e1d78f5f5b2f6c7f26f4b93b17c3b0226cf",
+      "classifier_decision": "Experimental/inactive",
+      "runtime_state": "Frozen unselected Phase 6 candidate",
+      "public_weight_policy": "Include only in local review package. Conservative public source omits all weights. Inherited-source rights require owner review.",
+      "training_permission_notes": [
+        "Nazario/Figshare CC BY 4.0 and MASC CC BY 3.0 US",
+        "MeAJOR curator release CC BY 4.0 with inherited TREC and sender rights",
+        "Phishing Pot CC BY-NC 4.0 and University scam material excluded from fitting"
+      ],
+      "probability_validated_for_deployment": false
+    }
+  ]
+}

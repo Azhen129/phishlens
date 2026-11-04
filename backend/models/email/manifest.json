@@ -1,0 +1,69 @@
+{
+  "format_version": 1,
+  "kind": "email",
+  "version": "email-passive-text-v2-1f69eeb07591",
+  "artifact": "model.joblib",
+  "sha256": "7a2a52a67faf21f959c74e5c310d7732c050e5697284101fa78f2523aa370f49",
+  "sklearn_version": "1.9.1",
+  "validated": true,
+  "metadata": {
+    "kind": "email",
+    "version": "email-passive-text-v2-1f69eeb07591",
+    "calibrated": true,
+    "validation_passed": true,
+    "assessment_mode": "ml",
+    "selected_candidate": "linear_svm_ml",
+    "feature_version": "passive-text-v2",
+    "sklearn_version": "1.9.1",
+    "calibration": "disjoint held-out sigmoid calibration for base model and learned hybrid",
+    "limitations": [
+      "Dataset-conditioned calibrated probabilities are not a guarantee of field performance or confirmed maliciousness.",
+      "Labels and source collection biases are inherited from the documented dataset; source-level and temporal generalization are not established.",
+      "Lexical near-duplicate grouping does not detect all semantic paraphrases. Email inputs are bounded to16000 characters; URL inputs to8192.",
+      "No destination fetching, DNS, reputation lookup, authentication verification or attachment execution is performed by the model."
+    ],
+    "dataset_source": "https://data.mendeley.com/datasets/hz2d6gz7pc/5",
+    "dataset_license": "CC BY 4.0",
+    "held_out_metrics": {
+      "n": 139,
+      "class_balance": {
+        "0": 66,
+        "1": 73
+      },
+      "threshold": 0.48,
+      "accuracy": 0.9424460431654677,
+      "precision": 0.9710144927536232,
+      "recall": 0.9178082191780822,
+      "f1": 0.9436619718309859,
+      "legitimate_precision": 0.9142857142857143,
+      "legitimate_recall": 0.9696969696969697,
+      "legitimate_f1": 0.9411764705882353,
+      "confusion_matrix": [
+        [
+          64,
+          2
+        ],
+        [
+          6,
+          67
+        ]
+      ],
+      "false_positives": 2,
+      "false_negatives": 6,
+      "roc_auc": 0.9923204649232047,
+      "average_precision": 0.9929579970738345,
+      "pr_auc_trapezoid": 0.9929079946377488,
+      "brier_score": 0.04021744321152369,
+      "expected_calibration_error": 0.030713647733303553
+    },
+    "input_max_characters": 16000,
+    "supported_languages": [
+      "es"
+    ],
+    "validation_scope": "Spanish-only anonymized author-inbox emails in SpaPhish v5. Does not validate English email predictions or deployment prevalence; source/campaign and collection-era limitations remain.",
+    "training_code_sha256": "422c6caa8375a18d5b1c316ad017cfca89da74be6fb44ba702cd68c1115597c7",
+    "feature_code_sha256": "f290b7f0fa5a4315ed15abb16c0afb116f4e0d4231dc1a7d4266786120b7aaf1",
+    "provenance_sha256": "cb08fc8eaf70212ddef17937e945f99dfba16324891a3f687a40bff2106c6620"
+  },
+  "metrics_file": "metrics.json"
+}

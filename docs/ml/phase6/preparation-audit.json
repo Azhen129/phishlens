@@ -1,0 +1,143 @@
+{
+  "protocol": "phase6-source-preparation-v1",
+  "raw_and_exclusions": {
+    "CEAS_ham_added_cap": 6000,
+    "MeAJOR_all_merged_positives_excluded": 48034,
+    "MeAJOR_malformed_rows_excluded": 1,
+    "trec5_hash_cap_retained": 4000,
+    "trec6_hash_cap_retained": 3000,
+    "trec7_hash_cap_retained": 6000,
+    "Pot_incomplete_financial_scams_excluded": 3,
+    "Nazario_2019_raw_messages": 243,
+    "development_nonEnglish_uncertain_excluded": 133,
+    "subject_annotation_quarantine": 9,
+    "canonical_duplicate_copies_removed": 12378
+  },
+  "MeAJOR_original_source_labels": {
+    "trec5:0.0": 29929,
+    "trec5:1.0": 19654,
+    "trec6:0.0": 11208,
+    "trec6:1.0": 3797,
+    ":": 1,
+    "trec7:1.0": 24583,
+    "trec7:0.0": 19513
+  },
+  "pot_annotation_counts": {
+    "en:strict_phishing": 24,
+    "nonen:unreadable": 22,
+    "en:generic_spam": 71,
+    "uncertain:unreadable": 94,
+    "nonen:financial_scam": 8,
+    "nonen:strict_phishing": 31,
+    "nonen:generic_spam": 74,
+    "en:financial_scam": 14,
+    "mixed:financial_scam": 2,
+    "en:legitimate_or_unknown": 36,
+    "en:unreadable": 10,
+    "mixed:legitimate_or_unknown": 1,
+    "nonen:legitimate_or_unknown": 9,
+    "mixed:generic_spam": 2,
+    "mixed:unreadable": 1,
+    "mixed:strict_phishing": 1
+  },
+  "pot_annotations_sha256": "5ab192f26f1dfc4700148b79931c1cbb74a1859680bd81d936ccedd3f5e130d8",
+  "canonical_unique_rows": 37219,
+  "group_audit": {
+    "passes": {
+      "full_text": {
+        "near_duplicate_threshold": 0.9,
+        "near_duplicate_representation": "email first600 tokens, 5-word shingles, URL/email/number placeholders; URL first600 character5-grams with digit placeholders",
+        "near_duplicate_algorithm": "deterministic exact prefix-filter Jaccard join; fail closed at comparison bound",
+        "near_duplicate_comparisons": 24273,
+        "near_duplicate_pairs": 22517,
+        "groups": 36060,
+        "largest_group": 195,
+        "url_registered_domain_groups": 0,
+        "source_separation": "Source labels are retained for error analysis. Lexical campaign and URL registered-domain groups are disjoint; whole-source holdout is not assumed possible when labels depend on corpus source."
+      },
+      "body_template": {
+        "near_duplicate_threshold": 0.8,
+        "near_duplicate_representation": "email first600 tokens, 5-word shingles, URL/email/number placeholders; URL first600 character5-grams with digit placeholders",
+        "near_duplicate_algorithm": "deterministic exact prefix-filter Jaccard join; fail closed at comparison bound",
+        "near_duplicate_comparisons": 31987,
+        "near_duplicate_pairs": 27092,
+        "groups": 34981,
+        "largest_group": 195,
+        "url_registered_domain_groups": 0,
+        "source_separation": "Source labels are retained for error analysis. Lexical campaign and URL registered-domain groups are disjoint; whole-source holdout is not assumed possible when labels depend on corpus source."
+      }
+    },
+    "global_subject_unions": 10041,
+    "components": 26222,
+    "largest_component": 295,
+    "threshold_policy": "full subject/body Jaccard>=0.90; body-only quote/tracking normalized Jaccard>=0.80; global normalized subjects (>=8 characters). No labels used for unions. Exact deterministic prefix-filter search, fail closed at bound."
+  },
+  "rare_domain_relations": 3669,
+  "global_components": 23272,
+  "final_preexisting_component_rows_excluded": 202,
+  "excluded_final_by_source": {
+    "MeAJOR-trec7": 116,
+    "Nazario-2019": 77,
+    "PhishingPot-financial_scam": 4,
+    "PhishingPot-strict_phishing": 5
+  },
+  "development_final_group_intersection": 0,
+  "final_previously_observed_group_intersection": 0,
+  "prepared": {
+    "development": {
+      "path": "work/phase6/raw/development.csv",
+      "sha256": "904dfe0eb3963e72fd48263fc3cdcadfb4ea59db4b0aface62d065d87b7e455d",
+      "rows": 22889,
+      "class_balance": {
+        "0": 21438,
+        "1": 1451
+      },
+      "sources": {
+        "Figshare-Enron": 6421,
+        "MeAJOR-trec6": 2912,
+        "CEAS-08-ham": 6537,
+        "Figshare-Ling": 998,
+        "MeAJOR-trec5": 3262,
+        "Nazario-2018": 160,
+        "Figshare-Assassin": 1237,
+        "nazario-phishing-2024": 234,
+        "nazario-phishing-2025": 347,
+        "Nazario-2023": 193,
+        "nazario-phishing2": 177,
+        "nazario-phishing1": 71,
+        "MASC-W3C": 27,
+        "Nazario-2020": 79,
+        "Nazario-2022": 82,
+        "nazario-phishing0": 53,
+        "Nazario-2021": 55,
+        "MASC-Enron": 44
+      },
+      "roles": {
+        "train_pool": 15538,
+        "validation": 7351
+      },
+      "groups": 16028
+    },
+    "final": {
+      "path": "work/phase6/raw/final.csv",
+      "sha256": "720d8d8b1d5108576e45dc8e52cde4de1f17c7ff39c3d284b2d8bfe1131ec660",
+      "rows": 5965,
+      "class_balance": {
+        "0": 5801,
+        "1": 164
+      },
+      "sources": {
+        "MeAJOR-trec7": 5801,
+        "Nazario-2019": 138,
+        "PhishingPot-strict_phishing": 19,
+        "PhishingPot-financial_scam": 7
+      },
+      "roles": {
+        "final": 5965
+      },
+      "groups": 4067
+    }
+  },
+  "normalization_sha256": "c64296e579ddc422b20f29d208aab635cad1edcb6b2d69a43170fb6392417c2a",
+  "final_language_policy": "Final sources not filtered by classifier/router. Pot language is model-blind content annotation; other final source language inherited and imperfect."
+}

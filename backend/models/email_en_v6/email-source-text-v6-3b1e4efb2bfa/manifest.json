@@ -1,0 +1,39 @@
+{
+  "format_version": 1,
+  "kind": "email",
+  "version": "email-source-text-v6-3b1e4efb2bfa",
+  "artifact": "model.joblib",
+  "metrics_file": "metrics.json",
+  "sha256": "7c141a2bcf99f187abb156b1cfe44e1d78f5f5b2f6c7f26f4b93b17c3b0226cf",
+  "sklearn_version": "1.9.1",
+  "validated": false,
+  "metadata": {
+    "kind": "email",
+    "version": "email-source-text-v6-3b1e4efb2bfa",
+    "feature_version": "passive-text-v2",
+    "feature_code_sha256": "f290b7f0fa5a4315ed15abb16c0afb116f4e0d4231dc1a7d4266786120b7aaf1",
+    "additional_code_sha256": {
+      "text_normalization_v6.py": "c64296e579ddc422b20f29d208aab635cad1edcb6b2d69a43170fb6392417c2a"
+    },
+    "pipeline_version": "email-source-text-v6",
+    "normalization_version": "english-format-address-v6",
+    "calibrated": true,
+    "validation_passed": true,
+    "assessment_mode": "ml",
+    "selected_candidate": "union_svm_balanced",
+    "supported_languages": [
+      "en"
+    ],
+    "probability_validated_for_deployment": false,
+    "probability_scope": "Archive decision score; representative deployment calibration not established.",
+    "prediction_warning": "Experimental archive decision score, not confidence or a verified inbox probability. Independent admission pending; a legitimate prediction never verifies safety.",
+    "validation_scope": "Historical source/era-held-out archive diagnostics; limited independent-curator manually reviewed final subset, not deployment probability calibration.",
+    "dataset_source": "https://zenodo.org/records/18471483",
+    "dataset_license": "Development curator CC BY 4.0 / MASC CC BY 3.0 US; original source rights inherited. PhishingPot final only CC BY-NC 4.0. University never fits.",
+    "limitations": [
+      "Source/era/campaign and label/prevalence shift remain; benchmark calibration is not deployment probability.",
+      "No live authentication, reputation, destination fetching or attachment execution is performed.",
+      "Bounded lexical grouping does not prove all semantic campaigns are independent."
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "role": "Eight deliberately enriched already-observed Phase5 language-review examples; not representative/global error rate, no model predictions or freshPhase6final",
+  "original_phase5_csv_sha256": "2c234b3a04531170f4d6fc8e529845d6322ff8a8523dd3948effe700dc831e89",
+  "raw_message_text_excluded": true,
+  "router_sha256": "4a43d5495721c5b2329816e398ce348305972e31e1c0dfc51bc14f79daa7d933",
+  "normalizer_sha256": "b2e1397eb4d3a35bd10384d9a5ac0758a78f4aa2910b1720a95a6e9d7b260367",
+  "original_language_review_sha256": "59bbe1d3f53705f84d55747642d898b8b56e51b1ab343bdf6e2a33bfdf506085",
+  "old_known_errors_repaired": 2,
+  "remaining_known_wrong_assignments": 3
+}

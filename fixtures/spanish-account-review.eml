@@ -1,0 +1,10 @@
+From: Equipo de Revision <revision@example.test>
+To: analista@example.test
+Subject: [DEV FIXTURE] Revision urgente de su cuenta
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+Este mensaje es una muestra sintetica para verificar la interfaz, nunca se utiliza para entrenar el clasificador.
+Estimado usuario, hemos detectado actividad inusual en su cuenta. Para evitar la suspension del acceso, confirme sus datos personales y verifique su identidad antes de que termine el dia.
+Revise la solicitud y confirme la informacion de su cuenta en https://cuentas.example.test/verificacion.
+Conserve el mensaje original y compruebe la solicitud por un canal independiente.

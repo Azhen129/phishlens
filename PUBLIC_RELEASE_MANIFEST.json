@@ -1,0 +1,673 @@
+{
+  "format_version": 1,
+  "publication_authorized": true,
+  "default_mode": "rules-only",
+  "model_weights_included": false,
+  "screenshot_publication_rights": "confirmed by owner for the three selected screenshots",
+  "files": {
+    ".env.example": {
+      "sha256": "d1086dcaf20d9c2e5dddd3bd561cd17d78da2fa42ee02465aa628b4e4ea1d6df",
+      "bytes": 400
+    },
+    ".gitattributes": {
+      "sha256": "baf6d8d7ec174b3b399dcfffbcc0972d8ffbef1881960371c2041bc433ba2583",
+      "bytes": 478
+    },
+    ".github/workflows/ci.yml": {
+      "sha256": "a85e9c28f03f5d845fdb36bf37ed5416ca21a6cd8ae97c4fc56bc2adc2a88eb2",
+      "bytes": 3382
+    },
+    ".gitignore": {
+      "sha256": "3742d656ac3eff0d55021b3db2b4105ac45c56b285db5f262113c38168a127bd",
+      "bytes": 765
+    },
+    "DATASET_PROVENANCE.md": {
+      "sha256": "3e5d118b5846a1175e2f787c93093f56e59092cb5bf6163f8e90867910d61b72",
+      "bytes": 10816,
+      "original_sha256": "1443832c3e3a8ec25e85df15bd62aa297486c126e9528e73607204e2a6ef1218",
+      "changes": [
+        "Adapted documentation for the public package and its evidence scope."
+      ]
+    },
+    "GITHUB_READINESS.md": {
+      "sha256": "02c982602e7a0374c77b1ea30715b3835f4ae3cdd7bb485f7ec0bb889de13eb2",
+      "bytes": 2122,
+      "original_sha256": "8a05f15872a14c3d1478da9e0acb18cf67cf234bb9d13dce126e3f822a4f385f",
+      "changes": [
+        "Adapted documentation for the public package and its evidence scope.",
+        "Recorded owner authorization for the MIT source release and selected assets."
+      ],
+      "reviewed_source_zip_member_sha256": "f8c2df1b6b2acd32a92339b30cd6c5c577b6a6efd0690836056257aa5175c4fb"
+    },
+    "LICENSE": {
+      "sha256": "2102c9f790fa2a0c6c1034262fc5d4527fcd5a30e5aa543c6502286716ab5481",
+      "bytes": 1065,
+      "changes": [
+        "Recorded owner authorization for the MIT source release and selected assets."
+      ]
+    },
+    "LICENSE.NOTICE.md": {
+      "sha256": "28f3102d9f0d3f890f05d3cd214d027683285474ee57ee6808826dda334485e3",
+      "bytes": 552,
+      "original_sha256": "031a2e8f5f14a6dc66f5bbbae91d7a10d6ac707bf0761bfd5e26373b4336e5fe",
+      "reviewed_source_zip_member_sha256": "031a2e8f5f14a6dc66f5bbbae91d7a10d6ac707bf0761bfd5e26373b4336e5fe",
+      "changes": [
+        "Recorded owner authorization for the MIT source release and selected assets."
+      ]
+    },
+    "MODEL_EVALUATION.md": {
+      "sha256": "2aca19c01efd1730217704dddb92188a08dda81163da79ea2439799528f998e7",
+      "bytes": 8588,
+      "original_sha256": "326bc21df82185da5ab0e0541bb33909cf08e04eb81f101fe67d754dfd714ea5",
+      "changes": [
+        "Adapted documentation for the public package and its evidence scope."
+      ]
+    },
+    "PUBLIC_RELEASE_AUDIT.json": {
+      "sha256": "ff5af8fdb664e69dace9de9699870ed4615da1ecd0a6add4953139c463eb34a4",
+      "bytes": 994,
+      "original_sha256": "32a1241cb39ff97155a57ce2f5e68dc9f68b502a44de8114d231963e88029042",
+      "reviewed_source_zip_member_sha256": "32a1241cb39ff97155a57ce2f5e68dc9f68b502a44de8114d231963e88029042",
+      "changes": [
+        "Recorded owner authorization for the MIT source release and selected assets."
+      ]
+    },
+    "README.md": {
+      "sha256": "6e07105945d292c4b882553bbbc13ecebf47ea05a207dd17fc5434e30d18171b",
+      "bytes": 13149,
+      "original_sha256": "5da59839cac642592b40ea60d8a69eed8e2eddf20644867bf2b02272c9ff45ef",
+      "changes": [
+        "Adapted documentation for the public package and its evidence scope.",
+        "Recorded owner authorization for the MIT source release and selected assets."
+      ],
+      "reviewed_source_zip_member_sha256": "2f28f79cb4ee6f19e82c987b7577332ad8fb247f74d2d332b5dfff56c02f94d3"
+    },
+    "SECURITY_AUDIT.md": {
+      "sha256": "ae9d44b578707fb1021664891d7d7e9e9365173be8d80a21330f50cd0ed0db4e",
+      "bytes": 9361,
+      "original_sha256": "c802ca488d90af8523bd7a8554f79e8c93a8cf40de390f3e6b210a538aeacdfa",
+      "changes": [
+        "Adapted documentation for the public package and its evidence scope.",
+        "Recorded owner authorization for the MIT source release and selected assets."
+      ],
+      "reviewed_source_zip_member_sha256": "627da04fbede883e6c28d150dab4068e8b4b330ef94800a83a7e7dead11b4a55"
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "sha256": "519a8710271eb3542628179cf03d86297c0210d65b7dd0c092060a81c630182b",
+      "bytes": 3355,
+      "original_sha256": "423646f3025c20371b52de7f044d0becb7eae40ef2319c1e7728ddd84a02671f",
+      "reviewed_source_zip_member_sha256": "423646f3025c20371b52de7f044d0becb7eae40ef2319c1e7728ddd84a02671f",
+      "changes": [
+        "Recorded owner authorization for the MIT source release and selected assets."
+      ]
+    },
+    "backend/BACKEND.md": {
+      "sha256": "9cd2ee27d985718597fd94535870c86db759c2e8d12c491c7813a75057d1e845",
+      "bytes": 6318
+    },
+    "backend/__init__.py": {
+      "sha256": "742dd160123899ffc78f272a191af086b81830c30ec67b7d689665af9bf4c4ea",
+      "bytes": 33
+    },
+    "backend/analysis.py": {
+      "sha256": "f14716e69abd2e6b154f1827b0a9db366377b33ce77c10608164f51c3f7911ba",
+      "bytes": 19678
+    },
+    "backend/language_routing_v2.py": {
+      "sha256": "071d0534f32e4abc000f1f15d876be9f93b925f83e3cd1aed8ec2578cda3e02e",
+      "bytes": 5491
+    },
+    "backend/language_routing_v3.py": {
+      "sha256": "4a43d5495721c5b2329816e398ce348305972e31e1c0dfc51bc14f79daa7d933",
+      "bytes": 3960
+    },
+    "backend/main.py": {
+      "sha256": "56174300372cd6edd4523736de59fcd3fbf9a7fee2a63ffc586db4bfc3f7a717",
+      "bytes": 13794
+    },
+    "backend/ml_features.py": {
+      "sha256": "f290b7f0fa5a4315ed15abb16c0afb116f4e0d4231dc1a7d4266786120b7aaf1",
+      "bytes": 7585
+    },
+    "backend/ml_features_v3.py": {
+      "sha256": "643599e8eb2c067df6263ddbbce084aa577cb44e31d83864ff0143684eb5c95c",
+      "bytes": 1413
+    },
+    "backend/ml_runtime.py": {
+      "sha256": "7c7a2ae16cf6823d8d3f8bdaa62e26e49d1de58797e85160e08adc8e1205d3f9",
+      "bytes": 24781
+    },
+    "backend/ml_training.py": {
+      "sha256": "f82f26de96b410f905ddc09f1d6064890b911f1ffc63d5f03a2997bc4a375ac2",
+      "bytes": 38146
+    },
+    "backend/ml_training_v3.py": {
+      "sha256": "277e9ab70c7f4410d5891b69cc8a622b0e8ec7f89153ba599f6c5454fee4869e",
+      "bytes": 10964
+    },
+    "backend/ml_training_v6.py": {
+      "sha256": "fe892344b761e7cd2cf82647fa31233c13f2c8c3d2faa5b2f159d39de4078c5e",
+      "bytes": 24824
+    },
+    "backend/models/NOTICE.md": {
+      "sha256": "9b208ed13b3b21177e77225e32899e216272155d48f7c845f48c27021d4df261",
+      "bytes": 1490,
+      "original_sha256": "8ae949646adca54c62e5af270fc4954c282e67e630b12e1fd7c4b187b4d8dfe1",
+      "changes": [
+        "Adapted documentation for the public package and its evidence scope.",
+        "Recorded owner authorization for the MIT source release and selected assets."
+      ],
+      "reviewed_source_zip_member_sha256": "60888637bcd6cefce8a25c21dd82c981aca9834419803dab09bea4d70c8799ed"
+    },
+    "backend/models/active-models.json": {
+      "sha256": "fa327be82dd50bc302fe61ba3662f34c2bcb34d62d0ecbc2bc7fd275ecc5c0a9",
+      "bytes": 66
+    },
+    "backend/models/distribution-phase6.json": {
+      "sha256": "96eab9270c327c93bc95a11c7e560e144cab05b87ab581705a7fe028f4716d8b",
+      "bytes": 5698,
+      "original_sha256": "858443f3dbd4794f3ad7d19c761533873a02e5abf6880e365547079350dad5dc",
+      "reviewed_source_zip_member_sha256": "858443f3dbd4794f3ad7d19c761533873a02e5abf6880e365547079350dad5dc",
+      "changes": [
+        "Recorded owner authorization for the MIT source release and selected assets."
+      ]
+    },
+    "backend/models/email/manifest.json": {
+      "sha256": "3ef25033f515df828439a7e7714151553cc10d9542a7fe38740d15f0a42814da",
+      "bytes": 2859
+    },
+    "backend/models/email/metrics.json": {
+      "sha256": "87ac9f9a6f82d33acb1e1e70d5395c98dc8baf6175da63ff083f0fcf4991701b",
+      "bytes": 31039,
+      "original_sha256": "20b19a725c902f4d43f6a8e0660778fd69e6617975d3e9c73283d37371761524",
+      "changes": [
+        "Omitted 12 record-level or detailed curve fields from the public evidence."
+      ]
+    },
+    "backend/models/email_en/manifest.json": {
+      "sha256": "fec7deefe72060dca6cbb590799583b8e88ee6bce4a1e38c24c537b450157583",
+      "bytes": 5385
+    },
+    "backend/models/email_en/metrics.json": {
+      "sha256": "e45b787fc8af3d392095ef0ecdf9930d031940e40f632a46e07c2155b83b2835",
+      "bytes": 47621,
+      "original_sha256": "b16ce747a97d3b7f3ce93ba3d12c95365ec52410e2ee37e995daa301b957a156",
+      "changes": [
+        "Omitted 16 record-level or detailed curve fields from the public evidence."
+      ]
+    },
+    "backend/models/email_en_v5/email-multiscale-v3-fa5c01a0f9a7/admission.json": {
+      "sha256": "f3671f15d3fa2003f389fd9e67a09785c2bb28a0e5fe540c1b7e28eedd3e013e",
+      "bytes": 576
+    },
+    "backend/models/email_en_v5/email-multiscale-v3-fa5c01a0f9a7/manifest.json": {
+      "sha256": "01c2a508f6c540d17dbfc9a306b314e3e3f706360989a95fe0e1dd36cac95e30",
+      "bytes": 2206
+    },
+    "backend/models/email_en_v5/email-multiscale-v3-fa5c01a0f9a7/metrics.json": {
+      "sha256": "77d322f8bb28dc0d70fdd116042ebbe265a68bb4758e11b896ea3f322cf1ca7b",
+      "bytes": 118398,
+      "original_sha256": "4e70f5f07fb6727bb1dcbf3d9a9c09960ad0f4d7a322ddb611b6d61ab214a75e",
+      "changes": [
+        "Machine-specific paths normalized in this copy (0 additional path redactions).",
+        "Omitted 44 record-level or detailed curve fields from the public evidence."
+      ]
+    },
+    "backend/models/email_en_v6/email-source-text-v6-3b1e4efb2bfa/manifest.json": {
+      "sha256": "7bebc79749349c3e3ebd34bca4f506a5b7d71c3721a9ac18c3455e82f0fdec28",
+      "bytes": 2083
+    },
+    "backend/models/email_en_v6/email-source-text-v6-3b1e4efb2bfa/metrics.json": {
+      "sha256": "1b6b6f315bafcd0e0b8b33b78a0b54d95aaa1e08104e3589c1ed92ff5ac70017",
+      "bytes": 81299,
+      "original_sha256": "2a7cb06c07d664c957397ea97ba258abdbf58bd3b4287c99af8d9812a5907897",
+      "changes": [
+        "Omitted 36 record-level or detailed curve fields from the public evidence."
+      ]
+    },
+    "backend/models/email_en_v6/email-source-text-v6-609bba638c1d/admission.json": {
+      "sha256": "1de4998f158a9e7ab8352ac1b00dd20ec8e57e98f47a22f3700626b1efafe911",
+      "bytes": 854
+    },
+    "backend/models/email_en_v6/email-source-text-v6-609bba638c1d/manifest.json": {
+      "sha256": "21b4b73e15bc9439ef37232112e09e89c4a84b3112f7af9150d076b4a0923051",
+      "bytes": 2140
+    },
+    "backend/models/email_en_v6/email-source-text-v6-609bba638c1d/manifest.pre-admission.json": {
+      "sha256": "14e6171d04883eb37c038e6ada9a6f452073c07b36b5ecdfca964f74d4441bf8",
+      "bytes": 2085
+    },
+    "backend/models/email_en_v6/email-source-text-v6-609bba638c1d/metrics.json": {
+      "sha256": "f0ce8b84e13abd7d9150385bcb43a2492ff013de9d919349ae1adfc535a46929",
+      "bytes": 80157,
+      "original_sha256": "c04ba4784e848fb3a3f2b022e09987017e025f7bcf4803596983a47bf2346c76",
+      "changes": [
+        "Omitted 36 record-level or detailed curve fields from the public evidence."
+      ]
+    },
+    "backend/models/email_en_v6/email-source-text-v6-bb697598d76b/manifest.json": {
+      "sha256": "a5a419fde405af509bcbb4089801e7ce5545d3f0a879f4dce464c4150aabfa31",
+      "bytes": 2083
+    },
+    "backend/models/email_en_v6/email-source-text-v6-bb697598d76b/metrics.json": {
+      "sha256": "7d407abe9d76885b151b5c16a71a43ad7a868dc545c9239ae685feaa52f2453d",
+      "bytes": 83612,
+      "original_sha256": "3166f117263fe6f940bffd6a1a242180143b050d3c8c0c60000cd9e1c06aac6f",
+      "changes": [
+        "Omitted 36 record-level or detailed curve fields from the public evidence."
+      ]
+    },
+    "backend/models/url/manifest.json": {
+      "sha256": "ffafe650f52d2e7feb5f4a55f858f2fd45ed0fa13bba63600965f7a5059ea1bf",
+      "bytes": 3231
+    },
+    "backend/models/url/metrics.json": {
+      "sha256": "03f1eaf2eb81c595bb0353d0fdd573c4d3a814652d5a61880b43d0226ac15c88",
+      "bytes": 42921,
+      "original_sha256": "fcbe4fbd97d37f2e913ac264e1ad86e321bcba4a302ed1880d3fa0f2baab49af",
+      "changes": [
+        "Omitted 15 record-level or detailed curve fields from the public evidence."
+      ]
+    },
+    "backend/reports.py": {
+      "sha256": "26768013cd83851445b85c95638169e338985b8811b8503fd0b82735200429cd",
+      "bytes": 11995
+    },
+    "backend/requirements-lock.txt": {
+      "sha256": "871bf532f79cf52e2fa126b75ab975743520056d566ea0df5c9db0f3b798f606",
+      "bytes": 897
+    },
+    "backend/requirements-ml.txt": {
+      "sha256": "32f13fbb71d42141c2fc834c0280dfdd02678e07668014af141adaba1f7a9135",
+      "bytes": 107
+    },
+    "backend/requirements.txt": {
+      "sha256": "a02c48f0e41a959ab8409e2320ab7bce534e94fe801b219315d0333b500b33b2",
+      "bytes": 110
+    },
+    "backend/storage.py": {
+      "sha256": "ab4ce1123bd244959dd2267103f13785657555ce596d5cee846bbce70a9e3362",
+      "bytes": 2159
+    },
+    "backend/tests/conftest.py": {
+      "sha256": "2a2957ba2fe9b3790868195f85d2ddd044c5f2a4cbe1c651f8e84b0ba6384082",
+      "bytes": 595
+    },
+    "backend/tests/test_analysis.py": {
+      "sha256": "9071c5c5ec03745f7353c84cbc70043d74bc7c4447e86425cd4ef65525d35208",
+      "bytes": 6368
+    },
+    "backend/tests/test_api.py": {
+      "sha256": "5218c9893cb659d3f2e4f9c4feb82f6cf604f59de3da2ab1971d9248b615f59c",
+      "bytes": 6662
+    },
+    "backend/tests/test_ci_model_registry.py": {
+      "sha256": "0eb5b611a7a54771c3faf943b001c4e384147b81ed03a8731a882facd0fc9255",
+      "bytes": 2714
+    },
+    "backend/tests/test_english_preparation.py": {
+      "sha256": "7b099aa24ef9b64a6f1c0b2b0bc109d406e3cb9f9826ff96936e8db7de693bd1",
+      "bytes": 3225
+    },
+    "backend/tests/test_language_routing.py": {
+      "sha256": "022820b8c5f2744ff893f6ae161c3f2bb54550e080f358c7a20c86c6f787da2d",
+      "bytes": 7832
+    },
+    "backend/tests/test_language_routing_v2.py": {
+      "sha256": "d2fb3688e126fc6043537294bdd5399b1bad9590342b36268e56a3c20933dcff",
+      "bytes": 4048
+    },
+    "backend/tests/test_ml_integration.py": {
+      "sha256": "07eaa35ff3ef343b0efcf923a5254297198bc580514d6f46baef1598d66e6ec8",
+      "bytes": 11561
+    },
+    "backend/tests/test_ml_reliability.py": {
+      "sha256": "3f7317b9de13a8ffc7b21fb47d7dda0cc9e56228806dcacadf17eb608ef267a5",
+      "bytes": 2836
+    },
+    "backend/tests/test_ml_training.py": {
+      "sha256": "370718b3767330be6f67b4d158f7c995ea28ba4cd076f42f4506fd56d513f0f4",
+      "bytes": 11878
+    },
+    "backend/tests/test_phase6_text.py": {
+      "sha256": "09d15dc994f6be9fe61bf2bc558584bdb8e457e7865ff58c8c76dd5683b41660",
+      "bytes": 5727
+    },
+    "backend/tests/test_phase6_training.py": {
+      "sha256": "88d3c1ea05ee26f7df3e6de966034cd355e8dfe6ae6ca5c219c6dde10461b57b",
+      "bytes": 8372
+    },
+    "backend/tests/test_real_models.py": {
+      "sha256": "0c1bbd56709d263697639a234c0128901471365250dd3c7777933ff625c70335",
+      "bytes": 8330
+    },
+    "backend/tests/test_release_audit.py": {
+      "sha256": "c82645a2b104c95faab7d709472707909cf794b738ce8610ec3c60dd1dddad52",
+      "bytes": 2108
+    },
+    "backend/tests/test_storage_versions.py": {
+      "sha256": "aa76fca38bf13cedf69f303de338c20d448452c860acb90fccb356b49bb8527f",
+      "bytes": 2362
+    },
+    "backend/tests/test_versioned_models_v5.py": {
+      "sha256": "8840401090cb1cb6574bf14339662815bfc1f812beb83fa1d61818f2080d9565",
+      "bytes": 6301
+    },
+    "backend/text_normalization_v6.py": {
+      "sha256": "c64296e579ddc422b20f29d208aab635cad1edcb6b2d69a43170fb6392417c2a",
+      "bytes": 2714
+    },
+    "backend/train_model.py": {
+      "sha256": "c218b3dbf28d6bb6b5b9ac383bba222d261207a9547926a37c17b76c576576ee",
+      "bytes": 4390
+    },
+    "docs/ARCHITECTURE.md": {
+      "sha256": "cefd57d7be540f1214513fac31b9a2500882e09f662d353ee67542787930c8e1",
+      "bytes": 6705
+    },
+    "docs/ml/INFERENCE.md": {
+      "sha256": "dc7be622f4e4859af67719c3352f8b01d137b3960691e2c997ba1d0bd32ee398",
+      "bytes": 6649,
+      "original_sha256": "11622678909ee60fcc804d6fa8450a44ef9a65bc5637fdd402357cb924edc0ca",
+      "changes": [
+        "Adapted documentation for the public package and its evidence scope."
+      ]
+    },
+    "docs/ml/dataset-provenance.json": {
+      "sha256": "be76310130b1406ebac03b69369daf983734e8ca378b1fe0aef964de6c4bb50e",
+      "bytes": 6158
+    },
+    "docs/ml/phase6/COMMANDS.md": {
+      "sha256": "5e0407ee62854e299d7d6ac291ef44c46d5b9d2e672738203760e1e75e3ef456",
+      "bytes": 12163,
+      "original_sha256": "46e91b0e8d4e12169af1b83df5095adf195b6bf6da3c797063b010e2222731a8",
+      "changes": [
+        "Adapted documentation for the public package and its evidence scope."
+      ]
+    },
+    "docs/ml/phase6/DATASET_RESEARCH.md": {
+      "sha256": "e8a5609109a83b69bc9795ac24e6a7e5bb6ddde392b9920f3f64e23f32a6f31f",
+      "bytes": 9722
+    },
+    "docs/ml/phase6/POT_ANNOTATION.md": {
+      "sha256": "d8b310a59191335a4f8894a88ccf17d87b74e0906248bbb23a2c9d33655d0182",
+      "bytes": 4464,
+      "original_sha256": "894a084a1b631c38bff5e98736ce539699be84e12b6043004a4f441f92767833",
+      "changes": [
+        "Adapted documentation for the public package and its evidence scope."
+      ]
+    },
+    "docs/ml/phase6/PROTOCOL.md": {
+      "sha256": "0900adbe9a73809d5ef8a6f99c98a13e37e616dbc384374584cb63269b10a306",
+      "bytes": 8297
+    },
+    "docs/ml/phase6/QA_VERIFICATION.md": {
+      "sha256": "623d5b3393feb802a876d4a0ca295d025fb9c8096d70aa01dc0bbb5df534e398",
+      "bytes": 2541,
+      "original_sha256": "75bcf27a654d13955bcd776cfe74b93b519675158be2ca1ae73c5e01f9f66eb7",
+      "changes": [
+        "Adapted documentation for the public package and its evidence scope.",
+        "Recorded owner authorization for the MIT source release and selected assets."
+      ],
+      "reviewed_source_zip_member_sha256": "43035f8d552b1a3fb568564253e8db8e7e7153432b73561807aaf256025733be"
+    },
+    "docs/ml/phase6/ROOT_CAUSES.md": {
+      "sha256": "37b857ca3dd6a4c05cca7da6858755501f97942ca105eb4abb14f8375475fbd4",
+      "bytes": 13896,
+      "original_sha256": "8ea6723217a5228766d206991110a808fb25586b84a5530af187d93f8bf31ac8",
+      "changes": [
+        "Adapted documentation for the public package and its evidence scope."
+      ]
+    },
+    "docs/ml/phase6/confusion-matrices.png": {
+      "sha256": "dfe7ed1494d6f750f5d48c43bdea5f9a27620997dd3e5e31636932ebb3dc123c",
+      "bytes": 56325
+    },
+    "docs/ml/phase6/independent-evaluation.json": {
+      "sha256": "d892a30fa6217ba6dc2e562870a98bd7cf3ebf4004f931f3bb4fcd6f94e3cd03",
+      "bytes": 453083,
+      "original_sha256": "a01ec3438bbe8aae57cc30a9112819270e42ebe04708a0fde6756a28e5b57ca5",
+      "changes": [
+        "Removed 1 detailed evidence fields from the public summary.",
+        "Omitted 136 record-level or detailed curve fields from the public evidence."
+      ]
+    },
+    "docs/ml/phase6/model-comparison.png": {
+      "sha256": "18af8430a1c39a31f04a61a854ca2c37df59129e9e03b6df4ee66a110a2a0790",
+      "bytes": 239451
+    },
+    "docs/ml/phase6/obfuscation-development.json": {
+      "sha256": "2d0f50ca1968b19060658e8764047027e9b34206e30070a9bb80e907446a2d8e",
+      "bytes": 669,
+      "original_sha256": "b80b32bb028369766ceb30610035d86965141d9d5c0222e3e27daa019066722b",
+      "changes": [
+        "Omitted 1 record-level or detailed curve fields from the public evidence."
+      ]
+    },
+    "docs/ml/phase6/preparation-audit.json": {
+      "sha256": "fd8e417900fe78069a5fe160cc5df4ae20947f42f77162b49e2927be3154e149",
+      "bytes": 5544
+    },
+    "docs/ml/phase6/provenance.json": {
+      "sha256": "3bfa2b1097e42088df176798696fd4264cc51666713699290d14102b15fcefaf",
+      "bytes": 3268
+    },
+    "docs/ml/phase6/routing-development-frozen.json": {
+      "sha256": "0ca3b3920ce3f053053bfff5518f64f0e242790a5eba058b1adc361c622a2062",
+      "bytes": 9505,
+      "original_sha256": "12ff4783256485788209db49d5aa9ee2e4fcfbc220444492eeb0033550c037a6",
+      "changes": [
+        "Removed 3 detailed evidence fields from the public summary.",
+        "Omitted 3 record-level or detailed curve fields from the public evidence."
+      ]
+    },
+    "docs/ml/phase6/screenshots/dashboard-en.png": {
+      "sha256": "54d26f30cdf4a5650462b15bd198d3e31a5b93902cca59ee144295466190c95c",
+      "bytes": 881233
+    },
+    "docs/ml/phase6/screenshots/email-en.png": {
+      "sha256": "ba02efcf63c0280e5142f24469f0429ca014158aecfbe036b2b310cec2e261f0",
+      "bytes": 951725
+    },
+    "docs/ml/phase6/screenshots/investigation-en.png": {
+      "sha256": "051f3acf475314437651fa869a9d1bcb12fd623e3f9cced05293e14de69c192f",
+      "bytes": 827546
+    },
+    "docs/ml/phase6/selection.json": {
+      "sha256": "f71e22b4a24312ae79cf4c566de143fc37d29dd1bebb2d2b9b94d1fd0c23a7aa",
+      "bytes": 41290
+    },
+    "docs/ml/phase6/source-confounding.json": {
+      "sha256": "fad74f942dd7937847895cfeb4ea2edf84330e9dab6bf70f21ef48ee5a8b79af",
+      "bytes": 653
+    },
+    "fixtures/ordinary-update.eml": {
+      "sha256": "e6889b45224a0bd92e925553b0de9d32bd247a426504f813973f30b69513de26",
+      "bytes": 313
+    },
+    "fixtures/spanish-account-review.eml": {
+      "sha256": "ccdff66d27f4cfb1badfd2de471e94dd4b77bdf399981a92f18079c158aa1371",
+      "bytes": 676
+    },
+    "fixtures/suspicious-invoice.eml": {
+      "sha256": "0dfd5bde92ce115dd092992fca9e4b6ca1687cb9eea640fc19d0a54cd8f92593",
+      "bytes": 1120
+    },
+    "frontend/index.html": {
+      "sha256": "042da666987efff533cd0bc24dffdeef058e4720a52e88ea1bf6e64c0ce6d720",
+      "bytes": 466
+    },
+    "frontend/src/App.tsx": {
+      "sha256": "5772e920da02aa7c78c43c5d54da4edee30d219f9b652a6d7596de0ee74d2c7b",
+      "bytes": 11690
+    },
+    "frontend/src/ModelResult.test.tsx": {
+      "sha256": "d7a210f66f5301ae67f3c39528ea65258ba0fca4b79cff68101c48a3cc4e3e22",
+      "bytes": 5229
+    },
+    "frontend/src/ModelResult.tsx": {
+      "sha256": "e7e4e1ff0f92cf99504858a40931366ab63cd86fae8fa4cb0b090d155b7ead28",
+      "bytes": 4310
+    },
+    "frontend/src/api.ts": {
+      "sha256": "2f4719f89b926061a7dabce6c82bebe5b8b3e5610896f9d9678f71e13351c19a",
+      "bytes": 2873
+    },
+    "frontend/src/components.tsx": {
+      "sha256": "f316fdb6369ff175cfcec5eff5b54c05602785a22ec8464ca05ef0a00e2649a8",
+      "bytes": 6670
+    },
+    "frontend/src/main.tsx": {
+      "sha256": "b1ee4348ec2a15489cd985e94b32f6acf1f2360d2cddc9908123134b1938d318",
+      "bytes": 330
+    },
+    "frontend/src/pages/Dashboard.tsx": {
+      "sha256": "de03e0218e955fb8f08ace6fb308321254a3f2aef662e5fff8aa535a0be6c8f6",
+      "bytes": 21402
+    },
+    "frontend/src/pages/EmailPage.test.tsx": {
+      "sha256": "708db86889322ee26c423163c6b51317bdad19518542b9ae3a3872a194ee3625",
+      "bytes": 7030
+    },
+    "frontend/src/pages/EmailPage.tsx": {
+      "sha256": "d22dba49f12da3f320d9c7068e01e52929b19e3909d6118d1335317de5adbab7",
+      "bytes": 41322
+    },
+    "frontend/src/pages/InvestigationsPage.test.tsx": {
+      "sha256": "cc8af3ae82e413898a47cdbccb2645abd8b01ee48c6fc67e07355b9bc419987f",
+      "bytes": 6985
+    },
+    "frontend/src/pages/InvestigationsPage.tsx": {
+      "sha256": "a4773faaa6f19f38a23349d12e4fb4c9871b6794b587d4ec3caeb672f8a8e65b",
+      "bytes": 36234
+    },
+    "frontend/src/pages/UtilityPages.tsx": {
+      "sha256": "b96c6edff2d49ec45a3bae565ae60caa340fd0895e157a36142ef4e3357da790",
+      "bytes": 14976
+    },
+    "frontend/src/pages/email.css": {
+      "sha256": "01f1a5b91c4178c16d37256d7175f75eba15327a089e75a048909ca8657e41de",
+      "bytes": 26530
+    },
+    "frontend/src/pages/investigations.css": {
+      "sha256": "d48e7fd711aa2d8cdc5987af8c5c403b299f8d00015731c200de5eed277b443f",
+      "bytes": 26505
+    },
+    "frontend/src/styles.css": {
+      "sha256": "12bfeaee7e91c60a308501e5754c943c0f3446962de0fe29ad45ab4ae42746a3",
+      "bytes": 31988
+    },
+    "frontend/src/test-setup.ts": {
+      "sha256": "9b328c4843431fa76d8de00008fc159e95f99a840211085ff3b8f25e53d14409",
+      "bytes": 43
+    },
+    "frontend/src/types.ts": {
+      "sha256": "2d058ef1391a1ee705a42310c15a5b100126f424c7f2eeb5e9149e843cef9004",
+      "bytes": 3515
+    },
+    "package-lock.json": {
+      "sha256": "81868525aca8530d8b8eda27af9768ac2e99a6233fc8a6fe20eeea08af744cfa",
+      "bytes": 148479
+    },
+    "package.json": {
+      "sha256": "5f80413d49adb9cb7fbd585ed5a5eac4708ece5685f1c9387fff659e3c734bb3",
+      "bytes": 1181
+    },
+    "playwright.config.ts": {
+      "sha256": "2fe3436a1c5e6121449b3dd22bf4e06bf214090ebf384a68e997bcfe7247b8ea",
+      "bytes": 1728
+    },
+    "scripts/acquire_datasets.py": {
+      "sha256": "704b2dad5c753b292d5a3e15415e6862c18df6287a22bce4bb22fd51a3bb56d7",
+      "bytes": 13006
+    },
+    "scripts/acquire_english_dataset.py": {
+      "sha256": "464a1943bcaba434e1286794ba6a57805b4e199a250a6d24ffa62a975d4360ed",
+      "bytes": 14544
+    },
+    "scripts/acquire_phase5_data.py": {
+      "sha256": "047bb79fba1c037a0c7f2f4d4fbb7de96d3fe84c41634d78d327bfd331149f59",
+      "bytes": 684
+    },
+    "scripts/acquire_phase6_data.py": {
+      "sha256": "681dc76138c6d668befb295e2c1b166cee34a8361107915eedd1757cc883b6d3",
+      "bytes": 6602
+    },
+    "scripts/annotate_english_scope.py": {
+      "sha256": "cb298b342e7d63c58802157b1cd0c7ace637710f406c463cd5a0faf612c488c4",
+      "bytes": 2368
+    },
+    "scripts/audit_release.py": {
+      "sha256": "af3f78c5d8cd59d0ff6a6d45489e2ea89a1a98f2794d231509468d7d0ace437d",
+      "bytes": 9166
+    },
+    "scripts/check_model_registry.py": {
+      "sha256": "3db4559e59c0f7d0f8136d91a3d22bace997f61548cc39a4be937d7b3b43b603",
+      "bytes": 4477
+    },
+    "scripts/evaluate_english_model.py": {
+      "sha256": "4ca83c7347ef1b2833bba661c819be2eded96c7d4dc76a16a50197264ace9252",
+      "bytes": 23136
+    },
+    "scripts/evaluate_phase5_final.py": {
+      "sha256": "3e46f8281c066d39b4befc86cb028a74368974a2b6de353d65a31acd5735dd1e",
+      "bytes": 10603
+    },
+    "scripts/evaluate_phase6_final.py": {
+      "sha256": "0e326db740367db73117d82021bc7d9a292ed77fd71e0ea61fbfe6a307bbb65f",
+      "bytes": 11531
+    },
+    "scripts/evaluate_phase6_routing.py": {
+      "sha256": "e96c5a685c3bf9810977c8515d2d7ec8ea55dd4eb77dfe90b9817a3003dc5f97",
+      "bytes": 6138
+    },
+    "scripts/parse_phase6_pot.py": {
+      "sha256": "7f4bc498bce1044454c37e599a9dc27add337089291ad7a1e9187428fb93f915",
+      "bytes": 4289
+    },
+    "scripts/prepare_english_dataset.py": {
+      "sha256": "149e506a7606c1e2722dc7da2c550d7b2b3e77e82c91abdf6f30637ae58160e9",
+      "bytes": 19715
+    },
+    "scripts/prepare_phase5_data.py": {
+      "sha256": "df5399b3f2306a8bb1301a4786b641666db7b537f4532da9d21bb8803e05f1e0",
+      "bytes": 9950
+    },
+    "scripts/prepare_phase6_data.py": {
+      "sha256": "7dcb9b597d0424f5b782b996a9864814a4281185c163a48d3ded5f5540295054",
+      "bytes": 13287
+    },
+    "scripts/run-frontend-tests.mjs": {
+      "sha256": "c86919536240ac944b856b91846014e5e47fd4f743bedf724d79167d28b45ed2",
+      "bytes": 927
+    },
+    "scripts/visual-compare.mjs": {
+      "sha256": "7b92f12f59ff4232dd4221b3d1ea74ed43aab063c94cd4ceac20bd676dba1386",
+      "bytes": 1602
+    },
+    "tests/e2e/application.spec.ts": {
+      "sha256": "ea985ebcfa631947aa9fc2b38b72e2517151c2f967501b97ad04e388539464a5",
+      "bytes": 10215
+    },
+    "tests/e2e/ml-workflow.spec.ts": {
+      "sha256": "a940f7514d27c4c0c0f49bf425a25552ad8950d6e7ec5afe83db73911da10c6e",
+      "bytes": 10472
+    },
+    "tsconfig.json": {
+      "sha256": "c650e34a0e43895119e999f417625a2610fb8f8992b01c9787863f876c479ca0",
+      "bytes": 477
+    },
+    "vite.config.ts": {
+      "sha256": "50540bbd3386992d9eb976e5f4c1d4c140233a6b3713c0051f806816630cd77d",
+      "bytes": 725
+    }
+  },
+  "manifest_hash_scope": "All source members except this manifest.",
+  "omissions": [
+    "Per-message splits, predictions, acquisition links and annotations",
+    "Raw corpora, trained weights, runtime databases and private artifacts",
+    "Historical captures, design references, vector charts and intermediate logs"
+  ],
+  "source_license": "MIT for owner-authorized original code and documentation",
+  "reviewed_source_zip_sha256": "0f08dc735a4f23ac9a9ffa230c60db6e91008b1f3d47b85dbc45f33d16a30376"
+}

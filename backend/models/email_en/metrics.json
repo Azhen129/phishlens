@@ -1,0 +1,1579 @@
+{
+  "format_version": 1,
+  "kind": "email",
+  "version": "email-passive-text-v2-3c3796081ca9",
+  "created_at": "2026-11-02T12:14:15.401676+00:00",
+  "dataset": {
+    "name": "English Nazario phishing / Figshare ham-only",
+    "version": "english-preparation-v1-2026-11-02",
+    "task": "email",
+    "approved_for_training": true,
+    "supported_languages": [
+      "en"
+    ],
+    "source_url": "https://figshare.com/articles/dataset/Seven_Phishing_Email_Datasets/25432108",
+    "doi": "10.6084/m9.figshare.25432108.v1",
+    "license": "CC BY 4.0 (Nazario and Figshare); external MASC CC BY 3.0 US",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "José Nazario, Phishing Corpus; Arifa Islam Champa and Md Fazle Rabbi, Seven Phishing Email Datasets (2024), DOI10.6084/m9.figshare.25432108.v1; American National Corpus Project, MASC (external only). Cite Champa, Rabbi and Zibran (2024), Curated Datasets and Feature Analysis for Phishing Email Detection with Machine Learning.",
+    "permission_basis": "Nazario official README/LICENSE explicitly CC BY4.0. Figshare original article/API explicitly CC BY4.0. MASC official page explicitly CC BY3.0 US and any purpose. Attribution/adaptation notices in docs/ml/phase4/DATASET_RESEARCH.md.",
+    "collection_notes": "Real manually classified inbox phishing versus curator-labeled legitimate Ling/Enron/Assassin emails. Use only Figshare original label0; every original label1 is excluded because merged historical spam is not reliable phishing ground truth. Reserve MASC and newest Nazario files externally; global lexical/thread groups exclude main records touching external.",
+    "validation_scope": "Offline English corpus benchmark and limited external historical legitimate/newer inbox phishing stress evaluation. This does not establish broad English mail accuracy, source-independent generalization or deployment confidence.",
+    "changes": "Subject plus decoded body only; no sender/transport/features/urls columns. Quarantine explicit bracketed spam/phish/phishing subject annotations regardless of label. Offline full-text English screen; canonical dedup and conflicting-label quarantine; .90 fulltext/.80 body template + global subject grouping; remove external-connected main components; label-blind SHA256 sample cap before training.",
+    "retrieved_at": "2026-11-02T12:12:31.296042+00:00",
+    "raw": [
+      {
+        "url": "https://www.monkey.org/~jose/phishing/phishing0.mbox",
+        "path": "work/phase4/raw/nazario-phishing0.mbox",
+        "sha256": "6184b0a34ed8cbbb252676e21c1eab9eac5fa4be89c61e30cc9954ebbb25d848",
+        "bytes": 3119972
+      },
+      {
+        "url": "https://www.monkey.org/~jose/phishing/phishing1.mbox",
+        "path": "work/phase4/raw/nazario-phishing1.mbox",
+        "sha256": "99f02474a11086408a5ce6d11ef38823f003c6611a4312c31fbee96773eeba28",
+        "bytes": 4191770
+      },
+      {
+        "url": "https://www.monkey.org/~jose/phishing/phishing2.mbox",
+        "path": "work/phase4/raw/nazario-phishing2.mbox",
+        "sha256": "5113277984eae759a5ff958ccf408b542441ce033a49b923ab3b0f324075e6bd",
+        "bytes": 10420294
+      },
+      {
+        "url": "https://www.monkey.org/~jose/phishing/phishing-2024",
+        "path": "work/phase4/raw/nazario-phishing-2024.mbox",
+        "sha256": "60afa40a2757170093a2bde31ec9cda4e54d33992203ce04bfbbc86d2e5e5b99",
+        "bytes": 15457816
+      },
+      {
+        "url": "https://www.monkey.org/~jose/phishing/phishing-2025",
+        "path": "work/phase4/raw/nazario-phishing-2025.mbox",
+        "sha256": "f1fa7e0fe35c9a16f36d9aa20ade7e1d3908d1d0c1d917b8c53c8aa799ec1c8f",
+        "bytes": 18769863
+      },
+      {
+        "url": "https://github.com/nancyide/anc-website/releases/download/datasets-2026-09-25/masc_500k_texts.zip",
+        "path": "work/phase4/raw/masc_500k_texts.zip",
+        "sha256": "0c3f1fd3314ee5ec09830d6f6b217c19a6899d1cabd22c42264578c3348b2d01",
+        "bytes": 1351682
+      },
+      {
+        "url": "https://ndownloader.figshare.com/files/45117802",
+        "path": "work/phase4/raw/figshare-Ling.csv",
+        "sha256": "9407c9e022accc6c831e54c5226b99b30ac4ae07682e63f5d483ed0ec17ff23c",
+        "bytes": 9337509,
+        "publisher_md5": "eac6399dc0c7ae455aebb64423dadc8b"
+      },
+      {
+        "url": "https://ndownloader.figshare.com/files/45117805",
+        "path": "work/phase4/raw/figshare-Enron.csv",
+        "sha256": "11f28a5bdd3603f1829681ab6b55071b5f9af781b4e6694e39216b2996a96883",
+        "bytes": 44837129,
+        "publisher_md5": "10489e0fdcc8af6fe62135c689367d40"
+      },
+      {
+        "url": "https://ndownloader.figshare.com/files/45117799",
+        "path": "work/phase4/raw/figshare-Assassin.csv",
+        "sha256": "3bfe8f8abff89f69a98456be50413c2fcb20a476141116dd84ee1507b980c00e",
+        "bytes": 14879195,
+        "publisher_md5": "d921e0b2333bfaa058bd38193e6b3fbd"
+      }
+    ],
+    "prepared": {
+      "path": "work/phase4/raw/english-train.csv",
+      "sha256": "5db5b7147b530e786c7755f0f12f78f3f16a885dc3dc505d4c999e29311efffb",
+      "rows": 10000,
+      "class_balance": {
+        "0": 9330,
+        "1": 670
+      },
+      "sources": {
+        "Figshare-Enron": 6495,
+        "Figshare-Assassin": 1837,
+        "nazario-phishing0": 117,
+        "Figshare-Ling": 998,
+        "nazario-phishing1": 145,
+        "nazario-phishing2": 408
+      },
+      "groups": 7364,
+      "label_mapping": {
+        "0": "legitimate",
+        "1": "phishing"
+      }
+    },
+    "external": {
+      "path": "work/phase4/raw/english-external.csv",
+      "sha256": "197840c12ae7ccabecf74015eac70d28fc14f5f0dbd3c52563b7734dba65e62b",
+      "rows": 802,
+      "class_balance": {
+        "1": 722,
+        "0": 80
+      },
+      "sources": {
+        "nazario-phishing-2024": 326,
+        "nazario-phishing-2025": 396,
+        "MASC-W3C": 35,
+        "MASC-Enron": 45
+      },
+      "groups": 643,
+      "label_mapping": {
+        "0": "legitimate",
+        "1": "phishing"
+      }
+    },
+    "preparation_audit_sha256": "6e32f06b0c242d93e1b8380bee078e643517d91021f3d827a649a4020e75d75f",
+    "protocol": "english-preparation-v1-2026-11-02",
+    "limitations": [
+      "Main phishing and legitimate labels are confounded with corpus family; source artifacts remain despite removed metadata and source/era stress tests.",
+      "Figshare label0 is inherited legitimate/ham labeling; not independent modern security adjudication. Generic spam label1 is excluded, never claimed as phishing.",
+      "Figshare curators license their release CC BY4.0; their original constituent corpora have separate collection and original-sender rights history. Explicit curator permission does not authenticate original senders.",
+      "External MASC legitimate labels are contextual routine-email genre, not security annotations. Only80 original documents before cleaning.",
+      "Nazario hand labeling can contain errors and collection/anonymization/era bias; curated real inbox data is not exhaustive.",
+      "Template and thread disjointness is lexical and bounded to the shared first600-token representation; semantic/paraphrased campaigns may remain related.",
+      "Offline language screening can misclassify short, mixed-language or technical emails; normalized langid score is not model confidence.",
+      "Artificial class balance and corpus-era biases prevent interpreting benchmark calibration as deployment prevalence calibration."
+    ]
+  },
+  "dataset_sha256": "5db5b7147b530e786c7755f0f12f78f3f16a885dc3dc505d4c999e29311efffb",
+  "cleaning": {
+    "input_rows": 10000,
+    "conflicting_exact_groups_quarantined": 0,
+    "unique_before_sampling": 10000,
+    "retained_rows": 10000
+  },
+  "group_audit": {
+    "near_duplicate_threshold": 0.9,
+    "near_duplicate_representation": "email first600 tokens, 5-word shingles, URL/email/number placeholders; URL first600 character5-grams with digit placeholders",
+    "near_duplicate_algorithm": "deterministic exact prefix-filter Jaccard join; fail closed at comparison bound",
+    "near_duplicate_comparisons": 21854,
+    "near_duplicate_pairs": 21443,
+    "groups": 7364,
+    "largest_group": 260,
+    "url_registered_domain_groups": 0,
+    "source_separation": "Source labels are retained for error analysis. Lexical campaign and URL registered-domain groups are disjoint; whole-source holdout is not assumed possible when labels depend on corpus source."
+  },
+  "partitions": {
+    "train": {
+      "n": 4922,
+      "class_balance": {
+        "0": 4665,
+        "1": 257
+      },
+      "group_count": 3653,
+      "sources": {
+        "Figshare-Assassin": 773,
+        "Figshare-Ling": 465,
+        "Figshare-Enron": 3427,
+        "nazario-phishing2": 150,
+        "nazario-phishing1": 55,
+        "nazario-phishing0": 52
+      }
+    },
+    "calibration": {
+      "n": 1140,
+      "class_balance": {
+        "0": 933,
+        "1": 207
+      },
+      "group_count": 716,
+      "sources": {
+        "Figshare-Enron": 572,
+        "nazario-phishing1": 45,
+        "Figshare-Ling": 126,
+        "nazario-phishing2": 136,
+        "Figshare-Assassin": 235,
+        "nazario-phishing0": 26
+      }
+    },
+    "hybrid_fit": {
+      "n": 985,
+      "class_balance": {
+        "0": 933,
+        "1": 52
+      },
+      "group_count": 749,
+      "sources": {
+        "nazario-phishing0": 15,
+        "Figshare-Ling": 97,
+        "Figshare-Enron": 654,
+        "Figshare-Assassin": 182,
+        "nazario-phishing1": 12,
+        "nazario-phishing2": 25
+      }
+    },
+    "hybrid_calibration": {
+      "n": 985,
+      "class_balance": {
+        "0": 933,
+        "1": 52
+      },
+      "group_count": 749,
+      "sources": {
+        "Figshare-Enron": 604,
+        "Figshare-Ling": 104,
+        "Figshare-Assassin": 225,
+        "nazario-phishing1": 19,
+        "nazario-phishing2": 30,
+        "nazario-phishing0": 3
+      }
+    },
+    "validation": {
+      "n": 984,
+      "class_balance": {
+        "0": 933,
+        "1": 51
+      },
+      "group_count": 749,
+      "sources": {
+        "Figshare-Enron": 642,
+        "Figshare-Assassin": 198,
+        "nazario-phishing2": 32,
+        "Figshare-Ling": 93,
+        "nazario-phishing1": 8,
+        "nazario-phishing0": 11
+      }
+    },
+    "test": {
+      "n": 984,
+      "class_balance": {
+        "0": 933,
+        "1": 51
+      },
+      "group_count": 748,
+      "sources": {
+        "Figshare-Enron": 596,
+        "Figshare-Ling": 113,
+        "Figshare-Assassin": 224,
+        "nazario-phishing1": 6,
+        "nazario-phishing2": 35,
+        "nazario-phishing0": 10
+      }
+    }
+  },
+  "group_intersection_count": 0,
+  "selected_candidate": "linear_svm_ml",
+  "selection_rule": "Among prespecified-policy eligible candidates, maximum positive-class F1 on selection validation; tie by recall, Brier, then simpler LR ML-only. No held-out test data used to fit or select any model, calibrator, threshold or combination.",
+  "candidates": {
+    "logistic_regression_ml": {
+      "validation": {
+        "n": 984,
+        "class_balance": {
+          "0": 933,
+          "1": 51
+        },
+        "threshold": 0.66,
+        "accuracy": 0.9928861788617886,
+        "precision": 0.9782608695652174,
+        "recall": 0.8823529411764706,
+        "f1": 0.9278350515463918,
+        "legitimate_precision": 0.9936034115138592,
+        "legitimate_recall": 0.9989281886387996,
+        "legitimate_f1": 0.9962586851950829,
+        "confusion_matrix": [
+          [
+            932,
+            1
+          ],
+          [
+            6,
+            45
+          ]
+        ],
+        "false_positives": 1,
+        "false_negatives": 6,
+        "false_positive_rate": 0.0010718113612004287,
+        "false_negative_rate": 0.11764705882352941,
+        "roc_auc": 0.9973099636424774,
+        "average_precision": 0.967227242103436,
+        "pr_auc_trapezoid": 0.9669981943970988,
+        "brier_score": 0.007504369093774709,
+        "log_loss": 0.029236071108546587,
+        "expected_calibration_error": 0.006620805673944175,
+        "calibration_bins": [
+          {
+            "bin": 0,
+            "n": 931,
+            "predicted": 0.002297456743803025,
+            "observed": 0.0053705692803437165
+          },
+          {
+            "bin": 1,
+            "n": 2,
+            "predicted": 0.14582961720115814,
+            "observed": 0.0
+          },
+          {
+            "bin": 2,
+            "n": 2,
+            "predicted": 0.23897728796374978,
+            "observed": 0.5
+          },
+          {
+            "bin": 4,
+            "n": 1,
+            "predicted": 0.49032987362220615,
+            "observed": 0.0
+          },
+          {
+            "bin": 6,
+            "n": 2,
+            "predicted": 0.6473133567861468,
+            "observed": 0.0
+          },
+          {
+            "bin": 7,
+            "n": 1,
+            "predicted": 0.7580311518019408,
+            "observed": 1.0
+          },
+          {
+            "bin": 8,
+            "n": 3,
+            "predicted": 0.8839915907658842,
+            "observed": 0.6666666666666666
+          },
+          {
+            "bin": 9,
+            "n": 42,
+            "predicted": 0.9961619012981748,
+            "observed": 1.0
+          }
+        ]
+      },
+      "threshold": 0.66,
+      "mode": "ml",
+      "baseline": "logistic_regression",
+      "calibration_comparison": {
+        "uncalibrated_diagnostic": "LR native sigmoid probability; SVM arbitrary sigmoid margin transform (not calibrated confidence). Neither diagnostic is displayed in the application.",
+        "held_out_sigmoid_coefficient": 2.4829671311521344,
+        "held_out_sigmoid_intercept": -0.14902544243155885,
+        "validation_before": {
+          "n": 984,
+          "class_balance": {
+            "0": 933,
+            "1": 51
+          },
+          "threshold": 0.5,
+          "accuracy": 0.9898373983739838,
+          "precision": 0.9183673469387755,
+          "recall": 0.8823529411764706,
+          "f1": 0.9,
+          "legitimate_precision": 0.9935828877005347,
+          "legitimate_recall": 0.9957127545551983,
+          "legitimate_f1": 0.9946466809421841,
+          "confusion_matrix": [
+            [
+              929,
+              4
+            ],
+            [
+              6,
+              45
+            ]
+          ],
+          "false_positives": 4,
+          "false_negatives": 6,
+          "false_positive_rate": 0.004287245444801715,
+          "false_negative_rate": 0.11764705882352941,
+          "roc_auc": 0.9973099636424774,
+          "average_precision": 0.967227242103436,
+          "pr_auc_trapezoid": 0.9669981943970988,
+          "brier_score": 0.010887606145916327,
+          "log_loss": 0.0793964275745714,
+          "expected_calibration_error": 0.05967940172055475,
+          "calibration_bins": [
+            {
+              "bin": 0,
+              "n": 844,
+              "predicted": 0.05428017572617037,
+              "observed": 0.0
+            },
+            {
+              "bin": 1,
+              "n": 75,
+              "predicted": 0.1293770438237048,
+              "observed": 0.04
+            },
+            {
+              "bin": 2,
+              "n": 12,
+              "predicted": 0.25514542417781594,
+              "observed": 0.16666666666666666
+            },
+            {
+              "bin": 3,
+              "n": 4,
+              "predicted": 0.37068387517343915,
+              "observed": 0.25
+            },
+            {
+              "bin": 5,
+              "n": 3,
+              "predicted": 0.5540797814126265,
+              "observed": 0.0
+            },
+            {
+              "bin": 6,
+              "n": 2,
+              "predicted": 0.6580809768098694,
+              "observed": 1.0
+            },
+            {
+              "bin": 7,
+              "n": 3,
+              "predicted": 0.7395424521640918,
+              "observed": 0.6666666666666666
+            },
+            {
+              "bin": 8,
+              "n": 7,
+              "predicted": 0.8555852890795455,
+              "observed": 1.0
+            },
+            {
+              "bin": 9,
+              "n": 34,
+              "predicted": 0.9679795182653214,
+              "observed": 1.0
+            }
+          ]
+        },
+        "test_before": {
+          "n": 984,
+          "class_balance": {
+            "0": 933,
+            "1": 51
+          },
+          "threshold": 0.5,
+          "accuracy": 0.9888211382113821,
+          "precision": 1.0,
+          "recall": 0.7843137254901961,
+          "f1": 0.8791208791208791,
+          "legitimate_precision": 0.9883474576271186,
+          "legitimate_recall": 1.0,
+          "legitimate_f1": 0.9941395844432606,
+          "confusion_matrix": [
+            [
+              933,
+              0
+            ],
+            [
+              11,
+              40
+            ]
+          ],
+          "false_positives": 0,
+          "false_negatives": 11,
+          "false_positive_rate": 0.0,
+          "false_negative_rate": 0.21568627450980393,
+          "roc_auc": 0.9952083727381628,
+          "average_precision": 0.9606727530191956,
+          "pr_auc_trapezoid": 0.9602627347823608,
+          "brier_score": 0.012352155369151822,
+          "log_loss": 0.08526261302753782,
+          "expected_calibration_error": 0.06470138248546202,
+          "calibration_bins": [
+            {
+              "bin": 0,
+              "n": 808,
+              "predicted": 0.055086661202341264,
+              "observed": 0.0012376237623762376
+            },
+            {
+              "bin": 1,
+              "n": 116,
+              "predicted": 0.12945075422660896,
+              "observed": 0.008620689655172414
+            },
+            {
+              "bin": 2,
+              "n": 10,
+              "predicted": 0.22732418632238166,
+              "observed": 0.4
+            },
+            {
+              "bin": 3,
+              "n": 7,
+              "predicted": 0.3542027949150874,
+              "observed": 0.5714285714285714
+            },
+            {
+              "bin": 4,
+              "n": 3,
+              "predicted": 0.41827185218154755,
+              "observed": 0.3333333333333333
+            },
+            {
+              "bin": 6,
+              "n": 1,
+              "predicted": 0.6390153249982362,
+              "observed": 1.0
+            },
+            {
+              "bin": 7,
+              "n": 2,
+              "predicted": 0.7478129010416192,
+              "observed": 1.0
+            },
+            {
+              "bin": 8,
+              "n": 4,
+              "predicted": 0.8430200551366558,
+              "observed": 1.0
+            },
+            {
+              "bin": 9,
+              "n": 33,
+              "predicted": 0.9653206714354808,
+              "observed": 1.0
+            }
+          ]
+        }
+      },
+      "eligible_for_selection": true,
+      "selection_exclusions": [],
+      "test": {
+        "n": 984,
+        "class_balance": {
+          "0": 933,
+          "1": 51
+        },
+        "threshold": 0.66,
+        "accuracy": 0.9888211382113821,
+        "precision": 1.0,
+        "recall": 0.7843137254901961,
+        "f1": 0.8791208791208791,
+        "legitimate_precision": 0.9883474576271186,
+        "legitimate_recall": 1.0,
+        "legitimate_f1": 0.9941395844432606,
+        "confusion_matrix": [
+          [
+            933,
+            0
+          ],
+          [
+            11,
+            40
+          ]
+        ],
+        "false_positives": 0,
+        "false_negatives": 11,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.21568627450980393,
+        "roc_auc": 0.9952083727381628,
+        "average_precision": 0.9606727530191956,
+        "pr_auc_trapezoid": 0.9602627347823608,
+        "brier_score": 0.009516759165338106,
+        "log_loss": 0.036066084153182715,
+        "expected_calibration_error": 0.007435290876418575,
+        "calibration_bins": [
+          {
+            "bin": 0,
+            "n": 935,
+            "predicted": 0.0024018049369846912,
+            "observed": 0.0074866310160427805
+          },
+          {
+            "bin": 1,
+            "n": 4,
+            "predicted": 0.15574008074405116,
+            "observed": 0.5
+          },
+          {
+            "bin": 2,
+            "n": 5,
+            "predicted": 0.2546259384418746,
+            "observed": 0.4
+          },
+          {
+            "bin": 7,
+            "n": 1,
+            "predicted": 0.7805680109116179,
+            "observed": 1.0
+          },
+          {
+            "bin": 9,
+            "n": 39,
+            "predicted": 0.9938802086006728,
+            "observed": 1.0
+          }
+        ]
+      }
+    },
+    "logistic_regression_hybrid": {
+      "validation": {
+        "n": 984,
+        "class_balance": {
+          "0": 933,
+          "1": 51
+        },
+        "threshold": 0.88,
+        "accuracy": 0.9928861788617886,
+        "precision": 0.9782608695652174,
+        "recall": 0.8823529411764706,
+        "f1": 0.9278350515463918,
+        "legitimate_precision": 0.9936034115138592,
+        "legitimate_recall": 0.9989281886387996,
+        "legitimate_f1": 0.9962586851950829,
+        "confusion_matrix": [
+          [
+            932,
+            1
+          ],
+          [
+            6,
+            45
+          ]
+        ],
+        "false_positives": 1,
+        "false_negatives": 6,
+        "false_positive_rate": 0.0010718113612004287,
+        "false_negative_rate": 0.11764705882352941,
+        "roc_auc": 0.9973099636424774,
+        "average_precision": 0.967227242103436,
+        "pr_auc_trapezoid": 0.9669981943970988,
+        "brier_score": 0.00850982373133163,
+        "log_loss": 0.031567647815591814,
+        "expected_calibration_error": 0.00615887846412319,
+        "calibration_bins": [
+          {
+            "bin": 0,
+            "n": 924,
+            "predicted": 0.00222588277349435,
+            "observed": 0.004329004329004329
+          },
+          {
+            "bin": 1,
+            "n": 7,
+            "predicted": 0.15918484021100987,
+            "observed": 0.14285714285714285
+          },
+          {
+            "bin": 2,
+            "n": 1,
+            "predicted": 0.24925520217770497,
+            "observed": 0.0
+          },
+          {
+            "bin": 3,
+            "n": 1,
+            "predicted": 0.34208616423266347,
+            "observed": 0.0
+          },
+          {
+            "bin": 4,
+            "n": 2,
+            "predicted": 0.4649651218533132,
+            "observed": 0.5
+          },
+          {
+            "bin": 7,
+            "n": 1,
+            "predicted": 0.7650257473295423,
+            "observed": 0.0
+          },
+          {
+            "bin": 8,
+            "n": 2,
+            "predicted": 0.8744535679480068,
+            "observed": 0.0
+          },
+          {
+            "bin": 9,
+            "n": 46,
+            "predicted": 0.9962481348695572,
+            "observed": 0.9782608695652174
+          }
+        ]
+      },
+      "threshold": 0.88,
+      "mode": "hybrid",
+      "baseline": "logistic_regression",
+      "eligible_for_selection": false,
+      "selection_exclusions": [
+        "English protocol prespecifies ML-only final assessment; heuristic points and evidence remain independently displayed. Hybrid is diagnostic only."
+      ],
+      "test": {
+        "n": 984,
+        "class_balance": {
+          "0": 933,
+          "1": 51
+        },
+        "threshold": 0.88,
+        "accuracy": 0.9888211382113821,
+        "precision": 1.0,
+        "recall": 0.7843137254901961,
+        "f1": 0.8791208791208791,
+        "legitimate_precision": 0.9883474576271186,
+        "legitimate_recall": 1.0,
+        "legitimate_f1": 0.9941395844432606,
+        "confusion_matrix": [
+          [
+            933,
+            0
+          ],
+          [
+            11,
+            40
+          ]
+        ],
+        "false_positives": 0,
+        "false_negatives": 11,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.21568627450980393,
+        "roc_auc": 0.9952083727381628,
+        "average_precision": 0.9606727530191956,
+        "pr_auc_trapezoid": 0.9602627347823608,
+        "brier_score": 0.008667045742926767,
+        "log_loss": 0.03137709298804403,
+        "expected_calibration_error": 0.00515972979675844,
+        "calibration_bins": [
+          {
+            "bin": 0,
+            "n": 932,
+            "predicted": 0.002991001805436168,
+            "observed": 0.00536480686695279
+          },
+          {
+            "bin": 1,
+            "n": 2,
+            "predicted": 0.10816963294003851,
+            "observed": 0.5
+          },
+          {
+            "bin": 2,
+            "n": 3,
+            "predicted": 0.24484895303548873,
+            "observed": 0.6666666666666666
+          },
+          {
+            "bin": 3,
+            "n": 2,
+            "predicted": 0.36318018338265556,
+            "observed": 0.5
+          },
+          {
+            "bin": 4,
+            "n": 3,
+            "predicted": 0.45307133744211087,
+            "observed": 0.3333333333333333
+          },
+          {
+            "bin": 5,
+            "n": 2,
+            "predicted": 0.5395677865575021,
+            "observed": 0.5
+          },
+          {
+            "bin": 9,
+            "n": 40,
+            "predicted": 0.9974078822753167,
+            "observed": 1.0
+          }
+        ]
+      }
+    },
+    "linear_svm_ml": {
+      "validation": {
+        "n": 984,
+        "class_balance": {
+          "0": 933,
+          "1": 51
+        },
+        "threshold": 0.5,
+        "accuracy": 0.9939024390243902,
+        "precision": 0.9787234042553191,
+        "recall": 0.9019607843137255,
+        "f1": 0.9387755102040817,
+        "legitimate_precision": 0.9946638207043756,
+        "legitimate_recall": 0.9989281886387996,
+        "legitimate_f1": 0.9967914438502674,
+        "confusion_matrix": [
+          [
+            932,
+            1
+          ],
+          [
+            5,
+            46
+          ]
+        ],
+        "false_positives": 1,
+        "false_negatives": 5,
+        "false_positive_rate": 0.0010718113612004287,
+        "false_negative_rate": 0.09803921568627451,
+        "roc_auc": 0.9962801840993631,
+        "average_precision": 0.9686098148473128,
+        "pr_auc_trapezoid": 0.9684379254905994,
+        "brier_score": 0.005424512931139649,
+        "log_loss": 0.02462146732901772,
+        "expected_calibration_error": 0.0044188483158219705,
+        "calibration_bins": [
+          {
+            "bin": 0,
+            "n": 931,
+            "predicted": 0.0012459056088076827,
+            "observed": 0.00322234156820623
+          },
+          {
+            "bin": 1,
+            "n": 4,
+            "predicted": 0.1594546735206776,
+            "observed": 0.5
+          },
+          {
+            "bin": 2,
+            "n": 1,
+            "predicted": 0.20175669606708638,
+            "observed": 0.0
+          },
+          {
+            "bin": 3,
+            "n": 1,
+            "predicted": 0.39601689197157974,
+            "observed": 0.0
+          },
+          {
+            "bin": 7,
+            "n": 2,
+            "predicted": 0.7338519989729932,
+            "observed": 0.5
+          },
+          {
+            "bin": 9,
+            "n": 45,
+            "predicted": 0.9982127561629593,
+            "observed": 1.0
+          }
+        ]
+      },
+      "threshold": 0.5,
+      "mode": "ml",
+      "baseline": "linear_svm",
+      "calibration_comparison": {
+        "uncalibrated_diagnostic": "LR native sigmoid probability; SVM arbitrary sigmoid margin transform (not calibrated confidence). Neither diagnostic is displayed in the application.",
+        "held_out_sigmoid_coefficient": 8.459397358134797,
+        "held_out_sigmoid_intercept": 1.3547066803938301,
+        "validation_before": {
+          "n": 984,
+          "class_balance": {
+            "0": 933,
+            "1": 51
+          },
+          "threshold": 0.5,
+          "accuracy": 0.9939024390243902,
+          "precision": 1.0,
+          "recall": 0.8823529411764706,
+          "f1": 0.9375,
+          "legitimate_precision": 0.9936102236421726,
+          "legitimate_recall": 1.0,
+          "legitimate_f1": 0.9967948717948718,
+          "confusion_matrix": [
+            [
+              933,
+              0
+            ],
+            [
+              6,
+              45
+            ]
+          ],
+          "false_positives": 0,
+          "false_negatives": 6,
+          "false_positive_rate": 0.0,
+          "false_negative_rate": 0.11764705882352941,
+          "roc_auc": 0.9962801840993631,
+          "average_precision": 0.9686098148473128,
+          "pr_auc_trapezoid": 0.9684379254905994,
+          "brier_score": 0.07075998192891472,
+          "log_loss": 0.3065392964898565,
+          "expected_calibration_error": 0.25463586439505315,
+          "calibration_bins": [
+            {
+              "bin": 1,
+              "n": 7,
+              "predicted": 0.19568412421652112,
+              "observed": 0.0
+            },
+            {
+              "bin": 2,
+              "n": 855,
+              "predicted": 0.25367899742259703,
+              "observed": 0.0011695906432748538
+            },
+            {
+              "bin": 3,
+              "n": 69,
+              "predicted": 0.31891984769584913,
+              "observed": 0.028985507246376812
+            },
+            {
+              "bin": 4,
+              "n": 8,
+              "predicted": 0.4367422558707053,
+              "observed": 0.375
+            },
+            {
+              "bin": 5,
+              "n": 3,
+              "predicted": 0.5760548918153067,
+              "observed": 1.0
+            },
+            {
+              "bin": 6,
+              "n": 12,
+              "predicted": 0.6584625646982754,
+              "observed": 1.0
+            },
+            {
+              "bin": 7,
+              "n": 26,
+              "predicted": 0.7433179082992764,
+              "observed": 1.0
+            },
+            {
+              "bin": 8,
+              "n": 4,
+              "predicted": 0.8117668928691567,
+              "observed": 1.0
+            }
+          ]
+        },
+        "test_before": {
+          "n": 984,
+          "class_balance": {
+            "0": 933,
+            "1": 51
+          },
+          "threshold": 0.5,
+          "accuracy": 0.9888211382113821,
+          "precision": 1.0,
+          "recall": 0.7843137254901961,
+          "f1": 0.8791208791208791,
+          "legitimate_precision": 0.9883474576271186,
+          "legitimate_recall": 1.0,
+          "legitimate_f1": 0.9941395844432606,
+          "confusion_matrix": [
+            [
+              933,
+              0
+            ],
+            [
+              11,
+              40
+            ]
+          ],
+          "false_positives": 0,
+          "false_negatives": 11,
+          "false_positive_rate": 0.0,
+          "false_negative_rate": 0.21568627450980393,
+          "roc_auc": 0.997267931824391,
+          "average_precision": 0.9797175039790459,
+          "pr_auc_trapezoid": 0.9795210951876718,
+          "brier_score": 0.07320773245751494,
+          "log_loss": 0.31255230494056835,
+          "expected_calibration_error": 0.2583052739396476,
+          "calibration_bins": [
+            {
+              "bin": 1,
+              "n": 4,
+              "predicted": 0.1894695934576965,
+              "observed": 0.0
+            },
+            {
+              "bin": 2,
+              "n": 830,
+              "predicted": 0.2554511441149609,
+              "observed": 0.0012048192771084338
+            },
+            {
+              "bin": 3,
+              "n": 102,
+              "predicted": 0.3218785557973359,
+              "observed": 0.0392156862745098
+            },
+            {
+              "bin": 4,
+              "n": 8,
+              "predicted": 0.4446495905123081,
+              "observed": 0.75
+            },
+            {
+              "bin": 6,
+              "n": 13,
+              "predicted": 0.6571587515166137,
+              "observed": 1.0
+            },
+            {
+              "bin": 7,
+              "n": 26,
+              "predicted": 0.7514126794762572,
+              "observed": 1.0
+            },
+            {
+              "bin": 8,
+              "n": 1,
+              "predicted": 0.80456096376624,
+              "observed": 1.0
+            }
+          ]
+        }
+      },
+      "eligible_for_selection": true,
+      "selection_exclusions": [],
+      "test": {
+        "n": 984,
+        "class_balance": {
+          "0": 933,
+          "1": 51
+        },
+        "threshold": 0.5,
+        "accuracy": 0.9908536585365854,
+        "precision": 1.0,
+        "recall": 0.8235294117647058,
+        "f1": 0.9032258064516129,
+        "legitimate_precision": 0.9904458598726115,
+        "legitimate_recall": 1.0,
+        "legitimate_f1": 0.9952,
+        "confusion_matrix": [
+          [
+            933,
+            0
+          ],
+          [
+            9,
+            42
+          ]
+        ],
+        "false_positives": 0,
+        "false_negatives": 9,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.17647058823529413,
+        "roc_auc": 0.997267931824391,
+        "average_precision": 0.9797175039790459,
+        "pr_auc_trapezoid": 0.9795210951876718,
+        "brier_score": 0.0067514840904797785,
+        "log_loss": 0.02595694907255189,
+        "expected_calibration_error": 0.006950059696472706,
+        "calibration_bins": [
+          {
+            "bin": 0,
+            "n": 936,
+            "predicted": 0.0017519923789390452,
+            "observed": 0.005341880341880342
+          },
+          {
+            "bin": 1,
+            "n": 2,
+            "predicted": 0.1403647350820496,
+            "observed": 0.0
+          },
+          {
+            "bin": 2,
+            "n": 1,
+            "predicted": 0.24033264136045449,
+            "observed": 1.0
+          },
+          {
+            "bin": 3,
+            "n": 2,
+            "predicted": 0.3406270585118899,
+            "observed": 1.0
+          },
+          {
+            "bin": 4,
+            "n": 1,
+            "predicted": 0.41451900569072575,
+            "observed": 1.0
+          },
+          {
+            "bin": 7,
+            "n": 2,
+            "predicted": 0.7489881015808149,
+            "observed": 1.0
+          },
+          {
+            "bin": 9,
+            "n": 40,
+            "predicted": 0.9991980973727855,
+            "observed": 1.0
+          }
+        ]
+      }
+    },
+    "linear_svm_hybrid": {
+      "validation": {
+        "n": 984,
+        "class_balance": {
+          "0": 933,
+          "1": 51
+        },
+        "threshold": 0.8,
+        "accuracy": 0.9939024390243902,
+        "precision": 0.9787234042553191,
+        "recall": 0.9019607843137255,
+        "f1": 0.9387755102040817,
+        "legitimate_precision": 0.9946638207043756,
+        "legitimate_recall": 0.9989281886387996,
+        "legitimate_f1": 0.9967914438502674,
+        "confusion_matrix": [
+          [
+            932,
+            1
+          ],
+          [
+            5,
+            46
+          ]
+        ],
+        "false_positives": 1,
+        "false_negatives": 5,
+        "false_positive_rate": 0.0010718113612004287,
+        "false_negative_rate": 0.09803921568627451,
+        "roc_auc": 0.9962801840993631,
+        "average_precision": 0.9686098148473128,
+        "pr_auc_trapezoid": 0.9684379254905994,
+        "brier_score": 0.006071014276922028,
+        "log_loss": 0.027243376503200953,
+        "expected_calibration_error": 0.004811368245705171,
+        "calibration_bins": [
+          {
+            "bin": 0,
+            "n": 930,
+            "predicted": 0.0010971456596831817,
+            "observed": 0.0032258064516129032
+          },
+          {
+            "bin": 1,
+            "n": 1,
+            "predicted": 0.16407742331867176,
+            "observed": 0.0
+          },
+          {
+            "bin": 3,
+            "n": 2,
+            "predicted": 0.3615303102648998,
+            "observed": 0.5
+          },
+          {
+            "bin": 4,
+            "n": 2,
+            "predicted": 0.45867140100487375,
+            "observed": 0.5
+          },
+          {
+            "bin": 5,
+            "n": 1,
+            "predicted": 0.5088417733222217,
+            "observed": 0.0
+          },
+          {
+            "bin": 7,
+            "n": 1,
+            "predicted": 0.794488643824361,
+            "observed": 0.0
+          },
+          {
+            "bin": 9,
+            "n": 47,
+            "predicted": 0.9984622850926285,
+            "observed": 0.9787234042553191
+          }
+        ]
+      },
+      "threshold": 0.8,
+      "mode": "hybrid",
+      "baseline": "linear_svm",
+      "eligible_for_selection": false,
+      "selection_exclusions": [
+        "English protocol prespecifies ML-only final assessment; heuristic points and evidence remain independently displayed. Hybrid is diagnostic only."
+      ],
+      "test": {
+        "n": 984,
+        "class_balance": {
+          "0": 933,
+          "1": 51
+        },
+        "threshold": 0.8,
+        "accuracy": 0.991869918699187,
+        "precision": 1.0,
+        "recall": 0.8431372549019608,
+        "f1": 0.9148936170212766,
+        "legitimate_precision": 0.9914984059511158,
+        "legitimate_recall": 1.0,
+        "legitimate_f1": 0.9957310565635006,
+        "confusion_matrix": [
+          [
+            933,
+            0
+          ],
+          [
+            8,
+            43
+          ]
+        ],
+        "false_positives": 0,
+        "false_negatives": 8,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.1568627450980392,
+        "roc_auc": 0.997246915915348,
+        "average_precision": 0.9796796337980264,
+        "pr_auc_trapezoid": 0.9794833656765489,
+        "brier_score": 0.005150831507418158,
+        "log_loss": 0.02059554492668793,
+        "expected_calibration_error": 0.00588696481637368,
+        "calibration_bins": [
+          {
+            "bin": 0,
+            "n": 931,
+            "predicted": 0.0013601686825799825,
+            "observed": 0.0021482277121374865
+          },
+          {
+            "bin": 1,
+            "n": 3,
+            "predicted": 0.10413485799051936,
+            "observed": 1.0
+          },
+          {
+            "bin": 2,
+            "n": 2,
+            "predicted": 0.22335190954776188,
+            "observed": 0.0
+          },
+          {
+            "bin": 3,
+            "n": 2,
+            "predicted": 0.36261034715042995,
+            "observed": 0.0
+          },
+          {
+            "bin": 5,
+            "n": 1,
+            "predicted": 0.5863169336050555,
+            "observed": 1.0
+          },
+          {
+            "bin": 6,
+            "n": 1,
+            "predicted": 0.6917713652075008,
+            "observed": 1.0
+          },
+          {
+            "bin": 7,
+            "n": 1,
+            "predicted": 0.7722414414949995,
+            "observed": 1.0
+          },
+          {
+            "bin": 8,
+            "n": 1,
+            "predicted": 0.8133356267557263,
+            "observed": 1.0
+          },
+          {
+            "bin": 9,
+            "n": 42,
+            "predicted": 0.9984943845135209,
+            "observed": 1.0
+          }
+        ]
+      }
+    }
+  },
+  "selected_test": {
+    "n": 984,
+    "class_balance": {
+      "0": 933,
+      "1": 51
+    },
+    "threshold": 0.5,
+    "accuracy": 0.9908536585365854,
+    "precision": 1.0,
+    "recall": 0.8235294117647058,
+    "f1": 0.9032258064516129,
+    "legitimate_precision": 0.9904458598726115,
+    "legitimate_recall": 1.0,
+    "legitimate_f1": 0.9952,
+    "confusion_matrix": [
+      [
+        933,
+        0
+      ],
+      [
+        9,
+        42
+      ]
+    ],
+    "false_positives": 0,
+    "false_negatives": 9,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.17647058823529413,
+    "roc_auc": 0.997267931824391,
+    "average_precision": 0.9797175039790459,
+    "pr_auc_trapezoid": 0.9795210951876718,
+    "brier_score": 0.0067514840904797785,
+    "log_loss": 0.02595694907255189,
+    "expected_calibration_error": 0.006950059696472706,
+    "calibration_bins": [
+      {
+        "bin": 0,
+        "n": 936,
+        "predicted": 0.0017519923789390452,
+        "observed": 0.005341880341880342
+      },
+      {
+        "bin": 1,
+        "n": 2,
+        "predicted": 0.1403647350820496,
+        "observed": 0.0
+      },
+      {
+        "bin": 2,
+        "n": 1,
+        "predicted": 0.24033264136045449,
+        "observed": 1.0
+      },
+      {
+        "bin": 3,
+        "n": 2,
+        "predicted": 0.3406270585118899,
+        "observed": 1.0
+      },
+      {
+        "bin": 4,
+        "n": 1,
+        "predicted": 0.41451900569072575,
+        "observed": 1.0
+      },
+      {
+        "bin": 7,
+        "n": 2,
+        "predicted": 0.7489881015808149,
+        "observed": 1.0
+      },
+      {
+        "bin": 9,
+        "n": 40,
+        "predicted": 0.9991980973727855,
+        "observed": 1.0
+      }
+    ]
+  },
+  "selected_base_ml_test": {
+    "n": 984,
+    "class_balance": {
+      "0": 933,
+      "1": 51
+    },
+    "threshold": 0.5,
+    "accuracy": 0.9908536585365854,
+    "precision": 1.0,
+    "recall": 0.8235294117647058,
+    "f1": 0.9032258064516129,
+    "legitimate_precision": 0.9904458598726115,
+    "legitimate_recall": 1.0,
+    "legitimate_f1": 0.9952,
+    "confusion_matrix": [
+      [
+        933,
+        0
+      ],
+      [
+        9,
+        42
+      ]
+    ],
+    "false_positives": 0,
+    "false_negatives": 9,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.17647058823529413,
+    "roc_auc": 0.997267931824391,
+    "average_precision": 0.9797175039790459,
+    "pr_auc_trapezoid": 0.9795210951876718,
+    "brier_score": 0.0067514840904797785,
+    "log_loss": 0.02595694907255189,
+    "expected_calibration_error": 0.006950059696472706,
+    "calibration_bins": [
+      {
+        "bin": 0,
+        "n": 936,
+        "predicted": 0.0017519923789390452,
+        "observed": 0.005341880341880342
+      },
+      {
+        "bin": 1,
+        "n": 2,
+        "predicted": 0.1403647350820496,
+        "observed": 0.0
+      },
+      {
+        "bin": 2,
+        "n": 1,
+        "predicted": 0.24033264136045449,
+        "observed": 1.0
+      },
+      {
+        "bin": 3,
+        "n": 2,
+        "predicted": 0.3406270585118899,
+        "observed": 1.0
+      },
+      {
+        "bin": 4,
+        "n": 1,
+        "predicted": 0.41451900569072575,
+        "observed": 1.0
+      },
+      {
+        "bin": 7,
+        "n": 2,
+        "predicted": 0.7489881015808149,
+        "observed": 1.0
+      },
+      {
+        "bin": 9,
+        "n": 40,
+        "predicted": 0.9991980973727855,
+        "observed": 1.0
+      }
+    ]
+  },
+  "heuristic_only_test": {
+    "n": 984,
+    "class_balance": {
+      "0": 933,
+      "1": 51
+    },
+    "threshold": 0.6,
+    "accuracy": 0.948170731707317,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "legitimate_precision": 0.948170731707317,
+    "legitimate_recall": 1.0,
+    "legitimate_f1": 0.97339593114241,
+    "confusion_matrix": [
+      [
+        933,
+        0
+      ],
+      [
+        51,
+        0
+      ]
+    ],
+    "false_positives": 0,
+    "false_negatives": 51,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 1.0,
+    "roc_auc": 0.8750604207384991,
+    "average_precision": 0.6454648129997518,
+    "pr_auc_trapezoid": 0.6768924340050166,
+    "brier_score": null,
+    "log_loss": null,
+    "expected_calibration_error": null,
+    "calibration_bins": []
+  },
+  "source_bias_audit": {
+    "scope": "retained reviewed sample; descriptive source bias, not independent performance evidence",
+    "by_label": {
+      "0": {
+        "n": 9330,
+        "sources": {
+          "Figshare-Enron": 6495,
+          "Figshare-Assassin": 1837,
+          "Figshare-Ling": 998
+        },
+        "text_length_quantiles": {
+          "min": 39.0,
+          "median": 958.0,
+          "p95": 5865.849999999995,
+          "max": 16000.0
+        }
+      },
+      "1": {
+        "n": 670,
+        "sources": {
+          "nazario-phishing0": 117,
+          "nazario-phishing1": 145,
+          "nazario-phishing2": 408
+        },
+        "text_length_quantiles": {
+          "min": 44.0,
+          "median": 3084.0,
+          "p95": 13461.74999999999,
+          "max": 16000.0
+        }
+      }
+    }
+  },
+  "hybrid_parameters": {
+    "features": [
+      "logit(calibrated_ml_probability)",
+      "heuristic_score/100"
+    ],
+    "coefficients": [
+      [
+        1.2811021226412063,
+        0.04982710264979409
+      ]
+    ],
+    "intercept": [
+      1.7538061203613973
+    ],
+    "calibration_coefficient": [
+      [
+        1.0747748491716997
+      ]
+    ],
+    "calibration_intercept": [
+      0.04413975748239689
+    ]
+  },
+  "deployment_gate": {
+    "passed": true,
+    "prespecified_requirements": "test positive F1>=0.70, ROC-AUC>=0.75, Brier<=0.25, at least10 examples of each label"
+  },
+  "limitations": [
+    "Dataset-conditioned calibrated probabilities are not a guarantee of field performance or confirmed maliciousness.",
+    "Labels and source collection biases are inherited from the documented dataset; source-level and temporal generalization are not established.",
+    "Lexical near-duplicate grouping does not detect all semantic paraphrases. Email inputs are bounded to16000 characters; URL inputs to8192.",
+    "No destination fetching, DNS, reputation lookup, authentication verification or attachment execution is performed by the model.",
+    "Main phishing and legitimate labels are confounded with corpus family; source artifacts remain despite removed metadata and source/era stress tests.",
+    "Figshare label0 is inherited legitimate/ham labeling; not independent modern security adjudication. Generic spam label1 is excluded, never claimed as phishing.",
+    "Figshare curators license their release CC BY4.0; their original constituent corpora have separate collection and original-sender rights history. Explicit curator permission does not authenticate original senders.",
+    "External MASC legitimate labels are contextual routine-email genre, not security annotations. Only80 original documents before cleaning.",
+    "Nazario hand labeling can contain errors and collection/anonymization/era bias; curated real inbox data is not exhaustive.",
+    "Template and thread disjointness is lexical and bounded to the shared first600-token representation; semantic/paraphrased campaigns may remain related.",
+    "Offline language screening can misclassify short, mixed-language or technical emails; normalized langid score is not model confidence.",
+    "Artificial class balance and corpus-era biases prevent interpreting benchmark calibration as deployment prevalence calibration."
+  ],
+  "source_only_baseline": {
+    "method": "Predict training-majority label for the recorded corpus source; unknown source uses training class majority. Source is never a classifier feature. High performance exposes corpus/label confounding rather than phishing detection.",
+    "source_training_majorities": {
+      "Figshare-Assassin": 0,
+      "Figshare-Ling": 0,
+      "Figshare-Enron": 0,
+      "nazario-phishing2": 1,
+      "nazario-phishing1": 1,
+      "nazario-phishing0": 1
+    },
+    "accuracy": 1.0,
+    "f1": 1.0,
+    "confusion_matrix": [
+      [
+        933,
+        0
+      ],
+      [
+        0,
+        51
+      ]
+    ]
+  },
+  "training_code_sha256": "f82f26de96b410f905ddc09f1d6064890b911f1ffc63d5f03a2997bc4a375ac2",
+  "feature_code_sha256": "f290b7f0fa5a4315ed15abb16c0afb116f4e0d4231dc1a7d4266786120b7aaf1",
+  "provenance_sha256": "a53954a6cf8de33ce97eb8e1198f052bdbbf0ef0373ec120896a7b1c2db710cb"
+}

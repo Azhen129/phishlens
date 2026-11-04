@@ -1,0 +1,93 @@
+{
+  "format_version": 1,
+  "kind": "email",
+  "version": "email-passive-text-v2-3c3796081ca9",
+  "artifact": "model.joblib",
+  "sha256": "cda5272ccad91326f42ecc2fea2723f32bccbf1ae655cf675009d43d8d9e3d27",
+  "sklearn_version": "1.9.1",
+  "validated": true,
+  "metadata": {
+    "kind": "email",
+    "version": "email-passive-text-v2-3c3796081ca9",
+    "calibrated": true,
+    "validation_passed": true,
+    "assessment_mode": "ml",
+    "selected_candidate": "linear_svm_ml",
+    "feature_version": "passive-text-v2",
+    "sklearn_version": "1.9.1",
+    "calibration": "disjoint held-out sigmoid calibration for base model and learned hybrid",
+    "limitations": [
+      "Dataset-conditioned calibrated probabilities are not a guarantee of field performance or confirmed maliciousness.",
+      "Labels and source collection biases are inherited from the documented dataset; source-level and temporal generalization are not established.",
+      "Lexical near-duplicate grouping does not detect all semantic paraphrases. Email inputs are bounded to16000 characters; URL inputs to8192.",
+      "No destination fetching, DNS, reputation lookup, authentication verification or attachment execution is performed by the model.",
+      "Main phishing and legitimate labels are confounded with corpus family; source artifacts remain despite removed metadata and source/era stress tests.",
+      "Figshare label0 is inherited legitimate/ham labeling; not independent modern security adjudication. Generic spam label1 is excluded, never claimed as phishing.",
+      "Figshare curators license their release CC BY4.0; their original constituent corpora have separate collection and original-sender rights history. Explicit curator permission does not authenticate original senders.",
+      "External MASC legitimate labels are contextual routine-email genre, not security annotations. Only80 original documents before cleaning.",
+      "Nazario hand labeling can contain errors and collection/anonymization/era bias; curated real inbox data is not exhaustive.",
+      "Template and thread disjointness is lexical and bounded to the shared first600-token representation; semantic/paraphrased campaigns may remain related.",
+      "Offline language screening can misclassify short, mixed-language or technical emails; normalized langid score is not model confidence.",
+      "Artificial class balance and corpus-era biases prevent interpreting benchmark calibration as deployment prevalence calibration."
+    ],
+    "dataset_source": "https://figshare.com/articles/dataset/Seven_Phishing_Email_Datasets/25432108",
+    "dataset_license": "CC BY 4.0 (Nazario and Figshare); external MASC CC BY 3.0 US",
+    "held_out_metrics": {
+      "n": 984,
+      "class_balance": {
+        "0": 933,
+        "1": 51
+      },
+      "threshold": 0.5,
+      "accuracy": 0.9908536585365854,
+      "precision": 1.0,
+      "recall": 0.8235294117647058,
+      "f1": 0.9032258064516129,
+      "legitimate_precision": 0.9904458598726115,
+      "legitimate_recall": 1.0,
+      "legitimate_f1": 0.9952,
+      "confusion_matrix": [
+        [
+          933,
+          0
+        ],
+        [
+          9,
+          42
+        ]
+      ],
+      "false_positives": 0,
+      "false_negatives": 9,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.17647058823529413,
+      "roc_auc": 0.997267931824391,
+      "average_precision": 0.9797175039790459,
+      "pr_auc_trapezoid": 0.9795210951876718,
+      "brier_score": 0.0067514840904797785,
+      "log_loss": 0.02595694907255189,
+      "expected_calibration_error": 0.006950059696472706
+    },
+    "input_max_characters": 16000,
+    "supported_languages": [
+      "en"
+    ],
+    "validation_scope": "Offline English corpus benchmark and limited external historical legitimate/newer inbox phishing stress evaluation. This does not establish broad English mail accuracy, source-independent generalization or deployment confidence.",
+    "dataset_name": "English Nazario phishing / Figshare ham-only",
+    "training_code_sha256": "f82f26de96b410f905ddc09f1d6064890b911f1ffc63d5f03a2997bc4a375ac2",
+    "feature_code_sha256": "f290b7f0fa5a4315ed15abb16c0afb116f4e0d4231dc1a7d4266786120b7aaf1",
+    "provenance_sha256": "a53954a6cf8de33ce97eb8e1198f052bdbbf0ef0373ec120896a7b1c2db710cb",
+    "prediction_warning": "Limited English research model: frozen external phishing recall was 39.2% and Brier score 0.449. Historical-corpus calibration did not transfer to newer email. A legitimate prediction must not be treated as safety; review heuristic evidence.",
+    "probability_scope": "Historical English corpus only; weak external calibration",
+    "release_evaluation": {
+      "path": "docs/ml/phase4/external-evaluation.json",
+      "sha256": "36ed1987c7ccb065579c2fb7e90adbbd715e7d89a61752c6397a42775d6a0da0",
+      "model_sha256": "cda5272ccad91326f42ecc2fea2723f32bccbf1ae655cf675009d43d8d9e3d27",
+      "internal_gate_passed": true,
+      "external_calibration_validated": false,
+      "external_recall": 0.39196675900277006,
+      "external_brier_score": 0.44881164580411465,
+      "note": "Post-evaluation disclosure only. No model, threshold, heuristic score, split, or calibration fitting changed after external evaluation."
+    }
+  },
+  "metrics_file": "metrics.json"
+}

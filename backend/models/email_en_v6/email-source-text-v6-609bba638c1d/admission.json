@@ -1,0 +1,18 @@
+{
+  "format_version": 1,
+  "version": "email-source-text-v6-609bba638c1d",
+  "model_sha256": "17040d24c574d753c0b6491e21ce8a8cfa32007d16e0fc66d68538a7f0b2ba13",
+  "threshold": 0.2095991955762941,
+  "approved_for_limited_use": true,
+  "conditions": {
+    "validation_constraints_met": true,
+    "primary_recall_gain_at_least_5pp": true,
+    "primary_fpr_at_most_1pct": true,
+    "primary_wilson_upper_fpr_at_most_2pct": true,
+    "fpr_increase_at_most_half_percentage_point": true,
+    "source:MeAJOR-trec7:fpr_bounds": true
+  },
+  "independent_evaluation_sha256": "a01ec3438bbe8aae57cc30a9112819270e42ebe04708a0fde6756a28e5b57ca5",
+  "spanish_nonregression_evidence_sha256": "12ff4783256485788209db49d5aa9ee2e4fcfbc220444492eeb0033550c037a6",
+  "scope": "Limited local research and analyst review. The positive sample is small and campaign clustered."
+}

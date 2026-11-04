@@ -1,0 +1,229 @@
+{
+  "protocol": "language-format-v3",
+  "role": "Previously observed Phase 4 English and original Spanish test rows only. Language applicability diagnostic, not classifier accuracy, new independent evaluation or per-row language truth.",
+  "comparison_report_sha256": "1f48ad1fbecf067342b3bbccfb6e6c7075013c5a4fe71472cbaba75da11f2532",
+  "code_and_model_sha256": {
+    "backend/language_routing_v2.py": "071d0534f32e4abc000f1f15d876be9f93b925f83e3cd1aed8ec2578cda3e02e",
+    "backend/language_routing_v3.py": "4a43d5495721c5b2329816e398ce348305972e31e1c0dfc51bc14f79daa7d933",
+    "backend/text_normalization_v6.py": "c64296e579ddc422b20f29d208aab635cad1edcb6b2d69a43170fb6392417c2a",
+    "backend/analysis.py": "f14716e69abd2e6b154f1827b0a9db366377b33ce77c10608164f51c3f7911ba",
+    "backend/ml_features.py": "f290b7f0fa5a4315ed15abb16c0afb116f4e0d4231dc1a7d4266786120b7aaf1",
+    "backend/ml_runtime.py": "24d2b4dd6ab5fec13839895a5d43a2cc966b28ddde80a003de71043ab0475f93",
+    "backend/models/distribution-phase6.json": "140f017ed64f046c27357ad26c7e6e14ceaa85a7ab84113ce94f462a433342d5",
+    "backend/models/NOTICE.md": "8ae949646adca54c62e5af270fc4954c282e67e630b12e1fd7c4b187b4d8dfe1",
+    "backend/models/release-notes.json": "2c2f561c17d71ec51b03dae55b5fb62f3f0599e5a0e829e761eed3d0f864aba4",
+    "backend/models/email/error-feature-audit.json": "ff15097822d8cff4470c947329c1190ec0df673a82dd3ec6f50587c937a5b200",
+    "backend/models/email/evaluation.png": "a0b71d8730e0df4ed86f13feac9dbea72059c0f91521d45ffd51b15ab69aabd5",
+    "backend/models/email/evaluation.svg": "013150a5a2531ac6162e483038fe2cd89417d53ddb00dc0e2167c4ed2324b647",
+    "backend/models/email/experiment.json": "070085da57373c87c110a606ab239a4b083996fa28f3d3b89b8358bf4999c29e",
+    "backend/models/email/manifest.json": "3ef25033f515df828439a7e7714151553cc10d9542a7fe38740d15f0a42814da",
+    "backend/models/email/metrics.json": "20b19a725c902f4d43f6a8e0660778fd69e6617975d3e9c73283d37371761524",
+    "backend/models/email/model.joblib": "7a2a52a67faf21f959c74e5c310d7732c050e5697284101fa78f2523aa370f49",
+    "backend/models/email/scope-evaluation.json": "e4e16705314cb8cf3e19555840e993dd63b02c813e7fb07d38e60481253a3717",
+    "backend/models/email/splits.json": "f19ef8c8445b20f6e6aba825513debeb7db614fbde02b7108d997ae104c63c1b",
+    "backend/models/email_en/evaluation.png": "45aed7a8233e61f9cc23ec2286d1a8fcfd0ed2bbd45a0d80caef8b283e69f383",
+    "backend/models/email_en/evaluation.svg": "d6b81808bbca520868b39ddc20f47ef45775264e5450ab36d3b9537ca1bbd377",
+    "backend/models/email_en/experiment.json": "a5e9d1dffbc98aa0aad27db5f35d36192bdc82461867523a7af4dcdf6e8c098e",
+    "backend/models/email_en/manifest.json": "fec7deefe72060dca6cbb590799583b8e88ee6bce4a1e38c24c537b450157583",
+    "backend/models/email_en/metrics.json": "b16ce747a97d3b7f3ce93ba3d12c95365ec52410e2ee37e995daa301b957a156",
+    "backend/models/email_en/model.joblib": "cda5272ccad91326f42ecc2fea2723f32bccbf1ae655cf675009d43d8d9e3d27",
+    "backend/models/email_en/splits.json": "1d210decb50f4ca1ab9f204070a2f048c160c7f1c377a718546b47187bb2498b",
+    "backend/models/email_en_v5/email-multiscale-v3-fa5c01a0f9a7/admission.json": "f3671f15d3fa2003f389fd9e67a09785c2bb28a0e5fe540c1b7e28eedd3e013e",
+    "backend/models/email_en_v5/email-multiscale-v3-fa5c01a0f9a7/experiment.json": "ff7d9dae70a0c495072484f984c21d79ab4986a7146ca0b683ca915febe3be34",
+    "backend/models/email_en_v5/email-multiscale-v3-fa5c01a0f9a7/manifest.json": "01c2a508f6c540d17dbfc9a306b314e3e3f706360989a95fe0e1dd36cac95e30",
+    "backend/models/email_en_v5/email-multiscale-v3-fa5c01a0f9a7/metrics.json": "4e70f5f07fb6727bb1dcbf3d9a9c09960ad0f4d7a322ddb611b6d61ab214a75e",
+    "backend/models/email_en_v5/email-multiscale-v3-fa5c01a0f9a7/model.joblib": "2fc41332e17adf0773b03780378e48c7bd5ff50a1d54746978552217f2c0d9b8",
+    "backend/models/email_en_v5/email-multiscale-v3-fa5c01a0f9a7/splits.json": "a01adafe55c7aa584890282709745bea975981822873bcaeb1cbf0526005e03a",
+    "backend/models/url/error-feature-audit.json": "e6a9c73607d4567f40b98ef691630f08af8ff6e44d4bb72b051df892cdae1f79",
+    "backend/models/url/evaluation.png": "bd563fddfd4317ce34498652baaf2d2a1cb0c6d6b53dab912912f46b6df82ffc",
+    "backend/models/url/evaluation.svg": "691355bd47c4815354314426763255a4ba94b1c274da94d280fa82cbbfb07c72",
+    "backend/models/url/experiment.json": "b16d3ccf679ae144fe6fa0acff1b4883ccdf1c0c09da44108134ba4b9e445d91",
+    "backend/models/url/manifest.json": "ffafe650f52d2e7feb5f4a55f858f2fd45ed0fa13bba63600965f7a5059ea1bf",
+    "backend/models/url/metrics.json": "fcbe4fbd97d37f2e913ac264e1ad86e321bcba4a302ed1880d3fa0f2baab49af",
+    "backend/models/url/model.joblib": "719f147c02c402881203b9fb0fe1c5f4f3c5bc95a7aad61c548991f459943709",
+    "backend/models/url/scope-evaluation.json": "d3df5a5e5bcfe786898bc96a39ac6fdb23499d245dd56257c9dd734fd8cafec1",
+    "backend/models/url/splits.json": "4b2ae4eaa3c31e0eed3c33dde45b63486d03362edb2d52c7f83b5a5b30db63d1"
+  },
+  "raw_message_text_excluded": true,
+  "new_final_data_read": false,
+  "datasets": {
+    "english_main": {
+      "summary": {
+        "n": 984,
+        "corpus_expected_language": "en",
+        "phase5": {
+          "expected_language_accepted": 969,
+          "expected_language_coverage": 0.9847560975609756,
+          "statuses": {
+            "supported": 969,
+            "too_short": 9,
+            "mixed": 6
+          },
+          "detected_languages": {
+            "en": 969,
+            "und": 9,
+            "mixed": 6
+          },
+          "either_supported": 969,
+          "by_label": {
+            "0": {
+              "n": 933,
+              "accepted": 918
+            },
+            "1": {
+              "n": 51,
+              "accepted": 51
+            }
+          }
+        },
+        "phase6": {
+          "expected_language_accepted": 969,
+          "expected_language_coverage": 0.9847560975609756,
+          "statuses": {
+            "supported": 969,
+            "too_short": 9,
+            "mixed": 6
+          },
+          "detected_languages": {
+            "en": 969,
+            "und": 9,
+            "mixed": 6
+          },
+          "either_supported": 969,
+          "by_label": {
+            "0": {
+              "n": 933,
+              "accepted": 918
+            },
+            "1": {
+              "n": 51,
+              "accepted": 51
+            }
+          }
+        },
+        "previously_expected_supported_lost": 0,
+        "recovered_expected_routes": 0
+      }
+    },
+    "english_old_external": {
+      "summary": {
+        "n": 802,
+        "corpus_expected_language": "en",
+        "phase5": {
+          "expected_language_accepted": 778,
+          "expected_language_coverage": 0.970074812967581,
+          "statuses": {
+            "supported": 778,
+            "mixed": 16,
+            "too_short": 7,
+            "uncertain": 1
+          },
+          "detected_languages": {
+            "en": 778,
+            "mixed": 16,
+            "und": 8
+          },
+          "either_supported": 778,
+          "by_label": {
+            "0": {
+              "n": 80,
+              "accepted": 78
+            },
+            "1": {
+              "n": 722,
+              "accepted": 700
+            }
+          }
+        },
+        "phase6": {
+          "expected_language_accepted": 779,
+          "expected_language_coverage": 0.9713216957605985,
+          "statuses": {
+            "supported": 779,
+            "mixed": 15,
+            "too_short": 7,
+            "uncertain": 1
+          },
+          "detected_languages": {
+            "en": 779,
+            "mixed": 15,
+            "und": 8
+          },
+          "either_supported": 779,
+          "by_label": {
+            "0": {
+              "n": 80,
+              "accepted": 78
+            },
+            "1": {
+              "n": 722,
+              "accepted": 701
+            }
+          }
+        },
+        "previously_expected_supported_lost": 0,
+        "recovered_expected_routes": 1
+      }
+    },
+    "spanish_old_test": {
+      "summary": {
+        "n": 139,
+        "corpus_expected_language": "es",
+        "phase5": {
+          "expected_language_accepted": 129,
+          "expected_language_coverage": 0.9280575539568345,
+          "statuses": {
+            "supported": 131,
+            "mixed": 7,
+            "unsupported": 1
+          },
+          "detected_languages": {
+            "es": 129,
+            "mixed": 7,
+            "an": 1,
+            "en": 2
+          },
+          "either_supported": 131,
+          "by_label": {
+            "0": {
+              "n": 66,
+              "accepted": 60
+            },
+            "1": {
+              "n": 73,
+              "accepted": 69
+            }
+          }
+        },
+        "phase6": {
+          "expected_language_accepted": 130,
+          "expected_language_coverage": 0.935251798561151,
+          "statuses": {
+            "supported": 132,
+            "mixed": 7
+          },
+          "detected_languages": {
+            "es": 130,
+            "mixed": 7,
+            "en": 2
+          },
+          "either_supported": 132,
+          "by_label": {
+            "0": {
+              "n": 66,
+              "accepted": 61
+            },
+            "1": {
+              "n": 73,
+              "accepted": 69
+            }
+          }
+        },
+        "previously_expected_supported_lost": 0,
+        "recovered_expected_routes": 1
+      }
+    }
+  },
+  "all_watched_files_unchanged": true,
+  "spanish_nonregression_passed": true
+}

@@ -1,0 +1,20 @@
+From: "Accounts Payable" <accounts@billing-review.example.test>
+To: analyst@example.test
+Reply-To: payments@external-review.example.test
+Subject: [DEV FIXTURE] Action required: verify your account and invoice
+Date: Mon, 02 Nov 2026 09:11:24 +0300
+Authentication-Results: fixture.invalid; spf=fail smtp.mailfrom=billing-review.example.test; dkim=fail; dmarc=fail
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="phishlens-fixture"
+
+--phishlens-fixture
+Content-Type: text/html; charset=UTF-8
+
+<html><body><p>Hi Analyst,</p><p>This is an explicitly synthetic development fixture. Urgent action required: verify your account and confirm payment within 24 hours to avoid account suspension.</p><p><a href="http://192.0.2.25/login?account=fixture">https://accounts.example.test/verify</a></p><p><a href="https://billing-review.example.test/privacy">Privacy information</a></p></body></html>
+--phishlens-fixture
+Content-Type: application/octet-stream
+Content-Disposition: attachment; filename="invoice.pdf.exe"
+Content-Transfer-Encoding: base64
+
+REVWIEZJWFRVUkUgT05MWSAtIE5PVCBBTiBFWEVDVVRBQkxF
+--phishlens-fixture--

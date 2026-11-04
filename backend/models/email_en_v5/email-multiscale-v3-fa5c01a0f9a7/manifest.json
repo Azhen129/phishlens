@@ -1,0 +1,41 @@
+{
+  "format_version": 1,
+  "kind": "email",
+  "version": "email-multiscale-v3-fa5c01a0f9a7",
+  "artifact": "model.joblib",
+  "metrics_file": "metrics.json",
+  "sha256": "2fc41332e17adf0773b03780378e48c7bd5ff50a1d54746978552217f2c0d9b8",
+  "sklearn_version": "1.9.1",
+  "validated": false,
+  "metadata": {
+    "kind": "email",
+    "version": "email-multiscale-v3-fa5c01a0f9a7",
+    "calibrated": true,
+    "validation_passed": true,
+    "feature_version": "passive-text-v2",
+    "feature_code_sha256": "f290b7f0fa5a4315ed15abb16c0afb116f4e0d4231dc1a7d4266786120b7aaf1",
+    "additional_code_sha256": {
+      "ml_features_v3.py": "643599e8eb2c067df6263ddbbce084aa577cb44e31d83864ff0143684eb5c95c"
+    },
+    "assessment_mode": "ml",
+    "selected_candidate": "structure_lr_balanced_ml",
+    "supported_languages": [
+      "en"
+    ],
+    "calibration": "C=1 sigmoid fitted on a separate archive partition; not verified representative deployment probability",
+    "probability_validated_for_deployment": false,
+    "probability_scope": "Archive decision score; representative deployment calibration not established",
+    "prediction_warning": "Rejected research experiment: independent ham false-positive rate 11.32% exceeds the prespecified1% constraint. Never active in PhishLens. Decision scores are not validated field probabilities.",
+    "validation_scope": "Source-held-out curated archive stress; not representative deployment calibration. University labels broader scam, strict-phish subgroup reported separately.",
+    "dataset_source": "https://www.monkey.org/~jose/phishing/",
+    "dataset_license": "CC BY 4.0 development; University evaluation CC BY-NC-SA 2.0 local noncommercial research only",
+    "limitations": [
+      "Source, campaign, era and class prevalence shifts remain.",
+      "No live authentication/reputation, destination fetching or attachment execution.",
+      "Related semantic campaigns may survive bounded lexical grouping."
+    ],
+    "pipeline_version": "email-multiscale-v3",
+    "independent_admission_passed": false,
+    "independent_evaluation_sha256": "5d767f95212bfefa3668780a7e842ee63b4a33df6ea7b094ac07ac1e23afba02"
+  }
+}

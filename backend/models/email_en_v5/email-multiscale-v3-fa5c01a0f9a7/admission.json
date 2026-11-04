@@ -1,0 +1,15 @@
+{
+  "model_version": "email-multiscale-v3-fa5c01a0f9a7",
+  "independent_evaluation_sha256": "5d767f95212bfefa3668780a7e842ee63b4a33df6ea7b094ac07ac1e23afba02",
+  "passed": false,
+  "conditions": {
+    "internal_candidate_gate": true,
+    "primary_recall_gain_at_least_5pp": true,
+    "final_empirical_fpr_at_most_1pct": false,
+    "final_wilson_fpr_upper_at_most_2pct": false,
+    "fpr_increase_at_most_half_percentage_point": false,
+    "strict_phishing_recall_no_regression": true
+  },
+  "active": false,
+  "weights_or_threshold_changed_after_final": false
+}

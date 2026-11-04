@@ -1,0 +1,8 @@
+From: project-team@example.test
+To: analyst@example.test
+Subject: [DEV FIXTURE] Weekly project update
+Date: Mon, 02 Nov 2026 10:30:00 +0300
+Content-Type: text/plain; charset=UTF-8
+
+Development fixture: the weekly project notes are ready for the scheduled meeting.
+Documentation: https://docs.example.test/project

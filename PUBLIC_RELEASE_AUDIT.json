@@ -1,0 +1,28 @@
+{
+  "format_version": 1,
+  "scope": "Current candidate tree only; not Git history, OS caches, external services, model contents or complete secret detection.",
+  "files_scanned": 133,
+  "blocking_findings": 0,
+  "review_findings": 0,
+  "category_counts": {},
+  "no_credential_pattern_matches": true,
+  "public_release_cleared": true,
+  "owner_decisions_pending": [],
+  "findings": [],
+  "policy": {
+    "preserve_originals": true,
+    "redact_in_place": false,
+    "raw_corpora_or_user_sqlite_distributed": false,
+    "model_hashes_change_during_sanitization": false,
+    "fixture_mail": [
+      "fixtures/ordinary-update.eml",
+      "fixtures/spanish-account-review.eml",
+      "fixtures/suspicious-invoice.eml"
+    ]
+  },
+  "owner_publication_authorization": {
+    "repository": "Azhen129/phishlens",
+    "source_license": "MIT for owner-authorized original code and documentation",
+    "asset_scope": "PhishLens branding, implemented design and three selected application screenshots"
+  }
+}

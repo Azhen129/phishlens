@@ -1,0 +1,22 @@
+{
+  "role": "Previously observed Phase5 internal development diagnostic, not a real application classifier or fresh test",
+  "method": "Source-majority lookup learned from original Phase5 fitting source/label metadata only, evaluated on original internal test membership",
+  "splits_sha256": "a01adafe55c7aa584890282709745bea975981822873bcaeb1cbf0526005e03a",
+  "training_sources": 14,
+  "mixed_label_training_sources": [],
+  "test_n": 998,
+  "test_sources_unseen": 0,
+  "confusion_matrix": [
+    [
+      874,
+      0
+    ],
+    [
+      0,
+      124
+    ]
+  ],
+  "accuracy": 1.0,
+  "f1": 1.0,
+  "raw_message_text_excluded": true
+}

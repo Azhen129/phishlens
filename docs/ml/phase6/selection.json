@@ -1,0 +1,1312 @@
+{
+  "version": "email-source-text-v6-609bba638c1d",
+  "directory": "backend/models/email_en_v6/email-source-text-v6-609bba638c1d",
+  "selected_candidate": "union_svm_unweighted",
+  "threshold": 0.2095991955762941,
+  "model_sha256": "17040d24c574d753c0b6491e21ce8a8cfa32007d16e0fc66d68538a7f0b2ba13",
+  "validation": {
+    "n": 7351,
+    "class_balance": {
+      "0": 6524,
+      "1": 827
+    },
+    "threshold": 0.2095991955762941,
+    "accuracy": 0.985444157257516,
+    "precision": 0.9787234042553191,
+    "recall": 0.8899637243047158,
+    "f1": 0.9322355921469284,
+    "legitimate_precision": 0.9862100318230035,
+    "legitimate_recall": 0.9975475168608215,
+    "legitimate_f1": 0.9918463765907186,
+    "confusion_matrix": [
+      [
+        6508,
+        16
+      ],
+      [
+        91,
+        736
+      ]
+    ],
+    "false_positives": 16,
+    "false_negatives": 91,
+    "false_positive_rate": 0.002452483139178418,
+    "false_negative_rate": 0.11003627569528417,
+    "roc_auc": 0.9971047279990094,
+    "average_precision": 0.9837660807073383,
+    "pr_auc_trapezoid": 0.9837583704646521,
+    "brier_score": 0.016185500855196155,
+    "log_loss": 0.05725708306312301,
+    "expected_calibration_error": 0.017442677863752677,
+    "wilson_95": {
+      "accuracy": [
+        0.9824417553006849,
+        0.9879394609307764
+      ],
+      "precision": [
+        0.9657189692796858,
+        0.9868617493321036
+      ],
+      "recall": [
+        0.8668058421686824,
+        0.9095155524274905
+      ],
+      "false_positive_rate": [
+        0.001510202077765436,
+        0.003980350817367095
+      ],
+      "false_negative_rate": [
+        0.09048444757250952,
+        0.1331941578313176
+      ]
+    },
+    "group_bootstrap_95": {
+      "method": "Source-set-stratified whole-campaign bootstrap; percentile 95% intervals, curated-source diagnostic only.",
+      "seed": 20261103,
+      "replicates": 400,
+      "groups": 5489,
+      "source_set_strata": 40,
+      "intervals": {
+        "accuracy": [
+          0.9821121237536148,
+          0.9885511067058508
+        ],
+        "precision": [
+          0.9654457318938197,
+          0.9908048535128988
+        ],
+        "recall": [
+          0.8644855107224344,
+          0.9156369285806487
+        ],
+        "f1": [
+          0.9137865596904519,
+          0.9474435808438225
+        ],
+        "false_positive_rate": [
+          0.0010691401401377214,
+          0.0041480742282957285
+        ],
+        "false_negative_rate": [
+          0.08436307141935126,
+          0.13551448927756557
+        ]
+      }
+    }
+  },
+  "internal_test": {
+    "n": 3108,
+    "class_balance": {
+      "0": 2983,
+      "1": 125
+    },
+    "threshold": 0.2095991955762941,
+    "accuracy": 0.9922779922779923,
+    "precision": 0.9173553719008265,
+    "recall": 0.888,
+    "f1": 0.9024390243902439,
+    "legitimate_precision": 0.9953130231001004,
+    "legitimate_recall": 0.9966476701307408,
+    "legitimate_f1": 0.9959798994974874,
+    "confusion_matrix": [
+      [
+        2973,
+        10
+      ],
+      [
+        14,
+        111
+      ]
+    ],
+    "false_positives": 10,
+    "false_negatives": 14,
+    "false_positive_rate": 0.003352329869259135,
+    "false_negative_rate": 0.112,
+    "roc_auc": 0.9952799195440831,
+    "average_precision": 0.9611665196794742,
+    "pr_auc_trapezoid": 0.9610842112000703,
+    "brier_score": 0.005367970194520513,
+    "log_loss": 0.02376882392268508,
+    "expected_calibration_error": 0.0032215392413348495,
+    "wilson_95": {
+      "accuracy": [
+        0.9885352907166127,
+        0.994805294108573
+      ],
+      "precision": [
+        0.854535161068024,
+        0.9544909505625935
+      ],
+      "recall": [
+        0.8207616439023667,
+        0.9321016105799721
+      ],
+      "false_positive_rate": [
+        0.0018219637679550657,
+        0.006160200384174903
+      ],
+      "false_negative_rate": [
+        0.06789838942002796,
+        0.1792383560976334
+      ]
+    },
+    "group_bootstrap_95": {
+      "method": "Source-set-stratified whole-campaign bootstrap; percentile 95% intervals, curated-source diagnostic only.",
+      "seed": 20261103,
+      "replicates": 400,
+      "groups": 2100,
+      "source_set_strata": 17,
+      "intervals": {
+        "accuracy": [
+          0.9882812163370389,
+          0.995184667934503
+        ],
+        "precision": [
+          0.8682028043775649,
+          0.9603329613095238
+        ],
+        "recall": [
+          0.8294771241830066,
+          0.9389493945775204
+        ],
+        "f1": [
+          0.859475756393431,
+          0.9380331169364778
+        ],
+        "false_positive_rate": [
+          0.001557650070537451,
+          0.0060442478512456954
+        ],
+        "false_negative_rate": [
+          0.0610506054224796,
+          0.17052287581699332
+        ]
+      }
+    }
+  },
+  "validation_constraints_feasible": true,
+  "threshold_selection": {
+    "threshold": 0.2095991955762941,
+    "feasible": true,
+    "validation_recall": 0.8899637243047158,
+    "pooled_false_positives": 16,
+    "pooled_benign_n": 6524,
+    "pooled_false_positive_rate": 0.002452483139178418,
+    "pooled_wilson_95": [
+      0.001510202077765436,
+      0.003980350817367095
+    ],
+    "per_benign_source": {
+      "CEAS-08-ham": {
+        "benign_n": 1368,
+        "false_positives": 10,
+        "false_positive_rate": 0.007309941520467836,
+        "wilson_95": [
+          0.0039754305341743795,
+          0.013403734286510857
+        ],
+        "constraint_required": true,
+        "constraint_passed": true,
+        "scope": "Prespecified source bound"
+      },
+      "Figshare-Assassin": {
+        "benign_n": 236,
+        "false_positives": 0,
+        "false_positive_rate": 0.0,
+        "wilson_95": [
+          0.0,
+          0.01601665883614395
+        ],
+        "constraint_required": true,
+        "constraint_passed": true,
+        "scope": "Prespecified source bound"
+      },
+      "Figshare-Enron": {
+        "benign_n": 1188,
+        "false_positives": 3,
+        "false_positive_rate": 0.0025252525252525255,
+        "wilson_95": [
+          0.0008591772742926906,
+          0.00739817838980048
+        ],
+        "constraint_required": true,
+        "constraint_passed": true,
+        "scope": "Prespecified source bound"
+      },
+      "Figshare-Ling": {
+        "benign_n": 170,
+        "false_positives": 0,
+        "false_positive_rate": 0.0,
+        "wilson_95": [
+          0.0,
+          0.022097483803655452
+        ],
+        "constraint_required": false,
+        "constraint_passed": null,
+        "scope": "Insufficient source denominator for the prespecified bound; no safety claim"
+      },
+      "MASC-Enron": {
+        "benign_n": 15,
+        "false_positives": 0,
+        "false_positive_rate": 0.0,
+        "wilson_95": [
+          0.0,
+          0.20388330103584862
+        ],
+        "constraint_required": false,
+        "constraint_passed": null,
+        "scope": "Insufficient source denominator for the prespecified bound; no safety claim"
+      },
+      "MASC-W3C": {
+        "benign_n": 4,
+        "false_positives": 0,
+        "false_positive_rate": 0.0,
+        "wilson_95": [
+          0.0,
+          0.4898908364545973
+        ],
+        "constraint_required": false,
+        "constraint_passed": null,
+        "scope": "Insufficient source denominator for the prespecified bound; no safety claim"
+      },
+      "MeAJOR-trec5": {
+        "benign_n": 631,
+        "false_positives": 0,
+        "false_positive_rate": 0.0,
+        "wilson_95": [
+          0.0,
+          0.006051052223070256
+        ],
+        "constraint_required": true,
+        "constraint_passed": true,
+        "scope": "Prespecified source bound"
+      },
+      "MeAJOR-trec6": {
+        "benign_n": 2912,
+        "false_positives": 3,
+        "false_positive_rate": 0.0010302197802197802,
+        "wilson_95": [
+          0.00035042816773589143,
+          0.0030247412163617207
+        ],
+        "constraint_required": true,
+        "constraint_passed": true,
+        "scope": "Prespecified source bound"
+      }
+    },
+    "selection_rule": "Validation recall, fewer pooled FP, precision, proximity to 0.5; both pooled bounds and source bounds for benign n>=200. Final data never read."
+  },
+  "candidates": {
+    "word_lr_unweighted": {
+      "version": "email-source-text-v6-bb697598d76b",
+      "directory": "backend/models/email_en_v6/email-source-text-v6-bb697598d76b",
+      "selected_candidate": "word_lr_unweighted",
+      "threshold": 0.4656417656408586,
+      "model_sha256": "28f6cd932170c7aa22aeec015d3f3036b2d71333dc73de308a6e8c720b019a8c",
+      "validation": {
+        "n": 7351,
+        "class_balance": {
+          "0": 6524,
+          "1": 827
+        },
+        "threshold": 0.4656417656408586,
+        "accuracy": 0.9587811182152088,
+        "precision": 0.9798534798534798,
+        "recall": 0.6469165659008465,
+        "f1": 0.7793153678077204,
+        "legitimate_precision": 0.9570903747244673,
+        "legitimate_recall": 0.9983139178418149,
+        "legitimate_f1": 0.9772676119738916,
+        "confusion_matrix": [
+          [
+            6513,
+            11
+          ],
+          [
+            292,
+            535
+          ]
+        ],
+        "false_positives": 11,
+        "false_negatives": 292,
+        "false_positive_rate": 0.0016860821581851624,
+        "false_negative_rate": 0.35308343409915355,
+        "roc_auc": 0.9915757055893336,
+        "average_precision": 0.9555332951271519,
+        "pr_auc_trapezoid": 0.9555088764606446,
+        "brier_score": 0.031474694545724005,
+        "log_loss": 0.1067676907943161,
+        "expected_calibration_error": 0.034453631083990674,
+        "wilson_95": {
+          "accuracy": [
+            0.95399190293612,
+            0.9630910876034914
+          ],
+          "precision": [
+            0.9642880125386014,
+            0.9887139693852075
+          ],
+          "recall": [
+            0.6137325478025191,
+            0.678742024115109
+          ],
+          "false_positive_rate": [
+            0.0009417652957317384,
+            0.0030168876500710528
+          ],
+          "false_negative_rate": [
+            0.32125797588489113,
+            0.38626745219748104
+          ]
+        },
+        "group_bootstrap_95": {
+          "method": "Source-set-stratified whole-campaign bootstrap; percentile 95% intervals, curated-source diagnostic only.",
+          "seed": 20261103,
+          "replicates": 400,
+          "groups": 5489,
+          "source_set_strata": 40,
+          "intervals": {
+            "accuracy": [
+              0.9536643490089182,
+              0.9633887473048511
+            ],
+            "precision": [
+              0.9645294745672233,
+              0.9922506558762061
+            ],
+            "recall": [
+              0.6097070003167564,
+              0.6842796956549079
+            ],
+            "f1": [
+              0.7496201201201201,
+              0.8062668425139308
+            ],
+            "false_positive_rate": [
+              0.0006078034394459694,
+              0.003047389641060934
+            ],
+            "false_negative_rate": [
+              0.31572030434509213,
+              0.39029299968324355
+            ]
+          }
+        }
+      },
+      "internal_test": {
+        "n": 3108,
+        "class_balance": {
+          "0": 2983,
+          "1": 125
+        },
+        "threshold": 0.4656417656408586,
+        "accuracy": 0.9887387387387387,
+        "precision": 0.9411764705882353,
+        "recall": 0.768,
+        "f1": 0.8458149779735683,
+        "legitimate_precision": 0.9903526280771789,
+        "legitimate_recall": 0.9979886020784445,
+        "legitimate_f1": 0.9941559525797296,
+        "confusion_matrix": [
+          [
+            2977,
+            6
+          ],
+          [
+            29,
+            96
+          ]
+        ],
+        "false_positives": 6,
+        "false_negatives": 29,
+        "false_positive_rate": 0.002011397921555481,
+        "false_negative_rate": 0.232,
+        "roc_auc": 0.9794730137445524,
+        "average_precision": 0.906033823576651,
+        "pr_auc_trapezoid": 0.905802762901336,
+        "brier_score": 0.009412800723255323,
+        "log_loss": 0.03984053287670825,
+        "expected_calibration_error": 0.005398228942966192,
+        "wilson_95": {
+          "accuracy": [
+            0.9843792012215474,
+            0.9918916146931304
+          ],
+          "precision": [
+            0.8775640550984952,
+            0.9727643606546253
+          ],
+          "recall": [
+            0.6866866534318612,
+            0.8333322955404758
+          ],
+          "false_positive_rate": [
+            0.0009221576107181007,
+            0.004381591864806076
+          ],
+          "false_negative_rate": [
+            0.16666770445952422,
+            0.3133133465681388
+          ]
+        },
+        "group_bootstrap_95": {
+          "method": "Source-set-stratified whole-campaign bootstrap; percentile 95% intervals, curated-source diagnostic only.",
+          "seed": 20261103,
+          "replicates": 400,
+          "groups": 2100,
+          "source_set_strata": 17,
+          "intervals": {
+            "accuracy": [
+              0.9848094628240078,
+              0.9925853844207514
+            ],
+            "precision": [
+              0.8916477272727273,
+              0.982172619047619
+            ],
+            "recall": [
+              0.6863950456323337,
+              0.84375
+            ],
+            "f1": [
+              0.7887256229685806,
+              0.8974409448818897
+            ],
+            "false_positive_rate": [
+              0.0005747833684928967,
+              0.00400313018578859
+            ],
+            "false_negative_rate": [
+              0.15625,
+              0.31360495436766617
+            ]
+          }
+        }
+      },
+      "validation_constraints_feasible": true,
+      "threshold_selection": {
+        "threshold": 0.4656417656408586,
+        "feasible": true,
+        "validation_recall": 0.6469165659008465,
+        "pooled_false_positives": 11,
+        "pooled_benign_n": 6524,
+        "pooled_false_positive_rate": 0.0016860821581851624,
+        "pooled_wilson_95": [
+          0.0009417652957317384,
+          0.0030168876500710528
+        ],
+        "per_benign_source": {
+          "CEAS-08-ham": {
+            "benign_n": 1368,
+            "false_positives": 7,
+            "false_positive_rate": 0.005116959064327485,
+            "wilson_95": [
+              0.0024808399153695114,
+              0.010524641662677825
+            ],
+            "constraint_required": true,
+            "constraint_passed": true,
+            "scope": "Prespecified source bound"
+          },
+          "Figshare-Assassin": {
+            "benign_n": 236,
+            "false_positives": 0,
+            "false_positive_rate": 0.0,
+            "wilson_95": [
+              0.0,
+              0.01601665883614395
+            ],
+            "constraint_required": true,
+            "constraint_passed": true,
+            "scope": "Prespecified source bound"
+          },
+          "Figshare-Enron": {
+            "benign_n": 1188,
+            "false_positives": 1,
+            "false_positive_rate": 0.0008417508417508417,
+            "wilson_95": [
+              0.00014860514947935468,
+              0.004752599433950847
+            ],
+            "constraint_required": true,
+            "constraint_passed": true,
+            "scope": "Prespecified source bound"
+          },
+          "Figshare-Ling": {
+            "benign_n": 170,
+            "false_positives": 0,
+            "false_positive_rate": 0.0,
+            "wilson_95": [
+              0.0,
+              0.022097483803655452
+            ],
+            "constraint_required": false,
+            "constraint_passed": null,
+            "scope": "Insufficient source denominator for the prespecified bound; no safety claim"
+          },
+          "MASC-Enron": {
+            "benign_n": 15,
+            "false_positives": 0,
+            "false_positive_rate": 0.0,
+            "wilson_95": [
+              0.0,
+              0.20388330103584862
+            ],
+            "constraint_required": false,
+            "constraint_passed": null,
+            "scope": "Insufficient source denominator for the prespecified bound; no safety claim"
+          },
+          "MASC-W3C": {
+            "benign_n": 4,
+            "false_positives": 0,
+            "false_positive_rate": 0.0,
+            "wilson_95": [
+              0.0,
+              0.4898908364545973
+            ],
+            "constraint_required": false,
+            "constraint_passed": null,
+            "scope": "Insufficient source denominator for the prespecified bound; no safety claim"
+          },
+          "MeAJOR-trec5": {
+            "benign_n": 631,
+            "false_positives": 0,
+            "false_positive_rate": 0.0,
+            "wilson_95": [
+              0.0,
+              0.006051052223070256
+            ],
+            "constraint_required": true,
+            "constraint_passed": true,
+            "scope": "Prespecified source bound"
+          },
+          "MeAJOR-trec6": {
+            "benign_n": 2912,
+            "false_positives": 3,
+            "false_positive_rate": 0.0010302197802197802,
+            "wilson_95": [
+              0.00035042816773589143,
+              0.0030247412163617207
+            ],
+            "constraint_required": true,
+            "constraint_passed": true,
+            "scope": "Prespecified source bound"
+          }
+        },
+        "selection_rule": "Validation recall, fewer pooled FP, precision, proximity to 0.5; both pooled bounds and source bounds for benign n>=200. Final data never read."
+      }
+    },
+    "union_svm_unweighted": {
+      "version": "email-source-text-v6-609bba638c1d",
+      "directory": "backend/models/email_en_v6/email-source-text-v6-609bba638c1d",
+      "selected_candidate": "union_svm_unweighted",
+      "threshold": 0.2095991955762941,
+      "model_sha256": "17040d24c574d753c0b6491e21ce8a8cfa32007d16e0fc66d68538a7f0b2ba13",
+      "validation": {
+        "n": 7351,
+        "class_balance": {
+          "0": 6524,
+          "1": 827
+        },
+        "threshold": 0.2095991955762941,
+        "accuracy": 0.985444157257516,
+        "precision": 0.9787234042553191,
+        "recall": 0.8899637243047158,
+        "f1": 0.9322355921469284,
+        "legitimate_precision": 0.9862100318230035,
+        "legitimate_recall": 0.9975475168608215,
+        "legitimate_f1": 0.9918463765907186,
+        "confusion_matrix": [
+          [
+            6508,
+            16
+          ],
+          [
+            91,
+            736
+          ]
+        ],
+        "false_positives": 16,
+        "false_negatives": 91,
+        "false_positive_rate": 0.002452483139178418,
+        "false_negative_rate": 0.11003627569528417,
+        "roc_auc": 0.9971047279990094,
+        "average_precision": 0.9837660807073383,
+        "pr_auc_trapezoid": 0.9837583704646521,
+        "brier_score": 0.016185500855196155,
+        "log_loss": 0.05725708306312301,
+        "expected_calibration_error": 0.017442677863752677,
+        "wilson_95": {
+          "accuracy": [
+            0.9824417553006849,
+            0.9879394609307764
+          ],
+          "precision": [
+            0.9657189692796858,
+            0.9868617493321036
+          ],
+          "recall": [
+            0.8668058421686824,
+            0.9095155524274905
+          ],
+          "false_positive_rate": [
+            0.001510202077765436,
+            0.003980350817367095
+          ],
+          "false_negative_rate": [
+            0.09048444757250952,
+            0.1331941578313176
+          ]
+        },
+        "group_bootstrap_95": {
+          "method": "Source-set-stratified whole-campaign bootstrap; percentile 95% intervals, curated-source diagnostic only.",
+          "seed": 20261103,
+          "replicates": 400,
+          "groups": 5489,
+          "source_set_strata": 40,
+          "intervals": {
+            "accuracy": [
+              0.9821121237536148,
+              0.9885511067058508
+            ],
+            "precision": [
+              0.9654457318938197,
+              0.9908048535128988
+            ],
+            "recall": [
+              0.8644855107224344,
+              0.9156369285806487
+            ],
+            "f1": [
+              0.9137865596904519,
+              0.9474435808438225
+            ],
+            "false_positive_rate": [
+              0.0010691401401377214,
+              0.0041480742282957285
+            ],
+            "false_negative_rate": [
+              0.08436307141935126,
+              0.13551448927756557
+            ]
+          }
+        }
+      },
+      "internal_test": {
+        "n": 3108,
+        "class_balance": {
+          "0": 2983,
+          "1": 125
+        },
+        "threshold": 0.2095991955762941,
+        "accuracy": 0.9922779922779923,
+        "precision": 0.9173553719008265,
+        "recall": 0.888,
+        "f1": 0.9024390243902439,
+        "legitimate_precision": 0.9953130231001004,
+        "legitimate_recall": 0.9966476701307408,
+        "legitimate_f1": 0.9959798994974874,
+        "confusion_matrix": [
+          [
+            2973,
+            10
+          ],
+          [
+            14,
+            111
+          ]
+        ],
+        "false_positives": 10,
+        "false_negatives": 14,
+        "false_positive_rate": 0.003352329869259135,
+        "false_negative_rate": 0.112,
+        "roc_auc": 0.9952799195440831,
+        "average_precision": 0.9611665196794742,
+        "pr_auc_trapezoid": 0.9610842112000703,
+        "brier_score": 0.005367970194520513,
+        "log_loss": 0.02376882392268508,
+        "expected_calibration_error": 0.0032215392413348495,
+        "wilson_95": {
+          "accuracy": [
+            0.9885352907166127,
+            0.994805294108573
+          ],
+          "precision": [
+            0.854535161068024,
+            0.9544909505625935
+          ],
+          "recall": [
+            0.8207616439023667,
+            0.9321016105799721
+          ],
+          "false_positive_rate": [
+            0.0018219637679550657,
+            0.006160200384174903
+          ],
+          "false_negative_rate": [
+            0.06789838942002796,
+            0.1792383560976334
+          ]
+        },
+        "group_bootstrap_95": {
+          "method": "Source-set-stratified whole-campaign bootstrap; percentile 95% intervals, curated-source diagnostic only.",
+          "seed": 20261103,
+          "replicates": 400,
+          "groups": 2100,
+          "source_set_strata": 17,
+          "intervals": {
+            "accuracy": [
+              0.9882812163370389,
+              0.995184667934503
+            ],
+            "precision": [
+              0.8682028043775649,
+              0.9603329613095238
+            ],
+            "recall": [
+              0.8294771241830066,
+              0.9389493945775204
+            ],
+            "f1": [
+              0.859475756393431,
+              0.9380331169364778
+            ],
+            "false_positive_rate": [
+              0.001557650070537451,
+              0.0060442478512456954
+            ],
+            "false_negative_rate": [
+              0.0610506054224796,
+              0.17052287581699332
+            ]
+          }
+        }
+      },
+      "validation_constraints_feasible": true,
+      "threshold_selection": {
+        "threshold": 0.2095991955762941,
+        "feasible": true,
+        "validation_recall": 0.8899637243047158,
+        "pooled_false_positives": 16,
+        "pooled_benign_n": 6524,
+        "pooled_false_positive_rate": 0.002452483139178418,
+        "pooled_wilson_95": [
+          0.001510202077765436,
+          0.003980350817367095
+        ],
+        "per_benign_source": {
+          "CEAS-08-ham": {
+            "benign_n": 1368,
+            "false_positives": 10,
+            "false_positive_rate": 0.007309941520467836,
+            "wilson_95": [
+              0.0039754305341743795,
+              0.013403734286510857
+            ],
+            "constraint_required": true,
+            "constraint_passed": true,
+            "scope": "Prespecified source bound"
+          },
+          "Figshare-Assassin": {
+            "benign_n": 236,
+            "false_positives": 0,
+            "false_positive_rate": 0.0,
+            "wilson_95": [
+              0.0,
+              0.01601665883614395
+            ],
+            "constraint_required": true,
+            "constraint_passed": true,
+            "scope": "Prespecified source bound"
+          },
+          "Figshare-Enron": {
+            "benign_n": 1188,
+            "false_positives": 3,
+            "false_positive_rate": 0.0025252525252525255,
+            "wilson_95": [
+              0.0008591772742926906,
+              0.00739817838980048
+            ],
+            "constraint_required": true,
+            "constraint_passed": true,
+            "scope": "Prespecified source bound"
+          },
+          "Figshare-Ling": {
+            "benign_n": 170,
+            "false_positives": 0,
+            "false_positive_rate": 0.0,
+            "wilson_95": [
+              0.0,
+              0.022097483803655452
+            ],
+            "constraint_required": false,
+            "constraint_passed": null,
+            "scope": "Insufficient source denominator for the prespecified bound; no safety claim"
+          },
+          "MASC-Enron": {
+            "benign_n": 15,
+            "false_positives": 0,
+            "false_positive_rate": 0.0,
+            "wilson_95": [
+              0.0,
+              0.20388330103584862
+            ],
+            "constraint_required": false,
+            "constraint_passed": null,
+            "scope": "Insufficient source denominator for the prespecified bound; no safety claim"
+          },
+          "MASC-W3C": {
+            "benign_n": 4,
+            "false_positives": 0,
+            "false_positive_rate": 0.0,
+            "wilson_95": [
+              0.0,
+              0.4898908364545973
+            ],
+            "constraint_required": false,
+            "constraint_passed": null,
+            "scope": "Insufficient source denominator for the prespecified bound; no safety claim"
+          },
+          "MeAJOR-trec5": {
+            "benign_n": 631,
+            "false_positives": 0,
+            "false_positive_rate": 0.0,
+            "wilson_95": [
+              0.0,
+              0.006051052223070256
+            ],
+            "constraint_required": true,
+            "constraint_passed": true,
+            "scope": "Prespecified source bound"
+          },
+          "MeAJOR-trec6": {
+            "benign_n": 2912,
+            "false_positives": 3,
+            "false_positive_rate": 0.0010302197802197802,
+            "wilson_95": [
+              0.00035042816773589143,
+              0.0030247412163617207
+            ],
+            "constraint_required": true,
+            "constraint_passed": true,
+            "scope": "Prespecified source bound"
+          }
+        },
+        "selection_rule": "Validation recall, fewer pooled FP, precision, proximity to 0.5; both pooled bounds and source bounds for benign n>=200. Final data never read."
+      }
+    },
+    "union_svm_balanced": {
+      "version": "email-source-text-v6-3b1e4efb2bfa",
+      "directory": "backend/models/email_en_v6/email-source-text-v6-3b1e4efb2bfa",
+      "selected_candidate": "union_svm_balanced",
+      "threshold": 0.3169806346246505,
+      "model_sha256": "7c141a2bcf99f187abb156b1cfe44e1d78f5f5b2f6c7f26f4b93b17c3b0226cf",
+      "validation": {
+        "n": 7351,
+        "class_balance": {
+          "0": 6524,
+          "1": 827
+        },
+        "threshold": 0.3169806346246505,
+        "accuracy": 0.9844919058631478,
+        "precision": 0.9824086603518268,
+        "recall": 0.8778718258766627,
+        "f1": 0.9272030651340997,
+        "legitimate_precision": 0.9847247428917121,
+        "legitimate_recall": 0.9980073574494175,
+        "legitimate_f1": 0.9913215590742996,
+        "confusion_matrix": [
+          [
+            6511,
+            13
+          ],
+          [
+            101,
+            726
+          ]
+        ],
+        "false_positives": 13,
+        "false_negatives": 101,
+        "false_positive_rate": 0.001992642550582465,
+        "false_negative_rate": 0.12212817412333736,
+        "roc_auc": 0.997096943515043,
+        "average_precision": 0.9835272813322478,
+        "pr_auc_trapezoid": 0.983519345709117,
+        "brier_score": 0.014833216309408367,
+        "log_loss": 0.052968473028099296,
+        "expected_calibration_error": 0.015814053573475866,
+        "wilson_95": {
+          "accuracy": [
+            0.9814036554565785,
+            0.9870740527144596
+          ],
+          "precision": [
+            0.9701367954790803,
+            0.9896911617972015
+          ],
+          "recall": [
+            0.8537917856050288,
+            0.898457627763356
+          ],
+          "false_positive_rate": [
+            0.0011649182111399586,
+            0.0034064947143947278
+          ],
+          "false_negative_rate": [
+            0.1015423722366441,
+            0.14620821439497134
+          ]
+        },
+        "group_bootstrap_95": {
+          "method": "Source-set-stratified whole-campaign bootstrap; percentile 95% intervals, curated-source diagnostic only.",
+          "seed": 20261103,
+          "replicates": 400,
+          "groups": 5489,
+          "source_set_strata": 40,
+          "intervals": {
+            "accuracy": [
+              0.9810272349533435,
+              0.9874483061640309
+            ],
+            "precision": [
+              0.9713144738446531,
+              0.9920758928571429
+            ],
+            "recall": [
+              0.8487740297969482,
+              0.9032746556758191
+            ],
+            "f1": [
+              0.9093084076776573,
+              0.9419083570248301
+            ],
+            "false_positive_rate": [
+              0.0009058049933933424,
+              0.0033104027654508998
+            ],
+            "false_negative_rate": [
+              0.09672534432418085,
+              0.15122597020305178
+            ]
+          }
+        }
+      },
+      "internal_test": {
+        "n": 3108,
+        "class_balance": {
+          "0": 2983,
+          "1": 125
+        },
+        "threshold": 0.3169806346246505,
+        "accuracy": 0.9938867438867439,
+        "precision": 0.9649122807017544,
+        "recall": 0.88,
+        "f1": 0.9205020920502092,
+        "legitimate_precision": 0.9949899799599199,
+        "legitimate_recall": 0.9986590680522963,
+        "legitimate_f1": 0.9968211477329764,
+        "confusion_matrix": [
+          [
+            2979,
+            4
+          ],
+          [
+            15,
+            110
+          ]
+        ],
+        "false_positives": 4,
+        "false_negatives": 15,
+        "false_positive_rate": 0.0013409319477036541,
+        "false_negative_rate": 0.12,
+        "roc_auc": 0.9961729802212538,
+        "average_precision": 0.9594821765482637,
+        "pr_auc_trapezoid": 0.959389352254178,
+        "brier_score": 0.00528673116999248,
+        "log_loss": 0.02274503632372382,
+        "expected_calibration_error": 0.0021158325305249406,
+        "wilson_95": {
+          "accuracy": [
+            0.9904713171506265,
+            0.9960827989975174
+          ],
+          "precision": [
+            0.9132415849113642,
+            0.9862720587655025
+          ],
+          "recall": [
+            0.8114261894188212,
+            0.9259141113628507
+          ],
+          "false_positive_rate": [
+            0.0005215819555817105,
+            0.0034429601816395716
+          ],
+          "false_negative_rate": [
+            0.0740858886371493,
+            0.1885738105811788
+          ]
+        },
+        "group_bootstrap_95": {
+          "method": "Source-set-stratified whole-campaign bootstrap; percentile 95% intervals, curated-source diagnostic only.",
+          "seed": 20261103,
+          "replicates": 400,
+          "groups": 2100,
+          "source_set_strata": 17,
+          "intervals": {
+            "accuracy": [
+              0.9907112369337979,
+              0.9964408909194745
+            ],
+            "precision": [
+              0.9291877370417193,
+              0.9919447890818859
+            ],
+            "recall": [
+              0.8174238095238096,
+              0.9348285364360074
+            ],
+            "f1": [
+              0.8812118632042004,
+              0.95200073800738
+            ],
+            "false_positive_rate": [
+              0.0003008877185863305,
+              0.0029521386122952136
+            ],
+            "false_negative_rate": [
+              0.06517146356399266,
+              0.18257619047619042
+            ]
+          }
+        }
+      },
+      "validation_constraints_feasible": true,
+      "threshold_selection": {
+        "threshold": 0.3169806346246505,
+        "feasible": true,
+        "validation_recall": 0.8778718258766627,
+        "pooled_false_positives": 13,
+        "pooled_benign_n": 6524,
+        "pooled_false_positive_rate": 0.001992642550582465,
+        "pooled_wilson_95": [
+          0.0011649182111399586,
+          0.0034064947143947278
+        ],
+        "per_benign_source": {
+          "CEAS-08-ham": {
+            "benign_n": 1368,
+            "false_positives": 7,
+            "false_positive_rate": 0.005116959064327485,
+            "wilson_95": [
+              0.0024808399153695114,
+              0.010524641662677825
+            ],
+            "constraint_required": true,
+            "constraint_passed": true,
+            "scope": "Prespecified source bound"
+          },
+          "Figshare-Assassin": {
+            "benign_n": 236,
+            "false_positives": 0,
+            "false_positive_rate": 0.0,
+            "wilson_95": [
+              0.0,
+              0.01601665883614395
+            ],
+            "constraint_required": true,
+            "constraint_passed": true,
+            "scope": "Prespecified source bound"
+          },
+          "Figshare-Enron": {
+            "benign_n": 1188,
+            "false_positives": 2,
+            "false_positive_rate": 0.0016835016835016834,
+            "wilson_95": [
+              0.0004617983513990932,
+              0.006117481772362592
+            ],
+            "constraint_required": true,
+            "constraint_passed": true,
+            "scope": "Prespecified source bound"
+          },
+          "Figshare-Ling": {
+            "benign_n": 170,
+            "false_positives": 0,
+            "false_positive_rate": 0.0,
+            "wilson_95": [
+              0.0,
+              0.022097483803655452
+            ],
+            "constraint_required": false,
+            "constraint_passed": null,
+            "scope": "Insufficient source denominator for the prespecified bound; no safety claim"
+          },
+          "MASC-Enron": {
+            "benign_n": 15,
+            "false_positives": 0,
+            "false_positive_rate": 0.0,
+            "wilson_95": [
+              0.0,
+              0.20388330103584862
+            ],
+            "constraint_required": false,
+            "constraint_passed": null,
+            "scope": "Insufficient source denominator for the prespecified bound; no safety claim"
+          },
+          "MASC-W3C": {
+            "benign_n": 4,
+            "false_positives": 0,
+            "false_positive_rate": 0.0,
+            "wilson_95": [
+              0.0,
+              0.4898908364545973
+            ],
+            "constraint_required": false,
+            "constraint_passed": null,
+            "scope": "Insufficient source denominator for the prespecified bound; no safety claim"
+          },
+          "MeAJOR-trec5": {
+            "benign_n": 631,
+            "false_positives": 1,
+            "false_positive_rate": 0.001584786053882726,
+            "wilson_95": [
+              0.0002798084520080667,
+              0.008921636632478767
+            ],
+            "constraint_required": true,
+            "constraint_passed": true,
+            "scope": "Prespecified source bound"
+          },
+          "MeAJOR-trec6": {
+            "benign_n": 2912,
+            "false_positives": 3,
+            "false_positive_rate": 0.0010302197802197802,
+            "wilson_95": [
+              0.00035042816773589143,
+              0.0030247412163617207
+            ],
+            "constraint_required": true,
+            "constraint_passed": true,
+            "scope": "Prespecified source bound"
+          }
+        },
+        "selection_rule": "Validation recall, fewer pooled FP, precision, proximity to 0.5; both pooled bounds and source bounds for benign n>=200. Final data never read."
+      }
+    }
+  },
+  "primary_eligible_for_independent_admission": true,
+  "selection_rule": "Validation recall, lower pooled FPR, lower validation logloss, deterministic name; no final-data candidate switching.",
+  "dataset_sha256": "904dfe0eb3963e72fd48263fc3cdcadfb4ea59db4b0aface62d065d87b7e455d",
+  "provenance_sha256": "3bfa2b1097e42088df176798696fd4264cc51666713699290d14102b15fcefaf",
+  "code_sha256": {
+    "backend/ml_features.py": "f290b7f0fa5a4315ed15abb16c0afb116f4e0d4231dc1a7d4266786120b7aaf1",
+    "backend/ml_training.py": "f82f26de96b410f905ddc09f1d6064890b911f1ffc63d5f03a2997bc4a375ac2",
+    "backend/text_normalization_v6.py": "c64296e579ddc422b20f29d208aab635cad1edcb6b2d69a43170fb6392417c2a",
+    "backend/ml_training_v6.py": "fe892344b761e7cd2cf82647fa31233c13f2c8c3d2faa5b2f159d39de4078c5e",
+    "docs/ml/phase6/PROTOCOL.md": "0900adbe9a73809d5ef8a6f99c98a13e37e616dbc384374584cb63269b10a306"
+  },
+  "final_data_read": false,
+  "all_three_artifacts_frozen_before_final": true,
+  "partitions": {
+    "train": {
+      "n": 9322,
+      "class_balance": {
+        "0": 8948,
+        "1": 374
+      },
+      "sources": {
+        "Figshare-Enron": 3010,
+        "CEAS-08-ham": 3158,
+        "MeAJOR-trec5": 1603,
+        "Nazario-2018": 76,
+        "Figshare-Assassin": 642,
+        "Figshare-Ling": 503,
+        "Nazario-2023": 92,
+        "nazario-phishing2": 81,
+        "MASC-W3C": 17,
+        "nazario-phishing1": 39,
+        "nazario-phishing0": 29,
+        "Nazario-2021": 23,
+        "MASC-Enron": 15,
+        "Nazario-2020": 34
+      },
+      "groups": 6329
+    },
+    "calibration": {
+      "n": 3108,
+      "class_balance": {
+        "0": 2983,
+        "1": 125
+      },
+      "sources": {
+        "CEAS-08-ham": 1053,
+        "Figshare-Ling": 167,
+        "Figshare-Enron": 1017,
+        "MeAJOR-trec5": 551,
+        "Figshare-Assassin": 187,
+        "nazario-phishing1": 15,
+        "Nazario-2020": 16,
+        "Nazario-2018": 23,
+        "nazario-phishing2": 24,
+        "Nazario-2023": 32,
+        "MASC-Enron": 8,
+        "Nazario-2021": 9,
+        "nazario-phishing0": 6
+      },
+      "groups": 2110
+    },
+    "test": {
+      "n": 3108,
+      "class_balance": {
+        "0": 2983,
+        "1": 125
+      },
+      "sources": {
+        "Figshare-Enron": 1206,
+        "MeAJOR-trec5": 477,
+        "CEAS-08-ham": 958,
+        "Figshare-Ling": 158,
+        "Figshare-Assassin": 172,
+        "Nazario-2023": 30,
+        "nazario-phishing2": 28,
+        "nazario-phishing0": 9,
+        "nazario-phishing1": 9,
+        "MASC-W3C": 6,
+        "Nazario-2021": 13,
+        "Nazario-2018": 29,
+        "Nazario-2020": 7,
+        "MASC-Enron": 6
+      },
+      "groups": 2100
+    },
+    "validation": {
+      "n": 7351,
+      "class_balance": {
+        "0": 6524,
+        "1": 827
+      },
+      "sources": {
+        "MeAJOR-trec6": 2912,
+        "MeAJOR-trec5": 631,
+        "Figshare-Ling": 170,
+        "CEAS-08-ham": 1368,
+        "Figshare-Enron": 1188,
+        "Figshare-Assassin": 236,
+        "nazario-phishing-2024": 234,
+        "nazario-phishing-2025": 347,
+        "nazario-phishing2": 44,
+        "Nazario-2022": 82,
+        "nazario-phishing1": 8,
+        "Nazario-2023": 39,
+        "Nazario-2018": 32,
+        "MASC-Enron": 15,
+        "Nazario-2021": 10,
+        "MASC-W3C": 4,
+        "Nazario-2020": 22,
+        "nazario-phishing0": 9
+      },
+      "groups": 5489
+    }
+  }
+}

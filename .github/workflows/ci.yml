@@ -1,0 +1,73 @@
+name: PhishLens checks
+on: [push, pull_request]
+permissions:
+  contents: read
+concurrency:
+  group: phishlens-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4; upstream tag verified 2026-11-03
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4; upstream tag verified 2026-11-03
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5; upstream tag verified 2026-11-03
+        with:
+          python-version: '3.11'
+      - run: python -m venv .venv
+      - run: .venv/bin/python -m pip install -r backend/requirements-ml.txt
+      - run: .venv/bin/python -m pip check
+      - run: npm ci
+      - run: npm run format:check
+      - run: npm run typecheck
+      - run: npm run build
+      - run: npm test
+      - name: Validate present trusted models; report intentional optional omissions
+        id: models
+        run: .venv/bin/python scripts/check_model_registry.py --output work/phase6/ci-model-registry.json --github-output "$GITHUB_OUTPUT"
+      - name: Full backend suite with trusted models
+        if: steps.models.outputs.full_registry == 'true'
+        run: .venv/bin/python -m pytest backend/tests -q
+      - name: Explicit rules-only backend suite; learned-model coverage not run
+        if: steps.models.outputs.full_registry == 'false'
+        run: .venv/bin/python -m pytest backend/tests -m 'not real_models' -q
+      - run: .venv/bin/python -m compileall -q backend scripts
+      - name: Inventory release-sensitive files without printing matched credentials
+        run: .venv/bin/python scripts/audit_release.py --output work/phase6/ci-release-audit.json
+      - run: npx playwright install --with-deps chromium
+      - name: Full browser suite with trained classifier workflows
+        if: steps.models.outputs.full_registry == 'true'
+        run: npm run test:e2e
+        env:
+          CI: 'true'
+      - name: Explicit rules-only browser application checks
+        if: steps.models.outputs.full_registry == 'false'
+        run: npx playwright test tests/e2e/application.spec.ts
+        env:
+          CI: 'true'
+      - name: Disclose model verification coverage
+        if: always()
+        run: |
+          if [ "${{ steps.models.outputs.full_registry }}" = "true" ]; then
+            echo 'Complete trusted registry checked: full backend and trained-model browser workflows selected.' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'Optional trained-model workflow coverage NOT RUN, or registry validation failed. Rules-only checks do not validate learned models. Inspect the registry report and job failures.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4; upstream tag verified 2026-11-03
+        if: always()
+        with:
+          name: verification-evidence
+          path: |
+            docs/ml/phase6/screenshots/
+            work/phase6/playwright-report/
+            work/phase6/ci-release-audit.json
+            work/phase6/ci-model-registry.json

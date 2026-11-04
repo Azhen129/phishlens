@@ -1,0 +1,68 @@
+{
+  "format_version": 1,
+  "kind": "url",
+  "version": "url-passive-text-v2-4c777052d55d",
+  "artifact": "model.joblib",
+  "sha256": "719f147c02c402881203b9fb0fe1c5f4f3c5bc95a7aad61c548991f459943709",
+  "sklearn_version": "1.9.1",
+  "validated": true,
+  "metadata": {
+    "kind": "url",
+    "version": "url-passive-text-v2-4c777052d55d",
+    "calibrated": true,
+    "validation_passed": true,
+    "assessment_mode": "ml",
+    "selected_candidate": "logistic_regression_ml",
+    "feature_version": "passive-text-v2",
+    "sklearn_version": "1.9.1",
+    "calibration": "disjoint held-out sigmoid calibration for base model and learned hybrid",
+    "limitations": [
+      "Dataset-conditioned calibrated probabilities are not a guarantee of field performance or confirmed maliciousness.",
+      "Labels and source collection biases are inherited from the documented dataset; source-level and temporal generalization are not established.",
+      "Lexical near-duplicate grouping does not detect all semantic paraphrases. Email inputs are bounded to16000 characters; URL inputs to8192.",
+      "No destination fetching, DNS, reputation lookup, authentication verification or attachment execution is performed by the model.",
+      "The UCI source has strong collection artifacts (legitimate URLs predominantly HTTPS and short/root paths). Primary ML intentionally uses hostname-only features; path/scheme signals remain heuristic observations. Hostname collection bias and external prevalence shift remain unresolved."
+    ],
+    "dataset_source": "https://archive.ics.uci.edu/dataset/967/phiusiil+phishing+url+dataset",
+    "dataset_license": "CC BY 4.0",
+    "held_out_metrics": {
+      "n": 5999,
+      "class_balance": {
+        "0": 3475,
+        "1": 2524
+      },
+      "threshold": 0.44000000000000006,
+      "accuracy": 0.8814802467077846,
+      "precision": 0.902352418996893,
+      "recall": 0.8054675118858954,
+      "f1": 0.8511618170399833,
+      "legitimate_precision": 0.8689268553123332,
+      "legitimate_recall": 0.9366906474820144,
+      "legitimate_f1": 0.9015371832156212,
+      "confusion_matrix": [
+        [
+          3255,
+          220
+        ],
+        [
+          491,
+          2033
+        ]
+      ],
+      "false_positives": 220,
+      "false_negatives": 491,
+      "roc_auc": 0.9203211757060279,
+      "average_precision": 0.9279680758135789,
+      "pr_auc_trapezoid": 0.9279468967549496,
+      "brier_score": 0.0921530834607424,
+      "expected_calibration_error": 0.034089145858053393
+    },
+    "input_max_characters": 8192,
+    "supported_languages": [],
+    "validation_scope": "Offline raw-URL benchmark from UCI PhiUSIIL with registrable-domain-disjoint evaluation. Strong HTTPS/path/length collection artifacts prohibit interpreting benchmark calibration or accuracy as arbitrary-URL field performance.",
+    "training_code_sha256": "422c6caa8375a18d5b1c316ad017cfca89da74be6fb44ba702cd68c1115597c7",
+    "feature_code_sha256": "f290b7f0fa5a4315ed15abb16c0afb116f4e0d4231dc1a7d4266786120b7aaf1",
+    "provenance_sha256": "11c811d1d531bca4e447ebee4a935cd89c358565e0910becdfc3faf4887c3645"
+  },
+  "metrics_file": "metrics.json"
+}
