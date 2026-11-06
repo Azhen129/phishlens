@@ -4,6 +4,8 @@
 
 PhishLens helps an analyst inspect emails and URLs, review the evidence behind an assessment, preserve an investigation and produce a PDF report. React and TypeScript provide the navy/teal dashboard; FastAPI, SQLite and scikit-learn provide the local analysis and persistence.
 
+The separately configured **public demo** uses the same interface with passive heuristic analysis and temporary browser-tab cases. Its server exposes no SQLite or saved-record API, and loads no trained classifiers. Cases, notes and generated report history reset on reload. Submit only demonstration content: the hosting provider processes requests, and downloaded PDFs remain wherever you save them. [Hosted demo architecture and deployment](docs/HOSTED_DEMO.md)
+
 **The public source runs in rules-only mode out of the box.** The trained English email, Spanish email and hostname classifiers belong to the separate local research workspace and are excluded from this repository. The English classifier is approved for limited local analyst use. On its small independent test, it detected 16 of 19 phishing messages versus 14 for the baseline, while false positives rose from 6 to 17 among 5,801 legitimate messages. F1 declined. Treat all model outputs as research signals for analyst review. Keep them out of automated security decisions. [Model evaluation](MODEL_EVALUATION.md)
 
 ## Screenshots
@@ -122,7 +124,7 @@ These checks cover rules-only operation. The registry reports the intentional ab
 
 Default SQLite storage is `backend/data/phishlens.sqlite3`. Set `PHISHLENS_DB` in the API terminal before startup to choose another file; `.env` is not loaded automatically. Email content, cases, notes and report snapshots are sensitive local records excluded from Git. Use SQLite's online backup API for a consistent live backup. Deletion does not securely erase external backups, OS caches or forensic remnants.
 
-The supported deployment is a **trusted single-operator local setup**. Host/Origin protections reduce hostile browser access, but do not provide authentication or tenant isolation. A hosted version needs authentication/authorization, HTTPS, storage isolation, quotas, retention and trusted model provisioning. Do not expose this unauthenticated API to an untrusted network. See [SECURITY_AUDIT.md](SECURITY_AUDIT.md).
+The full SQLite application is supported as a **trusted single-operator local setup**. Host/Origin protections reduce hostile browser access, but do not provide authentication or tenant isolation. Do not expose `backend.main:app` to an untrusted network. The separate stateless public-demo entry point is `backend.demo:app`; it provides bounded analysis and PDF responses with temporary cases held exclusively in each browser tab. Persistent hosted accounts would need authentication, authorization and storage isolation. See [SECURITY_AUDIT.md](SECURITY_AUDIT.md) and [hosted-demo limits](docs/HOSTED_DEMO.md).
 
 ## Troubleshooting
 
@@ -143,4 +145,4 @@ The supported deployment is a **trusted single-operator local setup**. Host/Orig
 
 The MIT license covers owner-authorized original code and documentation. Dependencies and datasets carry their own terms. The included application captures and branding are published with owner permission. [MIT license](LICENSE) · [License scope](LICENSE.NOTICE.md) · [Third-party notices](THIRD_PARTY_NOTICES.md)
 
-The file manifest identifies the package contents and their SHA-256 values. The package audit records the scan findings and the owner's approval. [File manifest](PUBLIC_RELEASE_MANIFEST.json) · [Package audit](PUBLIC_RELEASE_AUDIT.json)
+The initial public-release manifest and audit describe the original MIT snapshot, before the hosted-demo changes. Current Git commits identify subsequent source revisions. [Initial file manifest](PUBLIC_RELEASE_MANIFEST.json) · [Initial package audit](PUBLIC_RELEASE_AUDIT.json) · [Hosted demo](docs/HOSTED_DEMO.md)

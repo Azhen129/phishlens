@@ -52,4 +52,6 @@ SOFTWARE.
 
 The application uses system font names in its CSS. The screenshots and retained evaluation charts are PNG images. The source package excludes font binaries, historical vector charts, compiled frontend bundles, dependency binaries, and generated PDFs. Installed dependencies carry their own notices. [Microsoft font guidance](https://learn.microsoft.com/en-us/typography/fonts/font-faq) · [DejaVu font terms](https://github.com/dejavu-fonts/dejavu-fonts/blob/master/LICENSE)
 
+The public demonstration generates PDF reports with embedded Bitstream Vera font subsets supplied by ReportLab. Each demonstration report carries the full bundled font notice, including its copyright and permission terms. A copy is also provided with the frontend. [Bitstream Vera font notice](frontend/public/bitstream-vera-license.txt)
+
 The owner confirmed publication rights for the PhishLens branding, implemented design and three selected screenshots. The project MIT license covers authorized original code and documentation. Dataset attribution and permitted research uses are documented separately. [Project license scope](LICENSE.NOTICE.md) · [Dataset provenance](DATASET_PROVENANCE.md)

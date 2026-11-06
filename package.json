@@ -9,8 +9,10 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "node scripts/run-frontend-tests.mjs",
     "test:e2e": "playwright test",
-    "format:check": "prettier --check frontend/src vite.config.ts playwright.config.ts tests/e2e scripts/visual-compare.mjs scripts/run-frontend-tests.mjs",
-    "verify:visual": "node scripts/visual-compare.mjs"
+    "format:check": "prettier --check frontend/src vite.config.ts playwright.config.ts playwright.demo.config.ts tests/e2e scripts/visual-compare.mjs scripts/run-frontend-tests.mjs",
+    "verify:visual": "node scripts/visual-compare.mjs",
+    "build:demo": "tsc -p tsconfig.json && vite build --mode demo",
+    "test:demo": "playwright test --config playwright.demo.config.ts"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

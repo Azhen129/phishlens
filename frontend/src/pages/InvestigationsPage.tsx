@@ -24,6 +24,7 @@ import {
   TriangleAlert,
 } from "lucide-react";
 import { api } from "../api";
+import { isPublicDemo } from "../environment";
 import { finalSummary, ModelDetails } from "../ModelResult";
 import type { Analysis, CaseStatus, Investigation, Metrics } from "../types";
 import "./investigations.css";
@@ -319,7 +320,9 @@ export default function InvestigationsPage({
               <div>
                 <strong>Total Investigations</strong>
                 <b>{(metrics?.total ?? cases.length).toLocaleString()}</b>
-                <small>Saved local cases</small>
+                <small>
+                  {isPublicDemo ? "This tab's cases" : "Saved local cases"}
+                </small>
               </div>
             </div>
             <div className="case-kpi case-kpi-danger">

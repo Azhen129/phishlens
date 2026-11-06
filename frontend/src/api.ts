@@ -6,29 +6,11 @@ import type {
   CaseStatus,
   ModelHealth,
 } from "./types";
-async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
-  const response = await fetch("/api" + path, {
-    ...options,
-    headers: {
-      ...(options.body instanceof FormData
-        ? {}
-        : { "Content-Type": "application/json" }),
-      ...options.headers,
-    },
-  });
-  if (!response.ok) {
-    const error = await response.json().catch(() => ({
-      detail: "The local API could not complete this request.",
-    }));
-    throw new Error(
-      typeof error.detail === "string"
-        ? error.detail
-        : "Please check the input and try again.",
-    );
-  }
-  return response.status === 204 ? (undefined as T) : response.json();
-}
-export const api = {
+import { request } from "./request";
+import { isPublicDemo } from "./environment";
+import { demoApi } from "./demoApi";
+
+const localApi = {
   analyzeEmail: (raw: string) =>
     request<Analysis>("/analyze/email", {
       method: "POST",
@@ -90,3 +72,5 @@ export const api = {
       body: JSON.stringify({ confirm: "DELETE ALL LOCAL DATA" }),
     }),
 };
+
+export const api = isPublicDemo ? demoApi : localApi;

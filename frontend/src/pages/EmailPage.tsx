@@ -26,6 +26,7 @@ import {
   X,
 } from "lucide-react";
 import { api } from "../api";
+import { isPublicDemo } from "../environment";
 import type { Analysis } from "../types";
 import {
   ModelDetails,
@@ -218,8 +219,12 @@ export default function EmailPage({
       setError("Choose an RFC/MIME email file with the .eml extension.");
       return;
     }
-    if (next.size > 25 * 1024 * 1024) {
-      setError("The file exceeds the 25 MB limit.");
+    if (next.size > (isPublicDemo ? 256 * 1024 : 25 * 1024 * 1024)) {
+      setError(
+        isPublicDemo
+          ? "The file exceeds the 256 KiB public demo limit."
+          : "The file exceeds the 25 MB limit.",
+      );
       return;
     }
     setError("");
@@ -237,7 +242,11 @@ export default function EmailPage({
         : await api.analyzeEmail(raw);
       onAnalysis(result);
       onRefresh();
-      notify("Email analyzed locally. Findings are ready for review.");
+      notify(
+        isPublicDemo
+          ? "Passive email analysis complete. Findings are ready for review."
+          : "Email analyzed locally. Findings are ready for review.",
+      );
     } catch (e) {
       setError(e instanceof Error ? e.message : "Email analysis failed.");
     } finally {
@@ -324,7 +333,10 @@ export default function EmailPage({
                 <CloudUpload size={38} />
                 <strong>Drag &amp; drop an .eml file here</strong>
                 <span>or click to browse</span>
-                <small>Supports .eml (recommended). Max 25 MB.</small>
+                <small>
+                  Supports .eml (recommended). Max{" "}
+                  {isPublicDemo ? "256 KiB" : "25 MB"}.
+                </small>
               </button>
               <div className="email-or">
                 <span>or</span>
@@ -547,7 +559,11 @@ export default function EmailPage({
             </h2>
             <span>
               {busy ? (
-                "Analyzing locally…"
+                isPublicDemo ? (
+                  "Analyzing passively…"
+                ) : (
+                  "Analyzing locally…"
+                )
               ) : inputChanged ? (
                 "Previous result · input changed"
               ) : analysis ? (
@@ -589,15 +605,18 @@ export default function EmailPage({
                         : analysis.ml.reason
                     }
                   >
-                    {analysis.ml.available
-                      ? analysis.ml.prediction_warning
-                        ? `English research ML score: ${probabilityText(analysis.ml.decision_score ?? analysis.ml.phishing_probability)}. Archive estimate, not confidence; review evidence. Final: ${analysis.assessment?.label || analysis.ml.classification} (ML).`
-                        : `${analysis.ml.detected_language === "en" ? "English " : analysis.ml.detected_language === "es" ? "Spanish " : ""}ML score: ${probabilityText(analysis.ml.decision_score ?? analysis.ml.phishing_probability)} (not confidence). Final: ${analysis.assessment?.label || analysis.ml.classification} (${analysis.assessment?.method === "validated_hybrid" ? "hybrid" : "ML"}).`
-                      : analysis.ml.model_loaded ||
-                          (analysis.ml.language_routing_status &&
-                            analysis.ml.language_routing_status !== "supported")
-                        ? `ML abstained: ${analysis.ml.language_routing_status || "outside validated"} language scope. ${analysis.summary}`
-                        : analysis.summary}
+                    {isPublicDemo
+                      ? `Rules-only demo. ${analysis.summary}`
+                      : analysis.ml.available
+                        ? analysis.ml.prediction_warning
+                          ? `English research ML score: ${probabilityText(analysis.ml.decision_score ?? analysis.ml.phishing_probability)}. Archive estimate, not confidence; review evidence. Final: ${analysis.assessment?.label || analysis.ml.classification} (ML).`
+                          : `${analysis.ml.detected_language === "en" ? "English " : analysis.ml.detected_language === "es" ? "Spanish " : ""}ML score: ${probabilityText(analysis.ml.decision_score ?? analysis.ml.phishing_probability)} (not confidence). Final: ${analysis.assessment?.label || analysis.ml.classification} (${analysis.assessment?.method === "validated_hybrid" ? "hybrid" : "ML"}).`
+                        : analysis.ml.model_loaded ||
+                            (analysis.ml.language_routing_status &&
+                              analysis.ml.language_routing_status !==
+                                "supported")
+                          ? `ML abstained: ${analysis.ml.language_routing_status || "outside validated"} language scope. ${analysis.summary}`
+                          : analysis.summary}
                   </p>
                 </>
               ) : (
@@ -981,7 +1000,7 @@ export default function EmailPage({
               }
               value={paste}
               onChange={(e) => setPaste(e.target.value)}
-              maxLength={25 * 1024 * 1024}
+              maxLength={isPublicDemo ? 256 * 1024 : 25 * 1024 * 1024}
             />
             <div>
               <button

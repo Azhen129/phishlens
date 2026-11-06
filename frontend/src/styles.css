@@ -1845,3 +1845,37 @@ td code {
     scroll-behavior: auto !important;
   }
 }
+/* The guest disclosure follows the existing navy and teal panel treatment. */
+.demo-notice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid #24535a;
+  border-radius: 9px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  background: #062026;
+  font-size: 12px;
+}
+.demo-notice > span {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 12px;
+  row-gap: 3px;
+}
+.demo-notice strong,
+.demo-notice a {
+  color: #21e0dc;
+}
+.demo-notice .button {
+  min-height: 31px;
+  white-space: nowrap;
+  font-size: 12px;
+}
+@media (max-width: 650px) {
+  .demo-notice {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}

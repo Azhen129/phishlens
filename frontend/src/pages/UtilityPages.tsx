@@ -14,6 +14,7 @@ import {
   Check,
 } from "lucide-react";
 import { api } from "../api";
+import { isPublicDemo } from "../environment";
 import type { Analysis, ModelHealth } from "../types";
 import {
   modelSummary,
@@ -195,8 +196,8 @@ export function HistoryPage({
       <header className="page-heading">
         <h1>Analysis History</h1>
         <p>
-          Review locally saved scans, preserve evidence, and remove sensitive
-          records.
+          Review {isPublicDemo ? "this tab's temporary" : "locally saved"}{" "}
+          scans, preserve evidence, and remove sensitive records.
         </p>
       </header>
       <section className="panel history-page">
@@ -282,7 +283,8 @@ export function HistoryPage({
         </div>
         {!filtered.length && (
           <Empty>
-            No saved analyses match. New submissions are saved locally after
+            No saved analyses match. New submissions are{" "}
+            {isPublicDemo ? "kept in this tab after" : "saved locally after"}
             analysis.
           </Empty>
         )}
@@ -314,8 +316,8 @@ export function SettingsPage({
       <header className="page-heading">
         <h1>Settings & Privacy</h1>
         <p>
-          Manage your local investigation workspace and understand its analysis
-          capabilities.
+          Manage your {isPublicDemo ? "temporary demo" : "local investigation"}{" "}
+          workspace and understand its analysis capabilities.
         </p>
       </header>
       <div className="settings-grid">
@@ -328,8 +330,9 @@ export function SettingsPage({
             <div>
               <dt>Analysis engine</dt>
               <dd>
-                Evidence based heuristics + local archive classifiers when
-                loaded
+                {isPublicDemo
+                  ? "Passive heuristic analysis"
+                  : "Evidence based heuristics + local archive classifiers when loaded"}
               </dd>
             </div>
             <div>
@@ -377,47 +380,52 @@ export function SettingsPage({
             </div>
           </dl>
           <p className="muted">
-            Model status changes only after a local artifact passes integrity,
-            compatibility, calibration and validation checks. Model decision
-            scores use archive calibration, not validated field probability or
-            confidence about future mail or URLs. Historical scans retain the
-            model metadata that was originally stored.
+            {isPublicDemo
+              ? "The public demo runs heuristic analysis. The separate local research workspace includes evaluated classifiers with limited validation. A low heuristic score never verifies safety."
+              : "Model status changes only after a local artifact passes integrity, compatibility, calibration and validation checks. Model decision scores use archive calibration, not validated field probability or confidence about future mail or URLs. Historical scans retain the model metadata that was originally stored."}
           </p>
         </section>
         <section className="panel settings-card">
           <h2>
             <Database />
-            Local Data & Privacy
+            {isPublicDemo ? "Demo Data & Privacy" : "Local Data & Privacy"}
           </h2>
           <p>
-            Email text, parsed indicators, cases, notes and report references
-            are stored in the local SQLite database. No email content is sent to
-            an external analysis service.
+            {isPublicDemo
+              ? "Analysis and PDF inputs are sent to the hosted demo API for passive processing. Cases, analyst notes, and report copies are kept only in this tab's memory and reset on reload."
+              : "Email text, parsed indicators, cases, notes and report references are stored in the local SQLite database. No email content is sent to an external analysis service."}
           </p>
           <p className="muted">
-            Use only on your own machine. This local application does not
-            provide multi-user accounts or an exposed production service.
+            {isPublicDemo
+              ? "Use the synthetic examples or nonconfidential content. This guest demo has no permanent case storage or user accounts. Other tabs have their own temporary workspace."
+              : "Use only on your own machine. This local application does not provide multi-user accounts or an exposed production service."}
           </p>
           <button
             className="button danger-button"
             onClick={async () => {
               if (
                 confirm(
-                  "Permanently delete ALL analyses, investigations, notes, and generated reports from this workspace?",
+                  isPublicDemo
+                    ? "Clear this tab's temporary analyses, investigations, notes and reports?"
+                    : "Permanently delete ALL analyses, investigations, notes, and generated reports from this workspace?",
                 )
               )
                 try {
                   await api.clearData();
                   onClear();
                   onRefresh();
-                  notify("All local investigation data deleted.");
+                  notify(
+                    isPublicDemo
+                      ? "This tab's demo data was cleared."
+                      : "All local investigation data deleted.",
+                  );
                 } catch (e) {
                   notify((e as Error).message);
                 }
             }}
           >
             <Trash2 size={17} />
-            Delete All Local Data
+            {isPublicDemo ? "Clear This Demo Tab" : "Delete All Local Data"}
           </button>
         </section>
         <section className="panel settings-card">

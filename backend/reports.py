@@ -27,6 +27,8 @@ pdfmetrics.registerFontFamily("PhishLens", normal="PhishLens", bold="PhishLens-B
 def generate_pdf(analysis: dict, report: dict, case: dict | None = None, include_raw=False) -> bytes:
     stream = BytesIO()
     modern = "assessment" in analysis or analysis.get("ml", {}).get("available", False)
+    public_demo = analysis.get("demo", {}).get("mode") == "public-demo"
+    retained_analysis = "temporary browser analysis until reload" if public_demo else "saved local analysis"
     styles = getSampleStyleSheet()
     for name in styles.byName:
         style = styles[name]
@@ -41,9 +43,11 @@ def generate_pdf(analysis: dict, report: dict, case: dict | None = None, include
         if modern:
             value = value.replace('→','->')
         if len(value) > MAX_REPORT_FIELD_CHARS:
-            value = value[:MAX_REPORT_FIELD_CHARS] + f"\n[Report field truncated at {MAX_REPORT_FIELD_CHARS:,} characters. The complete submitted field remains in the saved local analysis.]"
+            value = value[:MAX_REPORT_FIELD_CHARS] + f"\n[Report field truncated at {MAX_REPORT_FIELD_CHARS:,} characters. The complete submitted field remains in the {retained_analysis}.]"
         return Paragraph(escape(value).replace("\n", "<br/>"), styles[style])
     review_description = "Offline evidence review - observed rule indicators and available model predictions, not confirmation of compromise." if modern else "Offline evidence review - heuristic risk estimate, not confirmation of compromise."
+    if public_demo:
+        review_description = "Public demonstration - passive rule findings with temporary browser case state. Independent verification is required."
     story = [paragraph("PhishLens | Investigation Report", "ReportTitle"), paragraph(review_description, "SmallText"), Spacer(1, 5 * mm)]
     subject = analysis["subject"]
     subject_preview = subject if len(subject) <= 350 else subject[:350] + " [Preview truncated; submitted subject/input follows below.]"
@@ -59,7 +63,7 @@ def generate_pdf(analysis: dict, report: dict, case: dict | None = None, include
         # space instead of forcing one enormous keep-with-heading block.
         story.extend(paragraph(bounded_subject[start:start + 2000]) for start in range(0, len(bounded_subject), 2000))
         if len(subject) > MAX_REPORT_FIELD_CHARS:
-            story.append(paragraph(f"[Report field truncated at {MAX_REPORT_FIELD_CHARS:,} characters. The complete submitted field remains in the saved local analysis.]", "SmallText"))
+            story.append(paragraph(f"[Report field truncated at {MAX_REPORT_FIELD_CHARS:,} characters. The complete submitted field remains in the {retained_analysis}.]", "SmallText"))
     story.extend([paragraph("Summary", "Heading2"), paragraph(analysis["summary"])])
     ml = analysis.get("ml", {"available": False, "reason": "No model metadata was stored with this historical analysis."})
     score_contract = ml.get("score_type") == "archive_calibrated_decision_score"
@@ -117,11 +121,16 @@ def generate_pdf(analysis: dict, report: dict, case: dict | None = None, include
         story.extend([paragraph("Submitted raw email (explicitly included)", "Heading2"), paragraph(analysis["email"]["raw"][:50000], "SmallText")])
         if len(analysis["email"]["raw"]) > 50000:
             story.append(paragraph("Raw content truncated at 50,000 characters for report size.", "SmallText"))
+    if public_demo:
+        story.append(paragraph("Embedded font notice", "Heading2"))
+        font_notice = (FONT_DIRECTORY / "bitstream-vera-license.txt").read_text(encoding="utf-8")
+        story.extend(paragraph(section, "SmallText") for section in font_notice.split("\n\n") if section.strip())
     def footer(canvas, doc):
         canvas.saveState()
         canvas.setFont("PhishLens", 8)
         canvas.setFillColor(colors.HexColor("#52616b"))
-        canvas.drawString(20 * mm, 12 * mm, "PhishLens | Local evidence review | " + report["created_at"])
+        review_scope = "Public demo evidence review" if public_demo else "Local evidence review"
+        canvas.drawString(20 * mm, 12 * mm, "PhishLens | " + review_scope + " | " + report["created_at"])
         canvas.drawRightString(190 * mm, 12 * mm, f"Page {doc.page}")
         canvas.restoreState()
     doc = SimpleDocTemplate(stream, pagesize=A4, rightMargin=20 * mm, leftMargin=20 * mm, topMargin=18 * mm, bottomMargin=22 * mm, title="PhishLens Investigation Report", author="PhishLens", pageCompression=1, invariant=1)

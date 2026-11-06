@@ -25,6 +25,8 @@ import {
   LogOut,
 } from "lucide-react";
 import { api } from "./api";
+import { isPublicDemo } from "./environment";
+import { loadDemoExamples } from "./demoApi";
 import type { Analysis, Investigation, Metrics } from "./types";
 import Dashboard from "./pages/Dashboard";
 import EmailPage from "./pages/EmailPage";
@@ -48,7 +50,8 @@ export default function App() {
     [toast, setToast] = useState(""),
     [menu, setMenu] = useState(""),
     [search, setSearch] = useState(""),
-    [mobile, setMobile] = useState(false);
+    [mobile, setMobile] = useState(false),
+    [loadingExamples, setLoadingExamples] = useState(false);
   const navigate = useNavigate(),
     location = useLocation();
   const notify = useCallback((s: string) => {
@@ -70,7 +73,9 @@ export default function App() {
       setError("");
     } catch (e) {
       setError(
-        "Local API unavailable. Start the FastAPI server on port 8000. " +
+        (isPublicDemo
+          ? "The demo analysis service is unavailable. "
+          : "Local API unavailable. Start the FastAPI server on port 8000. ") +
           (e as Error).message,
       );
     }
@@ -174,7 +179,7 @@ export default function App() {
           <p>
             <Check />
             Content inspected in a<br />
-            safe local environment
+            {isPublicDemo ? "passive demo service" : "safe local environment"}
           </p>
           <p>
             <Check />
@@ -229,7 +234,9 @@ export default function App() {
                   {analyses.length} analyses · {cases.length} investigations
                 </p>
                 <p className="muted">
-                  All records remain in your local workspace.
+                  {isPublicDemo
+                    ? "Cases and reports are temporary to this tab and reset on reload."
+                    : "All records remain in your local workspace."}
                 </p>
                 <button onClick={() => navigate("/history")}>
                   View Analysis History <History size={16} />
@@ -240,7 +247,9 @@ export default function App() {
           <div className="utility-wrap">
             <button
               className="account-button"
-              aria-label="Local workspace menu"
+              aria-label={
+                isPublicDemo ? "Guest demo menu" : "Local workspace menu"
+              }
               aria-expanded={menu === "account"}
               onClick={() => setMenu(menu === "account" ? "" : "account")}
             >
@@ -249,8 +258,14 @@ export default function App() {
             </button>
             {menu === "account" && (
               <div className="utility-menu">
-                <strong>Local Analyst</strong>
-                <p className="muted">Single-user local workspace</p>
+                <strong>
+                  {isPublicDemo ? "Guest Analyst" : "Local Analyst"}
+                </strong>
+                <p className="muted">
+                  {isPublicDemo
+                    ? "Temporary demo tab"
+                    : "Single-user local workspace"}
+                </p>
                 <button onClick={() => navigate("/settings")}>
                   Settings & Privacy <Settings size={16} />
                 </button>
@@ -259,6 +274,50 @@ export default function App() {
           </div>
         </header>
         <main className="page-content">
+          {isPublicDemo && (
+            <div
+              className="demo-notice"
+              role="note"
+              aria-label="Public demo privacy"
+            >
+              <span>
+                <strong>Public demo · Rules only</strong>
+                <span>
+                  Cases stay in this tab and reset on reload. Use synthetic
+                  data.
+                </span>
+                <a
+                  href="/third-party-notices.txt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Licenses
+                </a>
+              </span>
+              <button
+                className="button"
+                disabled={loadingExamples}
+                onClick={async () => {
+                  setLoadingExamples(true);
+                  try {
+                    await loadDemoExamples();
+                    await refresh();
+                    notify(
+                      "Synthetic examples analyzed. Every finding is computed from the fixture content.",
+                    );
+                  } catch (e) {
+                    notify((e as Error).message);
+                  } finally {
+                    setLoadingExamples(false);
+                  }
+                }}
+              >
+                {loadingExamples
+                  ? "Analyzing examples…"
+                  : "Load synthetic examples"}
+              </button>
+            </div>
+          )}
           {error && (
             <div role="alert" className="api-error">
               <Info size={18} />

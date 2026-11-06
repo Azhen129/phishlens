@@ -20,6 +20,7 @@ import {
   Check,
 } from "lucide-react";
 import { api } from "../api";
+import { isPublicDemo } from "../environment";
 import type { Analysis, Investigation, Metrics, ModelHealth } from "../types";
 import { finalSummary, probabilityText, assessmentRisk } from "../ModelResult";
 import { Badge, RiskRing, FindingList, LinkTable, Empty } from "../components";
@@ -355,7 +356,9 @@ export default function Dashboard({
                 Links are analyzed passively and never auto-opened. &nbsp;
                 Attachments are inspected as metadata. &nbsp; ML:{" "}
                 {modelStatus === null
-                  ? "checking local classifiers"
+                  ? isPublicDemo
+                    ? "checking demo service"
+                    : "checking local classifiers"
                   : loadedCount
                     ? `${loadedCount}/${classifierCount} local classifiers loaded`
                     : "unavailable; rules remain active"}
@@ -622,7 +625,9 @@ export default function Dashboard({
             <p>
               {analysis
                 ? "Do not use embedded links to verify a request. Preserve the original message and share evidence with your security team."
-                : "Paste an email, upload an .eml file or enter a URL. Content stays in your local workspace."}
+                : isPublicDemo
+                  ? "Paste synthetic email content, upload an .eml fixture or enter a URL. Demo cases reset when you reload this tab."
+                  : "Paste an email, upload an .eml file or enter a URL. Content stays in your local workspace."}
             </p>
           </div>
           <div className="insight-actions">

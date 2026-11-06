@@ -1,0 +1,28 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "buildCommand": "npm run build:demo",
+  "outputDirectory": "dist",
+  "installCommand": "npm ci",
+  "functions": {
+    "api/index.py": {
+      "maxDuration": 15,
+      "excludeFiles": "{backend/models/**,backend/data/**,backend/tests/**,backend/main.py,backend/storage.py,backend/ml*.py,backend/language_routing*.py,docs/**,tests/**,fixtures/**,scripts/**,work/**,outputs/**,.venv/**}"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/index.py" },
+    { "source": "/((?!api(?:/|$)).*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/:path*",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "no-referrer" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    }
+  ]
+}
