@@ -2,6 +2,8 @@
 
 **A local phishing investigation workspace for passive email and URL analysis, explainable evidence, and case reports.**
 
+[Live rules-only demo](https://phishlens-lovat.vercel.app) · [Hosted demo verification](docs/HOSTED_RELEASE_REVIEW.md)
+
 PhishLens helps an analyst inspect emails and URLs, review the evidence behind an assessment, preserve an investigation and produce a PDF report. React and TypeScript provide the navy/teal dashboard; FastAPI, SQLite and scikit-learn provide the local analysis and persistence.
 
 The separately configured **public demo** uses the same interface with passive heuristic analysis and temporary browser-tab cases. Its server exposes no SQLite or saved-record API, and loads no trained classifiers. Cases, notes and generated report history reset on reload. Submit only demonstration content: the hosting provider processes requests, and downloaded PDFs remain wherever you save them. [Hosted demo architecture and deployment](docs/HOSTED_DEMO.md)

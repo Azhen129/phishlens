@@ -38,7 +38,10 @@ export default defineConfig({
   use: {
     baseURL: process.env.PHISHLENS_DEMO_BASE_URL || "http://127.0.0.1:5182",
     viewport: { width: 1672, height: 941 },
-    trace: "retain-on-failure",
+    // Protected-preview credentials must never enter recorded network traces.
+    trace: process.env.PHISHLENS_PREVIEW_ACCESS_FILE
+      ? "off"
+      : "retain-on-failure",
     launchOptions: {
       executablePath:
         process.env.PLAYWRIGHT_EXECUTABLE_PATH ||

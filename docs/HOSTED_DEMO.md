@@ -64,3 +64,15 @@ npm run test:demo
 The suite separates HTTP PDF validity from actual browser download completion. A canceled native transfer must be disclosed even when the PDF HTTP response and rendering succeed. Deployment verification must not substitute local passes for live checks.
 
 Official platform references: [Python functions](https://vercel.com/docs/functions/runtimes/python), [API directory](https://vercel.com/docs/functions/runtimes/python/api-directory), [deployment configuration](https://vercel.com/docs/project-configuration).
+
+## Current verification and manual download check
+
+The public deployment and its verification limits are recorded in [the hosted release review](HOSTED_RELEASE_REVIEW.md). Protected-preview tests can optionally read a temporary owner-created share credential from `PHISHLENS_PREVIEW_ACCESS_FILE`. That file belongs in ignored scratch, never in source or evidence artifacts. The test helper bootstraps same-origin cookies, disables redirects for the credential-bearing request, sanitizes failures and disables traces. Public-production checks run without that file. Revoke temporary access after testing.
+
+Native PDF download completion remains unverified in the execution environment: automated Chrome reported `canceled`, and native Windows browser control was stopped because URL-policy enforcement is unsupported. HTTP PDF generation and page rendering passed. To verify manually in a normal browser:
+
+1. Open the public demo and load the explicitly synthetic examples.
+2. Open Investigations, select an example and optionally edit its notes/status under Report Settings.
+3. Generate Report (PDF). Check that the browser's Downloads list reports completion and that the saved PDF opens with the selected case, evidence, notes and limitations.
+
+Do not treat a successful HTTP response alone as proof that the file reached the browser's download folder.
